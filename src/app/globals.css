@@ -94,6 +94,12 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.text-gradient-green {
+  background: linear-gradient(to right, #14b8a6, #5eead4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .text-glow {
   text-shadow: 0 0 20px rgba(37, 99, 235, 0.3);

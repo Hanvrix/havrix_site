@@ -83,7 +83,7 @@ const Footer = () => {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <span className="text-2xl font-black text-white tracking-tight">Hanvrix</span>
+                <span className="text-2xl font-black text-white tracking-tight text-gradient-green">Hanvrix</span>
               </Link>
               <p className="mb-10 max-w-sm leading-relaxed text-blue-100/60 font-medium">
                 Empowering forward-thinking companies with cutting-edge digital solutions. We build
