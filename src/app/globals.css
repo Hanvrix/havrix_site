@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: "Inter", "Geist Sans", "ui-sans-serif", "system-ui";
+  --font-serif: "Outfit", "serif";
+
+  --brand-primary: #2563EB;
+  --brand-secondary: #0F172A;
+  --brand-accent: #38BDF8;
+  --brand-accent-glow: #22D3EE;
+  --brand-cta: #d97706;
+  --brand-cta-glow: rgb(204, 142, 71);
+
+  --bg-light: #F8FAFC;
+  --bg-dark: #020617;
+
+  --text-primary: #0F172A;
+  --text-secondary: #64748B;
+  --text-dark: #E2E8F0;
+
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+  --primary: #2563EB;
+  --secondary: #0F172A;
+  --cta: #d97706;
+}
+
+@theme {
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-accent-glow: var(--brand-accent-glow);
+  --color-brand-cta: var(--brand-cta);
+
+  --color-bg-light: var(--bg-light);
+  --color-bg-dark: var(--bg-dark);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-dark: var(--text-dark);
+
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+}
+
+.dark {
+  --background: #020617;
+  --foreground: #E2E8F0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "cv11", "ss01";
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: rgba(37, 99, 235, 0.2);
+  color: #2563EB;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2563EB;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1d4ed8;
+}
+
+.glass-morphism {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--brand-cta), var(--brand-cta-glow));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+}
+
+.hero-glow {
+  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+}
+
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.15);
+  border-color: rgba(37, 99, 235, 0.3);
+}
