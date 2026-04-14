@@ -8,6 +8,7 @@ import {
   Box, Database, Utensils, Ruler, Home, ShoppingCart, Globe2, Plane, LineChart, Leaf, ShoppingBag,
   Settings, Code2, Sparkles, Monitor, Smartphone, Headset
 } from "lucide-react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "./ui/Button";
 
@@ -89,8 +90,14 @@ const Navbar = () => {
             className="flex items-center"
           >
             <Link href="/" className="flex items-center space-x-3 group">
-              <div className={`p-2 rounded-xl transition-all duration-300 ${scrolled ? "bg-blue-600 shadow-blue-500/20" : "bg-blue-500 shadow-blue-500/10"}`}>
-                <Rocket className="h-6 w-6 text-white" />
+              <div className={`transition-all duration-300 ${scrolled ? "scale-90" : "scale-100"}`}>
+                <Image
+                  src="/logo.png"
+                  alt="Hanvrix Logo"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 object-contain drop-shadow-sm"
+                />
               </div>
               <span className={`text-2xl font-black tracking-tight transition-colors duration-300 ${logoColor}`}>
                 Hanvrix

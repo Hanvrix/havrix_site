@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Rocket, Mail, Phone, MapPin, Instagram, Twitter, Linkedin, Github } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Twitter, Linkedin, Github } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -73,8 +74,14 @@ const Footer = () => {
           <div>
             <div className="col-span-1 md:col-span-2 lg:col-span-1">
               <Link href="/" className="flex items-center space-x-3 mb-8">
-                <div className="p-2 bg-brand-primary rounded-xl shadow-lg shadow-blue-500/20">
-                  <Rocket className="h-6 w-6 text-white" />
+                <div className="w-10 h-10 transition-transform duration-300 hover:scale-110">
+                  <Image
+                    src="/logo.png"
+                    alt="Hanvrix Logo"
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <span className="text-2xl font-black text-white tracking-tight">Hanvrix</span>
               </Link>

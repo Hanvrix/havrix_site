@@ -132,13 +132,13 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative pt-10 pb-15 lg:pt-20 lg:pb-22 flex items-center justify-center overflow-hidden">
         {/* Innovative Background Image */}
-        <div className="absolute inset-0 -z-30">
+        <div className="absolute inset-0 -z-20">
           <img
             src="/images/hero-bg.png"
             alt="Hero Background"
-            className="w-full h-full object-cover opacity-30 mix-blend-soft-light"
+            className="w-full h-full object-cover opacity-50"
           />
-          <div className="absolute inset-0 bg-bg-dark/40"></div>
+          <div className="absolute inset-0 bg-bg-dark/20"></div>
         </div>
 
         <div className="absolute top-0 inset-x-0 h-screen hero-glow -z-10 opacity-60"></div>
