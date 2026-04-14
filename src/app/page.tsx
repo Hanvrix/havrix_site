@@ -119,7 +119,7 @@ export default function Home() {
     {
       quote: "Hanvrix didn't just digitize our inventory; they helped us redefine our entire supply chain logic. Our operational efficiency increased by 40% in six months.",
       author: "Sarah Kensington",
-      role: "CTO, FlowSense",
+      role: "CTO, Hanvrix",
     },
     {
       quote: "The technical precision and architectural depth they brought to our CRM build was world-class. It’s a tool that finally scales as fast as our sales team.",
@@ -136,7 +136,7 @@ export default function Home() {
   return (
     <div className="overflow-hidden bg-bg-dark">
       {/* Hero Section */}
-      <section className="relative pt-10 pb-15 lg:pt-20 lg:pb-22 flex items-center justify-center overflow-hidden">
+      <section className="relative pt-8 pb-12 lg:pt-14 lg:pb-16 flex items-center justify-center overflow-hidden">
         {/* Innovative Background Image */}
         <div className="absolute inset-0 -z-20">
           <img
@@ -210,7 +210,7 @@ export default function Home() {
       {/* Short About Section */}
       <Section light={true} className="bg-white overflow-hidden py-1 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Side: Images */}
             <div className="relative flex justify-center lg:justify-start">
               {/* Main Circular Image */}
@@ -297,7 +297,7 @@ export default function Home() {
 
       {/* About Section */}
       <Section light={true} className="overflow-hidden border-y border-white/5">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -363,7 +363,7 @@ export default function Home() {
 
       {/* Why Choose Us */}
       <Section light={false}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, order: 1 }}
             whileInView={{ opacity: 1 }}

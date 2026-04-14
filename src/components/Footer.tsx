@@ -70,7 +70,7 @@ const Footer = () => {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-primary/10 rounded-full blur-[120px] -z-10"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
           <div>
             <div className="col-span-1 md:col-span-2 lg:col-span-1">
               <Link href="/" className="flex items-center space-x-3 mb-8">
@@ -103,7 +103,7 @@ const Footer = () => {
             </div>
             <div className="mt-10">
               <h3 className="text-white font-black mb-8 text-lg uppercase tracking-wider">Contact Us</h3>
-              <ul className="space-y-6">
+              <ul className="space-y-4">
                 <li className="flex items-start space-x-4">
                   <div className="p-2.5 bg-blue-500/10 rounded-lg shrink-0">
                     <MapPin className="h-5 w-5 text-brand-primary" />
@@ -188,7 +188,7 @@ const Footer = () => {
 
         </div>
 
-        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-sm font-semibold opacity-40">
             &copy; {currentYear} Hanvrix. All rights reserved.
           </p>

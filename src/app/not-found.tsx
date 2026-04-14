@@ -10,31 +10,30 @@ export default function NotFound() {
       {/* Background Effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
 
-      <div className="max-w-3xl w-full text-center relative z-10 glass-morphism p-12 md:p-20 rounded-[3rem] border border-white/5 shadow-2xl">
-        <div className="flex justify-center mb-8 relative">
-          <div className="absolute inset-0 bg-orange-500/20 rounded-full blur-2xl"></div>
-          <div className="w-24 h-24 bg-orange-500/10 border border-orange-500/30 rounded-3xl flex items-center justify-center relative z-10 shadow-lg shadow-orange-500/20 animate-pulse">
-            <HardHat className="w-12 h-12 text-orange-400" />
+      <div className="max-w-xl w-full text-center relative z-10 glass-morphism p-8 md:p-14 rounded-[10px] border border-white/5 shadow-2xl">
+        <div className="flex justify-center mb-6 relative">
+          <div className="absolute inset-0 bg-brand-primary/20 rounded-full blur-2xl"></div>
+          <div className="w-20 h-20 bg-brand-primary/10 border border-brand-primary/30 rounded-[10px] flex items-center justify-center relative z-10 shadow-lg shadow-brand-primary/20">
+            <HardHat className="w-10 h-10 text-brand-accent" />
           </div>
         </div>
 
         <div className="inline-flex items-center space-x-2 px-4 py-1.5 bg-brand-primary/10 border border-brand-primary/20 rounded-full mb-6">
-          <AlertTriangle className="w-4 h-4 text-brand-primary" />
-          <span className="text-sm font-bold text-brand-accent tracking-widest uppercase">Under Construction</span>
+          <AlertTriangle className="w-3.5 h-3.5 text-brand-primary" />
+          <span className="text-[10px] font-bold text-brand-accent tracking-widest uppercase">Under Construction</span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-tight">
+        <h1 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tighter leading-tight">
           Sector <span className="text-gradient">Unknown</span>
         </h1>
 
-        <p className="text-xl text-blue-100/60 font-medium max-w-xl mx-auto mb-10 leading-relaxed">
-          The module you are looking for is currently being engineered by our elite squad.
-          Deployment is scheduled. Please return to the main hub.
+        <p className="text-base text-blue-100/60 font-medium max-w-md mx-auto mb-8 leading-relaxed">
+          The module you are looking for is currently being engineered by our elite squad. Deployment is scheduled. 
         </p>
 
         <Link href="/">
-          <Button variant="cta" className="h-14 px-8 rounded-2xl text-lg shadow-xl inline-flex items-center group">
-            <ArrowLeft className="w-5 h-5 mr-3 group-hover:-translate-x-1 transition-transform" />
+          <Button variant="cta" className="h-10 px-10 rounded-[10px] text-xs uppercase tracking-widest shadow-xl inline-flex items-center group font-bold">
+            <ArrowLeft className="w-4 h-4 mr-3 group-hover:-translate-x-1 transition-transform" />
             Return to Headquarters
           </Button>
         </Link>

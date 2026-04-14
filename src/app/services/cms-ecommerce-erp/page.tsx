@@ -143,7 +143,7 @@ export default function CMSEcommerceERPPage() {
   return (
     <div className="bg-bg-dark text-white">
       {/* Hero Section */}
-      <Section className="pt-48 pb-40 relative overflow-hidden bg-bg-dark border-b border-white/5 min-h-[80vh] flex items-center">
+      <Section className="pt-24 pb-20 relative overflow-hidden bg-bg-dark border-b border-white/5 min-h-[70vh] flex items-center">
         {hero.backgroundImage && (
           <div className="absolute inset-0 z-0">
             <img 
@@ -206,7 +206,7 @@ export default function CMSEcommerceERPPage() {
       </Section>
 
       {/* Stats Section */}
-      <Section id="stats" className="py-20 bg-[#0D1B2A] border-y border-white/5" light={false}>
+      <Section id="stats" className="py-10 bg-[#0D1B2A] border-y border-white/5" light={false}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center lg:text-left">
           {stats.map((stat, i) => (
             <motion.div
@@ -225,7 +225,7 @@ export default function CMSEcommerceERPPage() {
       </Section>
 
       {/* Overview Section */}
-      <Section id="overview" className="bg-bg-dark py-32" light={false}>
+      <Section id="overview" className="bg-bg-dark py-16" light={false}>
         <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-black mb-12 tracking-tight uppercase tracking-wider">{overview.title}</h2>
             <p className="text-xl md:text-2xl text-blue-100/60 leading-relaxed font-bold">
@@ -235,7 +235,7 @@ export default function CMSEcommerceERPPage() {
       </Section>
 
       {/* Features Grid */}
-      <Section className="bg-bg-dark pb-32" light={false}>
+      <Section className="bg-bg-dark pb-16" light={false}>
         <SectionHeader title="Core Capabilities" centered />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, i) => {
@@ -264,7 +264,7 @@ export default function CMSEcommerceERPPage() {
       </Section>
 
       {/* Benefits Section */}
-      <Section className="bg-[#0b1121] py-32 border-y border-white/5" light={false}>
+      <Section className="bg-[#0b1121] py-16 border-y border-white/5" light={false}>
         <SectionHeader title="Business Outcomes" centered />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {benefits.map((benefit, i) => {
@@ -287,7 +287,7 @@ export default function CMSEcommerceERPPage() {
       </Section>
 
       {/* Process Section */}
-      <Section className="bg-bg-dark py-32" light={false}>
+      <Section className="bg-bg-dark py-16" light={false}>
         <SectionHeader title="Our Strategic Process" centered />
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
             <div className="hidden md:block absolute top-1/2 left-0 w-full h-px bg-white/5 -z-10"></div>
@@ -306,7 +306,7 @@ export default function CMSEcommerceERPPage() {
       </Section>
 
       {/* Why Choose Us */}
-      <Section className="bg-[#0b1121] py-32" light={false}>
+      <Section className="bg-[#0b1121] py-16" light={false}>
         <SectionHeader title="The Hanvrix Edge" centered />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {whyChooseUs.map((item, i) => {
@@ -325,8 +325,8 @@ export default function CMSEcommerceERPPage() {
       </Section>
 
       {/* Final CTA */}
-      <Section className="py-48 bg-bg-dark" light={false}>
-        <div className="text-center max-w-5xl mx-auto glass-morphism p-24 rounded-[4rem] border border-white/5 relative overflow-hidden group">
+      <Section className="py-20 bg-bg-dark" light={false}>
+        <div className="text-center max-w-5xl mx-auto glass-morphism p-16 rounded-[3rem] border border-white/5 relative overflow-hidden group">
           <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/10 to-transparent"></div>
           <h2 className="text-5xl md:text-7xl font-black text-white mb-10 tracking-tighter relative z-10 uppercase tracking-widest leading-none">
             {finalCTA.title}

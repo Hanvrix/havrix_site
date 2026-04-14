@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
+import Image from "next/image";
 
 export default function AboutPage() {
   const aboutCards = [
@@ -39,15 +40,15 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="pt-24 pb-10 bg-white min-h-screen text-gray-600 overflow-hidden relative">
-      <Section light={true} className="relative z-10 pt-10 lg:pt-20">
+    <div className="pt-16 pb-8 bg-white min-h-screen text-gray-600 overflow-hidden relative">
+      <Section light={true} className="relative z-10 pt-6 lg:pt-12">
 
         {/* Background Gradients */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-accent/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 
         {/* 1. About Hanvrix Content */}
-        <div className="mb-24 lg:mb-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="mb-14 lg:mb-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -57,7 +58,7 @@ export default function AboutPage() {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight leading-[1.1] mb-8">
               Innovating Technology For A <span className="text-orange-500">Smarter Future</span>
             </h2>
-            <div className="space-y-6 text-gray-600 text-lg md:text-xl font-medium leading-relaxed">
+            <div className="space-y-6 text-gray-600 text-base md:text-lg font-medium leading-relaxed">
               <p>
                 Hanvrix is a collective of elite software architects and designers dedicated to engineering the next generation of business technology. We help organizations improve efficiency, strengthen their digital presence, and adapt to the rapidly evolving tech landscape.
               </p>
@@ -72,18 +73,30 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="relative lg:ml-10"
           >
-            <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-white border border-gray-100 p-10 flex flex-col items-center justify-center shadow-[0_8px_30px_rgb(0,0,0,0.06)] relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <Users2 className="w-24 h-24 text-orange-500 mb-8" />
-              <h3 className="text-3xl font-black text-gray-900 mb-2 uppercase tracking-widest">Elite Ops</h3>
-              <p className="text-gray-500 text-center font-bold tracking-widest text-sm uppercase">Ready for Deployment</p>
+            <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-gray-50 border border-gray-100 shadow-[0_20px_40px_rgba(0,0,0,0.08)] relative group">
+              <Image 
+                src="/images/about-hero-innovative.png" 
+                alt="Innovative Tech Environment" 
+                fill 
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent opacity-60"></div>
+              <div className="absolute bottom-6 left-6 right-6 p-5 glass-morphism rounded-2xl border border-white/10 transform transition-all duration-500 group-hover:translate-y-[-5px]">
+                <div className="flex items-center space-x-3 mb-1">
+                  <div className="w-8 h-8 bg-brand-primary/20 rounded-lg flex items-center justify-center">
+                    <Users2 className="w-4 h-4 text-brand-primary" />
+                  </div>
+                  <h3 className="text-lg font-black text-white tracking-widest">Elite Ops</h3>
+                </div>
+                <p className="text-white/60 font-bold tracking-widest text-[10px] pl-11">Advanced Engineering Team</p>
+              </div>
             </div>
           </motion.div>
         </div>
 
         {/* 2. Mission, Vision, Values Cards */}
-        <div className="mb-24 lg:mb-32 pt-10 border-t border-gray-100">
-          <div className="text-center mb-16 relative">
+        <div className="mb-14 lg:mb-20 pt-8 border-t border-gray-100">
+          <div className="text-center mb-10 relative">
             <motion.h6
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -137,11 +150,11 @@ export default function AboutPage() {
         </div>
 
         {/* 3. Why Choose Us Content */}
-        <div className="pt-24 border-t border-gray-100 pb-10 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start relative z-10">
+        <div className="pt-16 border-t border-gray-100 pb-10 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start relative z-10">
             {/* Left Column */}
             <div className="flex flex-col h-full">
-              <div className="mb-14 lg:mb-20">
+              <div className="mb-10 lg:mb-14">
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="w-8 h-[2px] bg-orange-500/50"></div>
                   <span className="text-orange-500 font-bold tracking-[0.1em] text-sm uppercase">Why Choose Us</span>
@@ -226,9 +239,6 @@ export default function AboutPage() {
           transition={{ delay: 0.4 }}
           className="mt-10 text-center"
         >
-          <Link href="/contact">
-            <Button variant="cta" className="shadow-lg hover:shadow-xl">Get In Touch Today</Button>
-          </Link>
         </motion.div>
       </Section>
     </div>

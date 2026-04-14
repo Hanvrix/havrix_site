@@ -91,7 +91,7 @@ export default function ServicesPage() {
   return (
     <div className="pt-20 bg-bg-dark">
       {/* Header */}
-      <Section className="pt-40 pb-32 relative overflow-hidden">
+      <Section className="pt-24 pb-16 relative overflow-hidden">
         <div className="absolute top-0 inset-x-0 h-full bg-gradient-to-b from-brand-primary/5 to-transparent -z-10"></div>
         <div className="absolute top-1/4 right-0 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[120px] -z-10"></div>
 
@@ -128,20 +128,20 @@ export default function ServicesPage() {
       <Section id="all-services" className="border-y border-white/5">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((s, i) => (
-            <Card key={i} delay={s.delay} className="flex flex-col h-full group p-14 relative overflow-hidden rounded-[3rem]">
+            <Card key={i} delay={s.delay} className="flex flex-col h-full group p-10 relative overflow-hidden rounded-[2rem]">
               <div className="absolute top-0 right-0 w-48 h-48 bg-brand-primary/5 -translate-y-24 translate-x-24 rounded-full blur-3xl group-hover:bg-brand-primary/10 transition-colors duration-1000"></div>
 
-              <div className="w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center mb-12 group-hover:rotate-6 group-hover:bg-brand-primary/10 transition-all duration-500 border border-white/5">
+              <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8 group-hover:rotate-6 group-hover:bg-brand-primary/10 transition-all duration-500 border border-white/5">
                 {s.icon}
               </div>
-              <h3 className="text-3xl font-black text-white mb-6 tracking-tight uppercase tracking-wider">{s.title}</h3>
-              <p className="text-xl text-blue-100/50 mb-4 leading-relaxed font-bold">
+              <h3 className="text-2xl font-black text-white mb-4 tracking-tight uppercase tracking-wider">{s.title}</h3>
+              <p className="text-lg text-blue-100/50 mb-3 leading-relaxed font-bold">
                 {s.description}
               </p>
-              <p className="text-brand-accent/60 text-sm font-black tracking-widest uppercase mb-10 leading-relaxed">
+              <p className="text-brand-accent/60 text-[11px] font-black tracking-widest uppercase mb-6 leading-relaxed">
                 {s.benefit}
               </p>
-              <div className="h-px w-full bg-white/5 mb-10"></div>
+              <div className="h-px w-full bg-white/5 mb-6"></div>
               <ul className="space-y-6 mb-12">
                 {s.features.map((f, idx) => (
                   <li key={idx} className="flex items-center space-x-4 text-white">
@@ -163,7 +163,7 @@ export default function ServicesPage() {
       {/* Partnership Section */}
       <Section light={false} className="relative overflow-hidden">
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-brand-primary/5 rounded-full blur-[120px] -z-10"></div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -174,10 +174,10 @@ export default function ServicesPage() {
               Partnership <br />
               <span className="text-brand-primary text-glow">Logic</span>
             </h2>
-            <div className="space-y-10">
-              <div className="flex gap-8 p-10 glass-morphism rounded-[3rem] border border-white/5 hover:border-brand-primary/30 transition-all group">
-                <div className="shrink-0 w-20 h-20 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-brand-primary/20 transition-colors">
-                  <Activity className="h-10 w-10 text-brand-primary" />
+            <div className="space-y-6">
+              <div className="flex gap-6 p-8 glass-morphism rounded-[2rem] border border-white/5 hover:border-brand-primary/30 transition-all group">
+                <div className="shrink-0 w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center group-hover:bg-brand-primary/20 transition-colors">
+                  <Activity className="h-8 w-8 text-brand-primary" />
                 </div>
                 <div>
                   <h4 className="text-2xl font-black text-white mb-3 uppercase tracking-wider">ROI-Driven Infra</h4>
@@ -187,9 +187,9 @@ export default function ServicesPage() {
                   </p>
                 </div>
               </div>
-              <div className="flex gap-8 p-10 glass-morphism rounded-[3rem] border border-white/5 hover:border-brand-primary/30 transition-all group">
-                <div className="shrink-0 w-20 h-20 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-brand-primary/20 transition-colors">
-                  <ShieldAlert className="h-10 w-10 text-brand-accent-glow" />
+              <div className="flex gap-6 p-8 glass-morphism rounded-[2rem] border border-white/5 hover:border-brand-primary/30 transition-all group">
+                <div className="shrink-0 w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center group-hover:bg-brand-primary/20 transition-colors">
+                  <ShieldAlert className="h-8 w-8 text-brand-accent-glow" />
                 </div>
                 <div>
                   <h4 className="text-2xl font-black text-white mb-3 uppercase tracking-wider">24/7 Integrity</h4>
@@ -205,7 +205,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-brand-primary rounded-[4rem] p-20 text-white shadow-2xl relative overflow-hidden group"
+            className="bg-brand-primary rounded-[3rem] p-14 text-white shadow-2xl relative overflow-hidden group"
           >
             <div className="absolute top-0 right-0 p-12 opacity-10 group-hover:rotate-12 transition-transform duration-1000">
               <Rocket className="h-80 w-80 translate-x-20 -translate-y-20" />
@@ -215,7 +215,7 @@ export default function ServicesPage() {
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center font-black text-2xl">SK</div>
               <div>
                 <p className="font-black text-2xl uppercase tracking-widest">Sarah Kensington</p>
-                <p className="text-blue-100 font-bold">CTO @ FlowSense</p>
+                <p className="text-blue-100 font-bold">CTO @ Hanvrix</p>
               </div>
             </div>
           </motion.div>
@@ -223,11 +223,11 @@ export default function ServicesPage() {
       </Section>
 
       {/* Final CTA */}
-      <Section className="py-48">
-        <div className="text-center max-w-5xl mx-auto glass-morphism p-24 rounded-[4rem] border border-white/5 relative overflow-hidden group">
+      <Section className="py-24">
+        <div className="text-center max-w-5xl mx-auto glass-morphism p-16 rounded-[3rem] border border-white/5 relative overflow-hidden group">
           <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-transparent"></div>
-          <h2 className="text-6xl md:text-8xl font-black text-white mb-10 tracking-tighter relative z-10 uppercase tracking-widest">Digital Dominance.</h2>
-          <p className="text-xl md:text-3xl text-blue-100/60 mb-16 max-w-3xl mx-auto font-bold relative z-10">
+          <h2 className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter relative z-10 uppercase tracking-widest">Digital Dominance.</h2>
+          <p className="text-lg md:text-2xl text-blue-100/60 mb-10 max-w-3xl mx-auto font-bold relative z-10">
             Deploy your most ambitious projects with the world&apos;s most precise engineering squad.
           </p>
           <Link href="/contact" className="relative z-10">
