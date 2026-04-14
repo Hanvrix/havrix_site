@@ -34,36 +34,42 @@ export default function Home() {
       description: "We help businesses adopt modern technologies and digital strategies to optimize processes, increase productivity, and stay competitive.",
       icon: <Zap className="h-8 w-8 text-orange-500" />,
       delay: 0.5,
+      href: "/services/digital-transformation",
     },
     {
       title: "Web Development",
       description: "Web development is the process of creating websites and web applications for the internet or intranet.",
       icon: <Code2 className="h-8 w-8 text-orange-500" />,
       delay: 0.1,
+      href: "/services/web-app-development",
     },
     {
       title: "Software Development",
       description: "We build scalable web and mobile applications that improve business operations, enhance user experience, and support digital growth.",
       icon: <Globe2 className="h-8 w-8 text-orange-500" />,
       delay: 0.2,
+      href: "/services/mobile-app-development",
     },
     {
       title: "Custom Software",
       description: "We develop tailored software solutions designed specifically to meet unique business requirements and streamline internal processes.",
       icon: <Settings className="h-8 w-8 text-orange-500" />,
       delay: 0.3,
+      href: "/services/custom-development",
     },
     {
       title: "CMS, E-Commerce & ERP",
       description: "We provide CMS, e-commerce, and ERP solutions that help businesses manage content, sales, and operations efficiently.",
       icon: <Server className="h-8 w-8 text-orange-500" />,
       delay: 0.4,
+      href: "/services/cms-ecommerce-erp",
     },
     {
       title: "BPO Support Services",
       description: "Our BPO support services deliver reliable customer assistance through chat, email, and voice channels to improve engagement and satisfaction.",
       icon: <MessageSquare className="h-8 w-8 text-orange-500" />,
       delay: 0.6,
+      href: "/services/support",
     },
   ];
 
@@ -78,7 +84,7 @@ export default function Home() {
     { title: "Architectural Integrity", desc: "Every line of code is written for scalability and security." },
     { title: "Industry Precision", desc: "Deep expertise in Textile and SaaS market challenges." },
     { title: "End-to-End Ownership", desc: "Your dedicated engineering partner from discovery to support." },
-    { title: "Conversion-First Design", desc: "UX engineered to drive user action and business results." },
+    // { title: "Conversion-First Design", desc: "UX engineered to drive user action and business results." },
   ];
 
   const steps = [
@@ -253,7 +259,7 @@ export default function Home() {
               </div>
               <div>
                 <Link href="/about">
-                  <Button variant="cta" size="sm" className="h-10 px-6 py-0 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">About Us More</Button>
+                  <Button variant="cta" size="sm" className="h-10 px-6 py-0 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">About Us</Button>
                 </Link>
               </div>
             </motion.div>
@@ -268,18 +274,18 @@ export default function Home() {
           title="Our Service"
           subtitle="Precision-engineered services designed to eliminate technical debt and accelerate your digital dominance."
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <Card key={index} delay={service.delay} className="flex flex-col h-full group hover:-translate-y-2 transition-transform duration-500 hover:shadow-2xl hover:shadow-orange-500/10 border border-white/5 hover:border-orange-500/30">
-              <div className="w-16 h-16 bg-orange-500/10 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-orange-500/20 transition-all duration-500">
+              <div className="w-16 h-16 bg-orange-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-orange-500/20 transition-all duration-500">
                 {service.icon}
               </div>
-              <h3 className="text-2xl font-black text-white mb-4 tracking-tight">{service.title}</h3>
-              <p className="text-blue-100/50 leading-relaxed mb-8 font-medium flex-grow">
+              <h3 className="text-2xl font-black text-white mb-2 tracking-tight">{service.title}</h3>
+              <p className="text-blue-100/50 leading-relaxed mb-4 font-medium flex-grow">
                 {service.description}
               </p>
               <div className="mt-auto">
-                <Link href="/services" className="text-brand-primary font-bold inline-flex items-center group/link hover:text-white transition-colors">
+                <Link href={service.href} className="text-brand-primary font-bold inline-flex items-center group/link hover:text-white transition-colors">
                   Learn More
                   <ArrowUpRight className="h-4 w-4 ml-2 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
                 </Link>
@@ -302,7 +308,7 @@ export default function Home() {
             <h2 className="text-5xl md:text-7xl font-black text-gray-900 mb-1 tracking-tighter leading-tight">
               The <span className="text-gradient">Hanvrix</span>
             </h2>
-            <p className="text-xl text-gray-600 mb-12 leading-relaxed font-medium">
+            <p className="text-base text-gray-600 mb-12 leading-relaxed font-medium">
               Hanvrix Tech is a collective of elite software architects and designers dedicated to
               engineering the next generation of business technology. We don&apos;t just &quot;build apps&quot;—we design tactical advantages.
             </p>
@@ -316,16 +322,16 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <Link href="/about">
-              <Button variant="primary">Our Mission</Button>
-            </Link>
+            {/* <Link href="/about">
+              <Button variant="primary" size="sm" className="h-10 px-6 py-0">Our Mission</Button>
+            </Link> */}
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative lg:pl-10 mt-12 lg:mt-0"
+            className="relative lg:pl-10 mt-10 lg:mt-0"
           >
             <div className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 p-8 md:p-12 relative flex flex-col group transition-all duration-500 hover:shadow-[0_8px_40px_rgb(0,0,0,0.12)] mt-8">
               {/* Overlapping Orange Quote Box */}
@@ -336,7 +342,7 @@ export default function Home() {
               </div>
 
               <div className="pt-4 md:pt-6">
-                <p className="text-xl md:text-2xl text-gray-600 italic font-medium leading-relaxed mb-10">
+                <p className="text-base md:text-xl text-gray-600 italic font-medium leading-relaxed mb-10">
                   &quot;We bridge the gap between &apos;technical features&apos; and &apos;business value.&apos; Our engineering is
                   ROI-driven infrastructure that outlasts market trends.&quot;
                 </p>
@@ -364,22 +370,22 @@ export default function Home() {
             viewport={{ once: true }}
             className="lg:order-2"
           >
-            <h2 className="text-5xl md:text-6xl font-black text-white mb-10 tracking-tighter">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-8 tracking-tighter leading-tight">
               The Tactical <br />
               <span className="text-brand-primary text-glow">Advantage</span>
             </h2>
-            <p className="text-xl text-blue-100/50 mb-12 leading-relaxed font-medium">
+            <p className="text-base text-blue-100/50 mb-10 leading-relaxed font-medium">
               We prioritize architectural integrity and industry-specific precision to ensure
               your digital systems are secure, scalable, and conversion-ready.
             </p>
             <div className="grid grid-cols-1 gap-6">
               {reasons.map((reason, index) => (
-                <div key={index} className="flex flex-col space-y-2 p-6 glass-morphism rounded-3xl group border border-white/5 hover:border-brand-primary/30 transition-all">
+                <div key={index} className="flex flex-col space-y-2 p-5 glass-morphism rounded-2xl group border border-white/5 hover:border-brand-primary/30 transition-all">
                   <div className="flex items-center space-x-4">
                     <div className="p-2 bg-orange-500/10 border border-orange-500/20 rounded-xl group-hover:bg-orange-500/20 transition-colors flex items-center justify-center w-12 h-12">
                       <CheckCircle2 className="h-6 w-6 text-orange-500" />
                     </div>
-                    <span className="font-black text-white text-xl tracking-tight uppercase">{reason.title}</span>
+                    <span className="font-black text-white text-lg tracking-tight uppercase">{reason.title}</span>
                   </div>
                   <p className="text-blue-100/40 font-medium pl-14">{reason.desc}</p>
                 </div>
@@ -388,18 +394,18 @@ export default function Home() {
           </motion.div>
 
           <div className="lg:order-1 relative">
-            <div className="grid grid-cols-2 gap-8 relative z-10">
-              <div className="p-10 glass-morphism rounded-[2.5rem] border border-white/5 text-center mt-12">
-                <div className="text-5xl font-black text-white mb-2">100%</div>
-                <div className="text-brand-accent font-bold uppercase tracking-widest text-xs">Architectural Integrity</div>
+            <div className="grid grid-cols-2 gap-6 relative z-10">
+              <div className="p-8 glass-morphism rounded-3xl border border-white/5 text-center mt-10">
+                <div className="text-4xl font-black text-white mb-2">100%</div>
+                <div className="text-brand-accent font-bold uppercase tracking-widest text-[10px]">Architectural Integrity</div>
               </div>
-              <div className="p-10 glass-morphism rounded-[2.5rem] border border-white/5 text-center mb-12">
-                <div className="text-5xl font-black text-brand-primary mb-2">24/7</div>
-                <div className="text-blue-100/60 font-bold uppercase tracking-widest text-xs">Mission Support</div>
+              <div className="p-8 glass-morphism rounded-3xl border border-white/5 text-center mb-10">
+                <div className="text-4xl font-black text-brand-primary mb-2">24/7</div>
+                <div className="text-blue-100/60 font-bold uppercase tracking-widest text-[10px]">Mission Support</div>
               </div>
-              <div className="p-10 glass-morphism rounded-[2.5rem] border border-white/5 text-center mt-12">
-                <div className="text-5xl font-black text-white mb-2">ROI</div>
-                <div className="text-brand-accent font-bold uppercase tracking-widest text-xs">Driven Infrastructure</div>
+              <div className="p-8 glass-morphism rounded-3xl border border-white/5 text-center mt-10">
+                <div className="text-4xl font-black text-white mb-2">ROI</div>
+                <div className="text-brand-accent font-bold uppercase tracking-widest text-[10px]">Driven Infrastructure</div>
               </div>
               {/* <div className="p-10 glass-morphism rounded-[2.5rem] border border-white/5 text-center mb-12">
                 <div className="text-5xl font-black text-brand-primary mb-2">10K+</div>

@@ -26,7 +26,7 @@ const Button = ({
     lg: "px-12 py-6 rounded-3xl text-base",
   };
 
-  const baseStyles = `inline-flex items-center justify-center font-black tracking-tight transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed uppercase ${sizeStyles[size]}`;
+  const baseStyles = `inline-flex items-center justify-center font-black tracking-tight transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed ${sizeStyles[size]}`;
 
   const variants = {
     primary: "bg-brand-primary text-white hover:bg-blue-700 shadow-2xl shadow-blue-500/20 hover:shadow-blue-500/40",
