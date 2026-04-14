@@ -29,17 +29,17 @@ const Footer = () => {
     ],
     products: [
       { name: "Textile ERP", href: "/products/textile-erp" },
-      { name: "Steel ERP", href: "/products/steel-erp" },
-      { name: "Food and Beverage ERP", href: "/products/food-and-beverage-erp" },
-      { name: "Construnction ERP", href: "/products/construnction-erp" },
-      { name: "Real Estate ERP", href: "/products/real-estate-erp" },
+      // { name: "Steel ERP", href: "/products/steel-erp" },
+      // { name: "Food and Beverage ERP", href: "/products/food-and-beverage-erp" },
+      // { name: "Construnction ERP", href: "/products/construnction-erp" },
+      // { name: "Real Estate ERP", href: "/products/real-estate-erp" },
       { name: "E-Commerce ERP", href: "/products/e-commerce-erp" },
-      { name: "Logistics ERP", href: "/products/logistics-erp" },
-      { name: "Travel ERP", href: "/products/travel-erp" },
-      { name: "Finance ERP", href: "/products/finance-erp" },
-      { name: "Agriculture ERP", href: "/products/agriculture-erp" },
+      // { name: "Logistics ERP", href: "/products/logistics-erp" },
+      // { name: "Travel ERP", href: "/products/travel-erp" },
+      // { name: "Finance ERP", href: "/products/finance-erp" },
+      // { name: "Agriculture ERP", href: "/products/agriculture-erp" },
       { name: "Electrical ERP", href: "/products/electrical-erp" },
-      { name: "Retail ERP", href: "/products/retail-erp" },
+      // { name: "Retail ERP", href: "/products/retail-erp" },
     ],
     services: [
       { name: "Digital Transformation", href: "/services" },
@@ -101,22 +101,22 @@ const Footer = () => {
                   <div className="p-2.5 bg-blue-500/10 rounded-lg shrink-0">
                     <MapPin className="h-5 w-5 text-brand-primary" />
                   </div>
-                  <span className="font-medium text-blue-100/60">123 Innovation Drive, Silicon Valley, CA 94025</span>
+                  <span className="font-medium text-blue-100/60">Salem, Tamil Nadu, India</span>
                 </li>
                 <li className="flex items-center space-x-4">
                   <div className="p-2.5 bg-blue-500/10 rounded-lg shrink-0">
                     <Mail className="h-5 w-5 text-brand-primary" />
                   </div>
                   <a href="mailto:info@hanvrix.com" className="hover:text-white transition-all font-medium">
-                    info@hanvrix.com
+                    hanvrix@gmail.com
                   </a>
                 </li>
                 <li className="flex items-center space-x-4">
                   <div className="p-2.5 bg-blue-500/10 rounded-lg shrink-0">
                     <Phone className="h-5 w-5 text-brand-primary" />
                   </div>
-                  <a href="tel:+1234567890" className="hover:text-white transition-all font-medium">
-                    +1 (234) 567-890
+                  <a href="tel:+918838213390" className="hover:text-white transition-all font-medium">
+                    +91 8838213390
                   </a>
                 </li>
               </ul>
@@ -154,19 +154,6 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-white font-black mb-8 text-lg uppercase tracking-wider">Products</h3>
-            <ul className="space-y-5">
-              {footerLinks.products.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="hover:text-brand-primary transition-all font-semibold">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
             <h3 className="text-white font-black mb-8 text-lg uppercase tracking-wider">Industries</h3>
             <ul className="space-y-5">
               {footerLinks.Industries.map((link) => (
@@ -179,6 +166,18 @@ const Footer = () => {
             </ul>
           </div>
 
+          <div>
+            <h3 className="text-white font-black mb-8 text-lg uppercase tracking-wider">Products</h3>
+            <ul className="space-y-5">
+              {footerLinks.products.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="hover:text-brand-primary transition-all font-semibold">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
         </div>
 

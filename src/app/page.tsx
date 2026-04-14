@@ -130,7 +130,17 @@ export default function Home() {
   return (
     <div className="overflow-hidden bg-bg-dark">
       {/* Hero Section */}
-      <section className="relative pt-10 pb-15 lg:pt-20 lg:pb-22 flex items-center justify-center">
+      <section className="relative pt-10 pb-15 lg:pt-20 lg:pb-22 flex items-center justify-center overflow-hidden">
+        {/* Innovative Background Image */}
+        <div className="absolute inset-0 -z-30">
+          <img
+            src="/images/hero-bg.png"
+            alt="Hero Background"
+            className="w-full h-full object-cover opacity-30 mix-blend-soft-light"
+          />
+          <div className="absolute inset-0 bg-bg-dark/40"></div>
+        </div>
+
         <div className="absolute top-0 inset-x-0 h-screen hero-glow -z-10 opacity-60"></div>
         <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[800px] h-[800px] bg-brand-primary/10 rounded-full blur-[120px] -z-10"></div>
         <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[600px] h-[600px] bg-brand-accent/10 rounded-full blur-[120px] -z-10"></div>
@@ -164,7 +174,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-xl md:text-1xl text-blue-100/60 max-w-3xl mx-auto mb-10 leading-relaxed font-medium"
+              className="text-base md:text-lg text-blue-100/60 max-w-3xl mx-auto mb-10 leading-relaxed font-medium"
             >
               Powerful technology designed to streamline operations and unlock new opportunities. We build smart digital solutions
               that drive real‑world impact and sustainable growth.
@@ -192,7 +202,7 @@ export default function Home() {
       </section>
 
       {/* Short About Section */}
-      <Section light={true} className="bg-white overflow-hidden py-24 border-b border-gray-100">
+      <Section light={true} className="bg-white overflow-hidden py-1 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             {/* Left Side: Images */}
@@ -224,7 +234,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex flex-col space-y-6"
+              className="flex flex-col space-y-3"
             >
               <div className="inline-flex items-center space-x-3">
                 <span className="text-orange-500 font-bold tracking-widest text-sm uppercase">Short About</span>
@@ -233,7 +243,7 @@ export default function Home() {
               <h2 className="text-4xl sm:text-5xl lg:text-5xl font-black text-gray-900 leading-[1.15] tracking-tight">
                 Innovating Technology For A <span className="text-gradient">Smarter Future</span>
               </h2>
-              <div className="space-y-6 text-gray-600 text-lg leading-relaxed pt-2 pb-4">
+              <div className="space-y-6 text-gray-600 text-base leading-relaxed pt-2 pb-4">
                 <p>
                   Hanvrix is a technology-driven company focused on delivering innovative digital solutions for modern businesses. We help organizations improve efficiency, strengthen their digital presence, and adapt to the rapidly evolving technology landscape.
                 </p>
@@ -243,7 +253,7 @@ export default function Home() {
               </div>
               <div>
                 <Link href="/about">
-                  <Button variant="cta" className="shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">About Us More</Button>
+                  <Button variant="cta" size="sm" className="h-10 px-6 py-0 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">About Us More</Button>
                 </Link>
               </div>
             </motion.div>
