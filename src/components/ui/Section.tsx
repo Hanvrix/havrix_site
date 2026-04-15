@@ -1,18 +1,17 @@
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
 
 interface SectionProps {
   children: ReactNode;
   id?: string;
   className?: string;
-  light?: boolean;
+  light?: boolean; // Kept for compatibility but we mostly use white/light gray
 }
 
 const Section = ({ children, id, className = "", light = true }: SectionProps) => {
   return (
     <section
       id={id}
-      className={`py-14 ${light ? "bg-bg-light" : "bg-bg-dark text-text-dark"} ${className}`}
+      className={`py-10 md:py-16 ${light ? "bg-white" : "bg-slate-50 border-y border-gray-200"} ${className}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {children}
@@ -32,19 +31,16 @@ export const SectionHeader = ({
   subtitle?: string;
   centered?: boolean;
 }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className={`mb-10 ${centered ? "text-center" : "text-left"}`}
+  <div
+    className={`mb-8 md:mb-12 ${centered ? "text-center" : "text-left"}`}
   >
-    <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-inherit">
+    <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-slate-900">
       {title}
     </h2>
     {subtitle && (
-      <p className="text-lg opacity-80 max-w-2xl mx-auto leading-relaxed">
+      <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium">
         {subtitle}
       </p>
     )}
-  </motion.div>
+  </div>
 );

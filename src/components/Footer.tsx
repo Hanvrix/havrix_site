@@ -7,7 +7,7 @@ const Footer = () => {
 
   const footerLinks = {
     Industries: [
-      { name: "Textiles & apparel & Spinning Mills", href: "/industries/textiles" },
+      { name: "Textiles & apparel", href: "/industries/textiles" },
       { name: "Electrical & Electronics", href: "/industries/electrical" },
       { name: "Steel & Metals", href: "/industries/steel-metals" },
       { name: "Automotive", href: "/industries/automotive" },
@@ -17,35 +17,23 @@ const Footer = () => {
       { name: "E-Commerce", href: "/industries/e-commerce" },
       { name: "Agriculture", href: "/industries/agriculture" },
       { name: "Education", href: "/industries/education" },
-      { name: "Logistics & Supply Chain", href: "/industries/logistics" },
+      { name: "Logistics", href: "/industries/logistics" },
     ],
     company: [
       { name: "About Us", href: "/about" },
       { name: "Services", href: "/services" },
       { name: "FAQ", href: "/faq" },
       { name: "Contact", href: "/contact" },
-      // { name: "Blog", href: "/blog" },
-      // { name: "Careers", href: "/careers" },
-      // { name: "Support", href: "/support" },
     ],
     products: [
       { name: "Textile ERP", href: "/products/textile-erp" },
-      // { name: "Steel ERP", href: "/products/steel-erp" },
-      // { name: "Food and Beverage ERP", href: "/products/food-and-beverage-erp" },
-      // { name: "Construnction ERP", href: "/products/construnction-erp" },
-      // { name: "Real Estate ERP", href: "/products/real-estate-erp" },
       { name: "E-Commerce ERP", href: "/products/e-commerce-erp" },
-      // { name: "Logistics ERP", href: "/products/logistics-erp" },
-      // { name: "Travel ERP", href: "/products/travel-erp" },
-      // { name: "Finance ERP", href: "/products/finance-erp" },
-      // { name: "Agriculture ERP", href: "/products/agriculture-erp" },
       { name: "Electrical ERP", href: "/products/electrical-erp" },
-      // { name: "Retail ERP", href: "/products/retail-erp" },
     ],
     services: [
       { name: "Digital Transformation", href: "/services" },
-      { name: "Web & Application Development", href: "/services" },
-      { name: "Mobile Application Development", href: "/services" },
+      { name: "Web & App Development", href: "/services" },
+      { name: "Mobile App Development", href: "/services" },
       { name: "Custom Development", href: "/services" },
       { name: "CMS, E-Commerce & ERP", href: "/services" },
       { name: "BPO Support Services", href: "/services" },
@@ -65,107 +53,64 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-bg-dark text-blue-100/70 pt-16 pb-16 relative overflow-hidden">
-      {/* Decorative glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-primary/10 rounded-full blur-[120px] -z-10"></div>
-
+    <footer className="bg-slate-900 text-slate-400 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
-          <div>
-            <div className="col-span-1 md:col-span-2 lg:col-span-1">
-              <Link href="/" className="flex items-center space-x-3 mb-8">
-                <div className="w-10 h-10 transition-transform duration-300 hover:scale-110">
-                  <Image
-                    src="/logo.png"
-                    alt="Hanvrix Logo"
-                    width={40}
-                    height={40}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <span className="text-2xl font-black text-white tracking-tight text-gradient-green">Hanvrix</span>
-              </Link>
-              <p className="mb-10 max-w-sm leading-relaxed text-blue-100/60 font-medium">
-                Empowering forward-thinking companies with cutting-edge digital solutions. We build
-                modern web applications that scale with your ambitions.
-              </p>
-              <div className="flex space-x-5">
-                {socialLinks.map((social, idx) => (
-                  <a
-                    key={idx}
-                    href={social.href}
-                    className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all duration-300 border border-white/5 hover:border-brand-primary/50 text-blue-100/50"
-                  >
-                    {social.icon}
-                  </a>
-                ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+          
+          <div className="lg:col-span-2">
+            <Link href="/" className="flex items-center space-x-2 mb-6">
+              <Image
+                src="/logo.png"
+                alt="Hanvrix Logo"
+                width={32}
+                height={32}
+                className="w-8 h-8 object-contain opacity-90"
+              />
+              <span className="text-xl font-bold text-white tracking-tight">Hanvrix</span>
+            </Link>
+            <p className="mb-8 max-w-sm text-[15px] leading-relaxed text-slate-400">
+              Empowering forward-thinking companies with cutting-edge digital solutions. We build
+              modern scalable applications.
+            </p>
+            
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center space-x-3 text-[14px]">
+                <MapPin className="text-[#b45309]" />
+                <span>Salem, Tamil Nadu, India</span>
+              </div>
+              <div className="flex items-center space-x-3 text-[14px]">
+                <Mail className="text-[#b45309]" />
+                <a href="mailto:info@hanvrix.com" className="hover:text-white transition-colors">
+                  hanvrix@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center space-x-3 text-[14px]">
+                <Phone className="text-[#b45309]" />
+                <a href="tel:+918838213390" className="hover:text-white transition-colors">
+                  +91 8838213390
+                </a>
               </div>
             </div>
-            <div className="mt-10">
-              <h3 className="text-white font-black mb-8 text-lg uppercase tracking-wider">Contact Us</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start space-x-4">
-                  <div className="p-2.5 bg-blue-500/10 rounded-lg shrink-0">
-                    <MapPin className="h-5 w-5 text-brand-primary" />
-                  </div>
-                  <span className="font-medium text-blue-100/60">Salem, Tamil Nadu, India</span>
-                </li>
-                <li className="flex items-center space-x-4">
-                  <div className="p-2.5 bg-blue-500/10 rounded-lg shrink-0">
-                    <Mail className="h-5 w-5 text-brand-primary" />
-                  </div>
-                  <a href="mailto:info@hanvrix.com" className="hover:text-white transition-all font-medium">
-                    hanvrix@gmail.com
-                  </a>
-                </li>
-                <li className="flex items-center space-x-4">
-                  <div className="p-2.5 bg-blue-500/10 rounded-lg shrink-0">
-                    <Phone className="h-5 w-5 text-brand-primary" />
-                  </div>
-                  <a href="tel:+918838213390" className="hover:text-white transition-all font-medium">
-                    +91 8838213390
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
 
-
-          <div>
-            <div>
-              <h3 className="text-white font-black mb-8 text-lg uppercase tracking-wider">Company</h3>
-              <ul className="space-y-5">
-                {footerLinks.company.map((link) => (
-                  <li key={link.name}>
-                    <Link href={link.href} className="hover:text-brand-primary transition-all font-semibold">
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="mt-10">
-              <div>
-                <h3 className="text-white font-black mb-8 text-lg uppercase tracking-wider">Services</h3>
-                <ul className="space-y-5">
-                  {footerLinks.services.map((link) => (
-                    <li key={link.name}>
-                      <Link href={link.href} className="hover:text-brand-primary transition-all font-semibold">
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className="flex space-x-4">
+              {socialLinks.map((social, idx) => (
+                <a
+                  key={idx}
+                  href={social.href}
+                  className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-white hover:text-slate-900 transition-colors"
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </div>
 
           <div>
-            <h3 className="text-white font-black mb-8 text-lg uppercase tracking-wider">Industries</h3>
-            <ul className="space-y-5">
-              {footerLinks.Industries.map((link) => (
+            <h3 className="text-white font-semibold mb-6 text-[15px]">Company</h3>
+            <ul className="space-y-4 text-[14px]">
+              {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-brand-primary transition-all font-semibold">
+                  <Link href={link.href} className="hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -174,11 +119,35 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-white font-black mb-8 text-lg uppercase tracking-wider">Products</h3>
-            <ul className="space-y-5">
+            <h3 className="text-white font-semibold mb-6 text-[15px]">Services</h3>
+            <ul className="space-y-4 text-[14px]">
+              {footerLinks.services.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="hover:text-white transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            
+            <h3 className="text-white font-semibold mb-6 mt-8 text-[15px]">Products</h3>
+            <ul className="space-y-4 text-[14px]">
               {footerLinks.products.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-brand-primary transition-all font-semibold">
+                  <Link href={link.href} className="hover:text-white transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white font-semibold mb-6 text-[15px]">Industries</h3>
+            <ul className="space-y-4 text-[14px]">
+              {footerLinks.Industries.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -188,13 +157,13 @@ const Footer = () => {
 
         </div>
 
-        <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-sm font-semibold opacity-40">
+        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-[14px]">
+          <p>
             &copy; {currentYear} Hanvrix. All rights reserved.
           </p>
-          <div className="flex space-x-8 text-sm font-semibold opacity-40">
+          <div className="flex space-x-6">
             {footerLinks.legal.map((link) => (
-              <Link key={link.name} href={link.href} className="hover:text-white transition-all">
+              <Link key={link.name} href={link.href} className="hover:text-white transition-colors">
                 {link.name}
               </Link>
             ))}
@@ -206,4 +175,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

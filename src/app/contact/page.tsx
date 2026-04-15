@@ -1,9 +1,8 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Section from "@/components/ui/Section";
 import ContactForm from "@/components/ContactForm";
+import Card from "@/components/ui/Card";
 import { Mail } from "lucide-react";
+import { FadeIn } from "@/components/ui/FadeIn";
 
 export default function ContactPage() {
   const contactInfo = [
@@ -25,62 +24,46 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="pb-20 bg-gray-50 min-h-screen">
-      <Section light={true} className="py-12 bg-transparent border-0">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-16 xl:gap-24">
+    <div className="pb-12 bg-white min-h-screen">
+      <Section light={true} className="py-8 lg:py-12">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-16 xl:gap-24">
 
-            {/* Left Side: Info & Cards */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="flex flex-col space-y-8"
-            >
+          {/* Left Side: Info & Cards */}
+          <FadeIn direction="left">
+            <div className="flex flex-col space-y-10">
               <div>
-                <div className="inline-flex items-center px-4 py-1.5 bg-orange-100/50 rounded-full mb-8">
-                  <span className="text-sm font-bold text-[#c85a17]">Contact Us</span>
-                </div>
-
-                <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-gray-900 mb-6 tracking-tight leading-[1.1]">
+                <h6 className="text-slate-500 font-bold tracking-wider text-[13px] uppercase mb-4">Contact Us</h6>
+                <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight leading-tight">
                   Get in Touch with Our Team
                 </h1>
 
-                <p className="text-lg text-gray-500 max-w-lg leading-relaxed font-medium">
+                <p className="text-[17px] text-slate-600 max-w-lg leading-relaxed font-medium">
                   Have questions about Hanvrix? We&apos;re here to help. Reach out and we&apos;ll get back to you as soon as possible.
                 </p>
               </div>
 
-              <div className="space-y-4 pt-4">
+              <div className="grid grid-cols-1 gap-6">
                 {contactInfo.map((info, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 * i + 0.2 }}
-                    className="bg-white p-7 rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_4px_25px_rgb(0,0,0,0.06)] transition-shadow"
-                  >
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{info.title}</h3>
-                    <p className="text-gray-500 font-medium text-sm mb-5">{info.description}</p>
-                    <a href={`mailto:${info.email}`} className="inline-flex items-center text-[#c85a17] font-semibold text-[15px] hover:text-[#a64911] transition-colors">
+                  <Card key={i} className="p-5 hover:shadow-md transition-shadow">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2">{info.title}</h3>
+                    <p className="text-slate-600 font-medium text-[14px] mb-4">{info.description}</p>
+                    <a href={`mailto:${info.email}`} className="inline-flex items-center text-slate-900 font-semibold text-[14px] hover:text-[#b45309] transition-colors">
                       <Mail className="w-4 h-4 mr-2" />
                       {info.email}
                     </a>
-                  </motion.div>
+                  </Card>
                 ))}
               </div>
-            </motion.div>
+            </div>
+          </FadeIn>
 
-            {/* Right Side: Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="xl:pl-8"
-            >
+          {/* Right Side: Contact Form */}
+          <FadeIn direction="right" delay={0.2}>
+            <div className="xl:pl-8">
               <ContactForm />
-            </motion.div>
+            </div>
+          </FadeIn>
 
-          </div>
         </div>
       </Section>
     </div>

@@ -1,23 +1,18 @@
-import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface CardProps {
   children: ReactNode;
   className?: string;
-  delay?: number;
+  delay?: number; // Ignored to remove staggered heavy animations, kept for type compatibility
 }
 
-const Card = ({ children, className = "", delay = 0 }: CardProps) => {
+const Card = ({ children, className = "", delay }: CardProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      className={`bg-brand-secondary/40 backdrop-blur-sm rounded-2xl p-6 border border-white/5 shadow-xl transition-all duration-500 hover:border-brand-primary/30 group card-hover ${className}`}
+    <div
+      className={`bg-white rounded-[10px] p-5 border border-gray-200 shadow-sm transition-shadow duration-300 hover:shadow-md ${className}`}
     >
       {children}
-    </motion.div>
+    </div>
   );
 };
 
