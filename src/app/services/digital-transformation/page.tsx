@@ -327,7 +327,7 @@ export default function DigitalTransformationPage() {
             </p>
             <div className="flex justify-center">
               <Link href="/contact">
-                <Button variant="white" className="px-12 h-[54px] text-bg-dark font-black uppercase tracking-widest text-sm"><Rocket className="w-5 h-5" /> {finalCTA.buttonText}</Button>
+                <Button variant="white" className="px-12 shadow-2xl shadow-brand-primary/20"><Rocket className="w-5 h-5" /> {finalCTA.buttonText}</Button>
               </Link>
             </div>
           </div>

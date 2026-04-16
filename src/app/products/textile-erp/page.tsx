@@ -277,7 +277,7 @@ export default function TextileERP() {
             </p>
             <div className="flex justify-center">
               <Link href="/contact">
-                <Button variant="white" className="px-12 h-[54px] text-bg-dark font-black uppercase tracking-widest text-sm"><Settings className="w-5 h-5" /> Request Access</Button>
+                <Button variant="white" className="px-12 shadow-2xl shadow-brand-primary/20"><Settings className="w-5 h-5" /> Request Access</Button>
               </Link>
             </div>
           </div>

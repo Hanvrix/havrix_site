@@ -50,7 +50,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="w-full bg-slate-50 rounded-[10px] p-8 md:p-10 border border-gray-200">
+    <div className="w-full bg-slate-50 rounded-[10px] p-4 md:p-6 border border-gray-200">
       <div className="mb-8">
         <h2 className="text-2xl font-bold text-slate-900 tracking-tight mb-2">Send us a message</h2>
         <p className="text-slate-600 font-medium text-[14px]">

@@ -130,18 +130,19 @@ export default function TextilesRedesign() {
            />
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
            {benefits.map((benefit, i) => (
              <FadeIn key={i} delay={i * 0.1}>
-               <div className="group flex space-x-6 items-start p-5 bg-white/5 rounded-[2rem] border border-white/5 hover:border-brand-primary/30 transition-all duration-500">
-                  <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
+               <Card className="flex flex-col !p-8 h-full border-none bg-white/5 hover:bg-white hover:text-bg-dark transition-all duration-500 group relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/10 group-hover:bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
+                  <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all duration-500 mb-6 relative z-10">
                     {benefit.icon}
                   </div>
-                  <div>
-                     <h4 className="text-xl font-black text-white tracking-tight mb-2 leading-none">{benefit.title}</h4>
-                     <p className="text-gray-400 text-[15px] leading-relaxed font-medium">{benefit.desc}</p>
+                  <div className="relative z-10">
+                     <h4 className="text-xl font-black mb-2 leading-none group-hover:text-bg-dark transition-colors">{benefit.title}</h4>
+                     <p className="text-gray-400 text-[15px] leading-relaxed font-medium group-hover:text-gray-600 transition-colors">{benefit.desc}</p>
                   </div>
-               </div>
+               </Card>
              </FadeIn>
            ))}
         </div>
@@ -243,10 +244,10 @@ export default function TextilesRedesign() {
               </p>
               <div className="flex justify-center flex-col sm:flex-row gap-6">
                 <Link href="/contact">
-                  <Button className="px-12 h-[54px]"><Calendar className="w-5 h-5" /> Book a Strategic Demo</Button>
+                  <Button className="px-12 shadow-2xl shadow-brand-primary/20"><Calendar className="w-5 h-5" /> Book a Strategic Demo</Button>
                 </Link>
                 <Link href="/about">
-                   <Button variant="white" className="px-12 h-[54px]"><LayoutGrid className="w-5 h-5" /> Read Case Studies</Button>
+                   <Button variant="white" className="px-12 shadow-2xl shadow-brand-primary/20"><LayoutGrid className="w-5 h-5" /> Read Case Studies</Button>
                 </Link>
               </div>
            </div>

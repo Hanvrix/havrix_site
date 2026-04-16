@@ -17,6 +17,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Hanvrix",
   description: "Hanvrix is a leading provider of innovative technology solutions, specializing in web development, mobile applications, and digital transformation services. With a focus on quality, performance, and customer satisfaction, we help businesses of all sizes achieve their digital goals.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({

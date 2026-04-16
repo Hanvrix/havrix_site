@@ -157,12 +157,12 @@ export default function WebAppDevelopmentPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                    <Link href="/contact">
-                     <Button className="px-12 h-[54px] h-full shadow-2xl shadow-brand-primary/20">
+                     <Button className="px-12 shadow-2xl shadow-brand-primary/20">
                        <Monitor className="w-5 h-5" /> {hero.primaryCTA}
                      </Button>
                    </Link>
                    <Link href="#overview">
-                     <Button variant="white" className="px-12 h-[54px] font-black uppercase tracking-widest text-sm">
+                     <Button variant="white" className="px-12 font-black uppercase tracking-widest text-sm">
                         <Layers className="w-5 h-5" /> {hero.secondaryCTA}
                      </Button>
                    </Link>
@@ -192,7 +192,7 @@ export default function WebAppDevelopmentPage() {
       <Section id="overview" light={false} className="relative overflow-hidden !pb-0">
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-primary/5 blur-[120px] rounded-full"></div>
         <FadeIn>
-          <div className="max-w-4xl mx-auto text-center relative z-10 -mb-8 md:-mb-12">
+          <div className="max-w-4xl mx-auto text-center relative z-10 -mb-10 md:-mb-5">
               <SectionHeader
                 centered={true}
                 theme="dark"
@@ -213,7 +213,7 @@ export default function WebAppDevelopmentPage() {
             const Icon = feature.icon;
             return (
               <FadeIn key={i} delay={i * 0.1}>
-                <Card className="flex flex-col !p-8 h-full border-none bg-slate-50 hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative overflow-hidden">
+                <Card className="flex flex-col !p-8 h-full border bg-slate-50 hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
                   <div className="flex items-center space-x-4 mb-6 relative z-10">
                     <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-brand-primary shadow-sm group-hover:bg-brand-primary group-hover:text-white group-hover:scale-110 transition-all duration-500 shrink-0">
@@ -250,12 +250,12 @@ export default function WebAppDevelopmentPage() {
                 const Icon = benefit.icon;
                 return (
                     <FadeIn key={i} delay={i * 0.1} direction={i % 2 === 0 ? "left" : "right"}>
-                        <Card className="flex gap-8 !p-10 items-start h-full border-none bg-white/5 hover:bg-white hover:text-bg-dark transition-all duration-500 group">
+                        <Card className="flex gap-8 !p-6 items-start h-full border-none bg-white/5 hover:bg-white hover:text-bg-dark transition-all duration-500 group">
                              <div className="shrink-0 w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
                                 <Icon className="h-8 w-8" />
                              </div>
                              <div>
-                                <h4 className="text-2xl font-black mb-4 tracking-tight uppercase group-hover:text-bg-dark transition-colors">{benefit.title}</h4>
+                                <h4 className="text-2xl font-black mb-2 tracking-tight uppercase group-hover:text-bg-dark transition-colors">{benefit.title}</h4>
                                 <p className="text-gray-400 leading-relaxed font-medium text-[16px] group-hover:text-gray-600 transition-colors">
                                     {benefit.description}
                                 </p>
@@ -325,7 +325,7 @@ export default function WebAppDevelopmentPage() {
             </p>
             <div className="flex justify-center">
               <Link href="/contact">
-                <Button variant="white" className="px-12 h-[54px] text-bg-dark font-black uppercase tracking-widest text-sm"><Rocket className="w-5 h-5" /> {finalCTA.buttonText}</Button>
+                <Button variant="white" className="px-12 shadow-2xl shadow-brand-primary/20"><Rocket className="w-5 h-5" /> {finalCTA.buttonText}</Button>
               </Link>
             </div>
           </div>
