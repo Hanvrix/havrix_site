@@ -239,19 +239,19 @@ export default function Home() {
                <div className="space-y-6 pt-12">
                  <Card className="bg-brand-primary border text-black p-6">
                    <MonitorCheck className="w-12 h-12 mb-6 text-brand-primary" />
-                   <div className="text-4xl font-black mb-2">100%</div>
+                   <div className="text-2xl sm:text-3xl md:text-4xl font-black mb-2">100%</div>
                    <div className="font-bold text-sm uppercase tracking-widest opacity-80">Security</div>
                  </Card>
                  <Card className="bg-bg-dark border text-black p-6">
                    <Globe2 className="w-12 h-12 mb-6 text-brand-primary" />
-                   <div className="text-4xl font-black mb-2">Global</div>
-                   <div className="font-bold text-sm uppercase tracking-widest opacity-80">Connectivity</div>
+                   <div className="text-2xl sm:text-3xl md:text-4xl font-black mb-2 text-white">Global</div>
+                   <div className="font-bold text-sm uppercase tracking-widest opacity-80 text-white/80">Connectivity</div>
                  </Card>
                </div>
                <div className="space-y-6">
                   <Card className="bg-slate-50 p-6 border-[#eee]">
                     <Layers className="w-12 h-12 mb-6 text-brand-primary" />
-                    <div className="text-4xl font-black mb-2 text-bg-dark text-bg-dark">Enterprise</div>
+                    <div className="text-2xl sm:text-3xl md:text-4xl font-black mb-2 text-bg-dark">Enterprise</div>
                     <div className="font-bold text-sm uppercase tracking-widest text-gray-500">Solutions</div>
                   </Card>
                   <Card className="bg-brand-primary p-1 text-white overflow-hidden aspect-square h-auto">
