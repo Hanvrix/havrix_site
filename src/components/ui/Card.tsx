@@ -9,7 +9,7 @@ interface CardProps {
 const Card = ({ children, className = "", delay }: CardProps) => {
   return (
     <div
-      className={`bg-white rounded-[10px] p-5 border border-gray-200 shadow-sm transition-shadow duration-300 hover:shadow-md ${className}`}
+      className={`bg-white rounded-[18px] p-8 transition-all duration-400 border border-[#eee] hover:border-brand-primary hover:shadow-[0_20px_50px_rgba(253,74,24,0.1)] hover:-translate-y-2 ${className}`}
     >
       {children}
     </div>

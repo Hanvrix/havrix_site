@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hanvrix | Production-Ready Next.js App",
-  description: "Built with Next.js, MySQL, and Prisma",
+  title: "Hanvrix",
+  description: "Hanvrix is a leading provider of innovative technology solutions, specializing in web development, mobile applications, and digital transformation services. With a focus on quality, performance, and customer satisfaction, we help businesses of all sizes achieve their digital goals.",
 };
 
 export default function RootLayout({
