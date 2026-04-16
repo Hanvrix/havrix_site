@@ -158,7 +158,7 @@ export default function Home() {
       </div>
 
       {/* Services Section */}
-      <Section light={true} className="relative">
+      <Section light={true} className="relative overflow-hidden w-full">
         <FadeIn direction="up">
           <ServicesSlider />
         </FadeIn>

@@ -48,13 +48,13 @@ export default function PortfolioPage() {
                 <p className="text-xl text-gray-400 font-medium leading-relaxed max-w-2xl mx-auto mb-12">
                    Explore our elite portfolio of SaaS products and Industries-grade software ecosystems designed for high-stakes business environments.
                 </p>
-                <div className="flex justify-center mb-16">
-                   <Link href="/contact">
-                     <Button className="px-12 h-[65px] h-full shadow-2xl shadow-brand-primary/20">
-                       <Rocket className="w-5 h-5" /> Start Collaboration
-                     </Button>
-                   </Link>
-                </div>
+                 <div className="flex justify-center mb-16">
+                    <Link href="/contact">
+                      <Button className="px-12 shadow-2xl shadow-brand-primary/20">
+                        <Rocket className="w-5 h-5" /> Start Collaboration
+                      </Button>
+                    </Link>
+                 </div>
              </div>
           </FadeIn>
         </div>
@@ -64,7 +64,8 @@ export default function PortfolioPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {projects.map((p, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <Card className="!p-0 overflow-hidden flex flex-col h-full border-none bg-slate-50 hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group">
+              <Card className="!p-0 overflow-hidden flex flex-col h-full border-none bg-slate-50 hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700 z-20"></div>
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <img
                     src={p.image}
@@ -72,26 +73,26 @@ export default function PortfolioPage() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-bg-dark/40 group-hover:bg-bg-dark/20 transition-colors duration-500"></div>
-                  <div className="absolute top-6 left-6">
+                  <div className="absolute top-6 left-6 z-10">
                     <div className="px-4 py-1 bg-brand-primary text-bg-dark text-[11px] font-black uppercase tracking-widest rounded-full">
                       {p.category}
                     </div>
                   </div>
                 </div>
 
-                <div className="!p-10 flex flex-col flex-grow">
-                  <div className="flex items-center space-x-4 mb-8">
-                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-brand-primary shadow-sm group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
+                <div className="!p-8 flex flex-col flex-grow relative z-10">
+                  <div className="flex items-center space-x-4 mb-6">
+                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-brand-primary shadow-sm group-hover:bg-brand-primary group-hover:text-white transition-all duration-500 shrink-0">
                       {p.icon}
                     </div>
+                    <h3 className="text-xl font-black text-bg-dark tracking-tight leading-none uppercase">{p.title}</h3>
                   </div>
 
-                  <h3 className="text-2xl font-black text-bg-dark mb-6 tracking-tight leading-none uppercase">{p.title}</h3>
-                  <p className="text-gray-500 font-medium text-[16px] leading-relaxed mb-auto">
+                  <p className="text-gray-500 font-medium text-[15px] leading-relaxed mb-6">
                     {p.description}
                   </p>
 
-                  <div className="pt-10">
+                  <div className="mt-auto pt-6 border-t border-slate-100">
                     <Link href="/contact" className="inline-flex items-center text-bg-dark font-black uppercase tracking-widest text-[13px] group/btn hover:text-brand-primary transition-colors">
                       Initialize Review <ArrowRight className="ml-3 h-5 w-5 group-hover/btn:-rotate-45 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                     </Link>
@@ -117,7 +118,7 @@ export default function PortfolioPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                   <Link href="/contact" className="w-full sm:w-auto">
-                    <Button className="px-12 h-[54px] w-full shadow-2xl shadow-brand-primary/20"><Rocket className="w-5 h-5" /> Deploy Project</Button>
+                    <Button className="px-12 shadow-2xl shadow-brand-primary/20 w-full"><Rocket className="w-5 h-5" /> Deploy Project</Button>
                   </Link>
                 </div>
             </div>

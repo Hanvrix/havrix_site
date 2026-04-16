@@ -109,7 +109,7 @@ export default function ServicesSlider() {
       </div>
 
       {/* Slider Viewport */}
-      <div className="overflow-visible" ref={emblaRef}>
+      <div className="overflow-hidden -mx-4 px-4 -my-12 py-12" ref={emblaRef}>
         <div className="flex -ml-6 touch-pan-y">
           {services.map((service, index) => (
             <div key={index} className="flex-[0_0_100%] min-w-0 pl-6 sm:flex-[0_0_50%] lg:flex-[0_0_33.33%]">
