@@ -1,41 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 @import "tailwindcss";
 
 :root {
-  --font-sans: "Inter", "Geist Sans", "ui-sans-serif", "system-ui";
-  --font-serif: "Outfit", "serif";
-
-  --brand-primary: #0f172a;
-  --brand-secondary: #f8fafc;
-  --brand-accent: #b45309;
-  --brand-cta: #0f172a;
+  --font-plus-jakarta: "Plus Jakarta Sans", "Inter", "sans-serif";
+  
+  --brand-primary: #FD4A18; /* Fexo Orange */
+  --brand-secondary: #000B1D; /* Fexo Navy Black */
+  --brand-accent: #FD4A18;
+  --brand-cta: #FD4A18;
 
   --bg-light: #ffffff;
-  --bg-dark: #f8fafc;
+  --bg-dark: #000B1D;
+  --bg-footer: #00050E;
 
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-dark: #64748b;
+  --text-primary: #000B1D;
+  --text-secondary: #586174;
+  --text-white: #ffffff;
   
   --background: #ffffff;
-  --foreground: #0f172a;
+  --foreground: #000B1D;
+
+  --section-padding: 100px;
 }
 
 @theme {
+  --font-sans: var(--font-plus-jakarta);
   --color-brand-primary: var(--brand-primary);
   --color-brand-secondary: var(--brand-secondary);
   --color-brand-accent: var(--brand-accent);
+  --color-brand-cta: var(--brand-cta);
+  
   --color-bg-light: var(--bg-light);
   --color-bg-dark: var(--bg-dark);
+  --color-bg-footer: var(--bg-footer);
+  
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
-  --color-text-dark: var(--text-dark);
-  --radius-xl: 0.75rem;
-  --radius-2xl: 1rem;
+  --color-text-white: var(--text-white);
+  
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem; /* 24px */
+  --radius-3xl: 2rem;
+  --radius-full: 9999px;
+
+  --spacing-section: var(--section-padding);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-plus-jakarta);
   font-feature-settings: "cv11", "ss01";
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -43,41 +57,55 @@ body {
 }
 
 ::selection {
-  background-color: rgba(15, 23, 42, 0.1);
-  color: #0f172a;
+  background-color: var(--brand-primary);
+  color: #ffffff;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--bg-dark);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 20px;
+  background: var(--brand-primary);
+  border: 3px solid var(--bg-dark);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #e13d10;
 }
 
-/* Minimal Utilities - overriding old heavy styles to keep components from breaking */
+/* Utilities */
 .text-gradient {
-  color: var(--brand-primary);
+  background: linear-gradient(90deg, var(--brand-primary), #ff8c00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-.text-gradient-green {
-  color: var(--brand-primary);
-}
-.text-glow {
-  text-shadow: none;
-}
-.hero-glow {
-  background: none;
-}
+
 .glass-morphism {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-morphism-dark {
+  background: rgba(0, 11, 29, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Section transitions */
+.section-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

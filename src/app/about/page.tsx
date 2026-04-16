@@ -1,7 +1,7 @@
-import Section from "@/components/ui/Section";
+import Section, { SectionHeader } from "@/components/ui/Section";
 import Card from "@/components/ui/Card";
 import {
-  Target, Eye, Shield, Users2, CheckCircle2
+  Target, Eye, Shield, Users2, CheckCircle2, ArrowRight
 } from "lucide-react";
 import Image from "next/image";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -11,149 +11,181 @@ export default function AboutPage() {
     {
       title: "Our Mission",
       description: "To provide businesses with the technical precision required to lead their industries in a digital-first economy, creating sustainable success.",
-      icon: <Target className="text-[#b45309]" />,
+      icon: Target,
     },
     {
       title: "Our Vision",
       description: "To become the global benchmark for technical excellence, where business automation and human creativity converge for limitless scale.",
-      icon: <Eye className="text-[#b45309]" />,
+      icon: Eye,
     },
     {
       title: "Core Values",
       description: "We bridge the gap between technical features and business value. Every project is an ROI-driven infrastructure that is built to last.",
-      icon: <Shield className="text-[#b45309]" />,
+      icon: Shield,
     }
   ];
 
   return (
-    <div className="pb-8 bg-white min-h-screen text-slate-600">
-      <Section light={true} className="pt-4 lg:pt-8">
-        
+    <div className="bg-white min-h-screen">
+      {/* 1. Header / Intro */}
+      <section className="bg-bg-dark pt-32 pb-16 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-primary/5 blur-[120px] rounded-full"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <FadeIn direction="up">
+             <div className="max-w-3xl">
+                <div className="flex items-center space-x-3 text-brand-primary font-black uppercase tracking-[4px] text-[13px] mb-6">
+                  <span className="w-10 h-[2px] bg-brand-primary"></span>
+                  <span>About Our Company</span>
+                </div>
+                <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-tight mb-8">
+                  Innovating Technology <br />
+                  <span className="text-brand-primary">For A Smarter Future</span>
+                </h1>
+                <p className="text-xl text-gray-400 font-medium leading-relaxed">
+                   Hanvrix is a collective of elite software architects and designers dedicated to engineering the next generation of business technology.
+                </p>
+             </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      <Section light={true}>
         {/* 1. About Hanvrix Content */}
         <FadeIn>
-          <div className="mb-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <h6 className="text-slate-500 font-bold tracking-wider text-[13px] uppercase mb-4">About Hanvrix</h6>
-              <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-6">
-                Innovating Technology For A Smarter Future
-              </h2>
-              <div className="space-y-6 text-slate-600 text-[15px] font-medium leading-relaxed">
-                <p>
-                  Hanvrix is a collective of elite software architects and designers dedicated to engineering the next generation of business technology. We help organizations improve efficiency, strengthen their digital presence, and adapt to the rapidly evolving tech landscape.
-                </p>
-                <p>
-                  Our goal is to simplify complex business challenges through smart technology, creative thinking, and reliable solutions that provide the foundations required to lead your industry in a digital-first economy.
-                </p>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-[10px] overflow-hidden bg-slate-50 border border-gray-200 shadow-sm relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-brand-primary/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative rounded-[2.5rem] overflow-hidden border-[12px] border-white shadow-2xl skew-y-1">
                 <Image 
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
                   alt="Innovative Tech Environment" 
-                  fill 
-                  className="object-cover"
+                  width={800}
+                  height={600}
+                  className="object-cover scale-105 group-hover:scale-110 transition-transform duration-700"
                 />
+              </div>
+            </div>
+            <div>
+              <SectionHeader
+                centered={false}
+                title="Our Engineering Philosophy"
+                subtitle="We simplify complex business challenges through smart technology, creative thinking, and reliable solutions that provide the foundations required to lead your industry in a digital-first economy."
+              />
+              <div className="space-y-3 text-gray-600 text-lg font-medium leading-relaxed mb-10">
+                <p>
+                  Our goal is to bridge the gap between technical features and business value. Every project is an ROI-driven infrastructure that outlasts market trends.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-4">
+                 {["Elite Architects", "Scalable Systems", "ROI Driven"].map(tag => (
+                   <span key={tag} className="px-6 py-2 bg-slate-50 border border-slate-200 rounded-full text-bg-dark font-bold text-sm tracking-tight hover:bg-brand-primary hover:text-white hover:-translate-y-1 transition-all duration-300 hover:shadow-lg hover:shadow-brand-primary/20">
+                     {tag}
+                   </span>
+                 ))}
               </div>
             </div>
           </div>
         </FadeIn>
 
         {/* 2. Mission, Vision, Values Cards */}
-        <FadeIn delay={0.2}>
-          <div className="mb-20 pt-10 border-t border-gray-200">
-            <div className="text-center mb-12">
-              <h6 className="text-slate-500 font-bold tracking-wider text-[13px] uppercase mb-4">
-                OUR COMPANY
-              </h6>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
-                Vision, Mission & Values
-              </h2>
-            </div>
+        <div className="mt-32">
+          <SectionHeader
+            title="Vision, Mission & Values"
+            subtitle="The core principles that drive our engineering excellence and client success."
+          />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {aboutCards.map((card, index) => (
-                <Card key={index} className="flex flex-col h-full hover:shadow-md transition-shadow">
-                  <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6 border border-gray-200">
-                    {card.icon}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {aboutCards.map((card, index) => {
+              const Icon = card.icon;
+              return (
+                <Card key={index} className="group !p-10 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
+                  <div className="flex items-center space-x-5 mb-8 relative z-10">
+                    <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary transition-all group-hover:bg-brand-primary group-hover:text-white group-hover:scale-110 duration-500">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-2xl font-black text-bg-dark tracking-tighter uppercase leading-none">
+                      {card.title}
+                    </h3>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-tight">
-                    {card.title}
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed font-medium flex-grow text-[15px]">
+                  <p className="text-gray-500 leading-relaxed font-medium text-lg relative z-10">
                     {card.description}
                   </p>
                 </Card>
-              ))}
-            </div>
+              );
+            })}
           </div>
-        </FadeIn>
+        </div>
 
         {/* 3. Why Choose Us Content */}
-        <FadeIn>
-          <div className="pt-10 border-t border-gray-200">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-              
-              <div className="flex flex-col h-full">
-                <div className="mb-10">
-                  <h6 className="text-slate-500 font-bold tracking-wider text-[13px] uppercase mb-4">Why Choose Us</h6>
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
-                    A Technology Partner You Can Trust
-                  </h2>
-                </div>
+        <div className="mt-20 pt-20 border-t border-slate-100">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+            
+            <div className="flex flex-col">
+              <SectionHeader
+                centered={false}
+                title="A Technology Partner You Can Trust"
+                subtitle="We combine innovation, expertise, and strategic thinking to deliver high-quality digital solutions tailored to business needs."
+              />
 
-                <Card className="mt-auto bg-slate-900 text-white border-0 !p-6">
-                  <div className="flex items-center space-x-3 mb-6">
-                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-slate-900">
-                      <CheckCircle2 className="h-5 w-5" />
-                    </div>
-                    <span className="text-xl font-bold text-white tracking-tight">Hanvrix</span>
+              <Card className="bg-bg-dark text-white border-none !p-8 relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/10 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
+                <div className="flex items-center space-x-4 mb-8">
+                  <div className="w-12 h-12 bg-brand-primary rounded-2xl flex items-center justify-center text-white">
+                    <CheckCircle2 className="h-6 w-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-3 leading-tight">
-                    Smart Technology Solutions For Modern Businesses
-                  </h3>
-                  <p className="text-slate-300 leading-relaxed font-medium text-[15px]">
-                    We combine innovation, expertise, and strategic thinking to deliver high-quality digital solutions tailored to business needs. Our focus is on performance, reliability, and long-term value for our clients.
-                  </p>
-                </Card>
-              </div>
-
-              <div className="flex flex-col h-full">
-                <div className="w-full aspect-[16/9] rounded-[10px] overflow-hidden mb-12 border border-gray-200 shadow-sm">
-                  <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" alt="Team meeting" className="w-full h-full object-cover" />
+                  <span className="text-2xl font-black text-black tracking-tighter uppercase">Hanvrix<span className="text-brand-primary">.</span></span>
                 </div>
-
-                <div className="space-y-8">
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center border border-gray-200">
-                      <Target className="text-[#b45309]" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-2 tracking-tight">Strategy</h4>
-                      <p className="text-slate-600 leading-relaxed font-medium text-[15px]">
-                        Our strategic approach focuses on understanding business needs and delivering innovative IT and technology solutions that drive efficiency and long-term success.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center border border-gray-200">
-                      <Users2 className="text-[#b45309]" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-2 tracking-tight">Audience</h4>
-                      <p className="text-slate-600 leading-relaxed font-medium text-[15px]">
-                        We focus on understanding our clients' business goals and target audience to deliver technology solutions that create meaningful impact and long-term value.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
+                <h3 className="text-2xl font-black text-black mb-6 leading-tight tracking-tight">
+                   Smart Technology Solutions For Modern Businesses
+                </h3>
+                <p className="text-gray-400 leading-relaxed font-medium text-lg mb-8">
+                   Our focus is on performance, reliability, and long-term value for our clients. We build tactical advantages for ambitious enterprises.
+                </p>
+                <div className="h-1 lg:w-48 bg-brand-primary"></div>
+              </Card>
             </div>
-          </div>
-        </FadeIn>
 
+            <div className="space-y-12 pt-12">
+              <div className="group flex gap-6 p-6 bg-slate-50 rounded-[2rem] border border-slate-100 hover:border-brand-primary/30 transition-all">
+                <div className="flex-shrink-0 w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-brand-primary shadow-sm group-hover:bg-brand-primary group-hover:text-white transition-all">
+                  <Target className="w-8 h-8" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-black text-bg-dark mb-3 tracking-tight">Technical Strategy</h4>
+                  <p className="text-gray-500 leading-relaxed font-medium text-lg">
+                    Our strategic approach focuses on understanding business needs and delivering solutions that drive efficiency.
+                  </p>
+                </div>
+              </div>
+
+              <div className="group flex gap-6 p-6 bg-slate-50 rounded-[2rem] border border-slate-100 hover:border-brand-primary/30 transition-all">
+                <div className="flex-shrink-0 w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-brand-primary shadow-sm group-hover:bg-brand-primary group-hover:text-white transition-all">
+                  <Users2 className="w-8 h-8" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-black text-bg-dark mb-3 tracking-tight">Global Audience</h4>
+                  <p className="text-gray-500 leading-relaxed font-medium text-lg">
+                    We deliver technology solutions that create meaningful impact and long-term value for a global client base.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between p-6 bg-brand-primary rounded-[2.5rem] text-white">
+                 <div>
+                    <div className="text-3xl font-black mb-1">100%</div>
+                    <div className="font-bold text-sm uppercase tracking-widest opacity-80">Project Success</div>
+                 </div>
+                 <div className="w-px h-16 bg-white/20"></div>
+                 <div>
+                    <div className="text-3xl font-black mb-1">24/7</div>
+                    <div className="font-bold text-sm uppercase tracking-widest opacity-80">Expert Support</div>
+                 </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
       </Section>
     </div>
   );

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin, Instagram, Twitter, Linkedin, Github } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Twitter, Linkedin, Github, Facebook } from "lucide-react";
 import Image from "next/image";
 
 const Footer = () => {
@@ -46,6 +46,7 @@ const Footer = () => {
   };
 
   const socialLinks = [
+    { icon: <Facebook className="h-5 w-5" />, href: "#" },
     { icon: <Twitter className="h-5 w-5" />, href: "#" },
     { icon: <Linkedin className="h-5 w-5" />, href: "#" },
     { icon: <Instagram className="h-5 w-5" />, href: "#" },
@@ -53,39 +54,42 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-slate-900 text-slate-400 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
-          
-          <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-6">
-              <Image
-                src="/logo.png"
-                alt="Hanvrix Logo"
-                width={32}
-                height={32}
-                className="w-8 h-8 object-contain opacity-90"
-              />
-              <span className="text-xl font-bold text-white tracking-tight">Hanvrix</span>
+    <footer className="bg-bg-footer text-white pt-24 pb-12 overflow-hidden relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-20">
+          {/* Brand Identity */}
+          <div className="space-y-8">
+            <Link href="/" className="flex items-center space-x-2 group">
+              <div className="p-1.5 bg-brand-primary rounded-lg">
+                <Image
+                  src="/logo.png"
+                  alt="Hanvrix Logo"
+                  width={24}
+                  height={24}
+                  className="w-6 h-6 object-contain brightness-0 invert"
+                />
+              </div>
+              <span className="text-2xl font-black tracking-tighter text-white uppercase">
+                Hanvrix<span className="text-brand-primary">.</span>
+              </span>
             </Link>
-            <p className="mb-8 max-w-sm text-[15px] leading-relaxed text-slate-400">
-              Empowering forward-thinking companies with cutting-edge digital solutions. We build
-              modern scalable applications.
+            <p className="text-gray-400 text-[15px] leading-relaxed max-w-sm">
+              Helping businesses navigate the digital landscape with innovative IT solutions and world-class engineering.
             </p>
-            
-            <div className="space-y-4 mb-8">
+
+            <div className="space-y-4 text-gray-400">
               <div className="flex items-center space-x-3 text-[14px]">
-                <MapPin className="text-[#b45309]" />
+                <MapPin className="text-brand-primary h-5 w-5" />
                 <span>Salem, Tamil Nadu, India</span>
               </div>
               <div className="flex items-center space-x-3 text-[14px]">
-                <Mail className="text-[#b45309]" />
-                <a href="mailto:info@hanvrix.com" className="hover:text-white transition-colors">
+                <Mail className="text-brand-primary h-5 w-5" />
+                <a href="mailto:hanvrix@gmail.com" className="hover:text-white transition-colors">
                   hanvrix@gmail.com
                 </a>
               </div>
               <div className="flex items-center space-x-3 text-[14px]">
-                <Phone className="text-[#b45309]" />
+                <Phone className="text-brand-primary h-5 w-5" />
                 <a href="tel:+918838213390" className="hover:text-white transition-colors">
                   +91 8838213390
                 </a>
@@ -93,11 +97,11 @@ const Footer = () => {
             </div>
 
             <div className="flex space-x-4">
-              {socialLinks.map((social, idx) => (
+              {socialLinks.slice(0, 4).map((social, idx) => (
                 <a
                   key={idx}
                   href={social.href}
-                  className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-white hover:text-slate-900 transition-colors"
+                  className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-bg-dark transition-all duration-300"
                 >
                   {social.icon}
                 </a>
