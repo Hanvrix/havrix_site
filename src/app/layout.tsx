@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -15,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hanvrix",
-  description: "Hanvrix is a leading provider of innovative technology solutions, specializing in web development, mobile applications, and digital transformation services. With a focus on quality, performance, and customer satisfaction, we help businesses of all sizes achieve their digital goals.",
+  title: "Hanvrix | Best Software Company in Salem & Top IT Solutions Tamil Nadu",
+  description: "Hanvrix is the #1 software company in Salem, offering expert IT services, Textile software solutions, and SaaS development in Tamil Nadu. Your top choice for Salem IT services.",
   icons: {
     icon: "/logo.png",
     shortcut: "/logo.png",
@@ -37,6 +38,45 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
       >
+        <Script id="schema-local-business" type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Hanvrix",
+              "image": "https://hanvrix.vercel.app/logo.png",
+              "@id": "https://hanvrix.vercel.app",
+              "url": "https://hanvrix.vercel.app",
+              "telephone": "+91-XXXXXXXXXX",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Salem",
+                "addressLocality": "Salem",
+                "addressRegion": "TN",
+                "postalCode": "636001",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 11.6643,
+                "longitude": 78.1460
+              },
+              "description": "Best Software Company in Salem & Top IT Solutions in Tamil Nadu specializing in Textile Software and SaaS.",
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+              }
+            }
+          `}
+        </Script>
         <Navbar />
         <main className="min-h-screen pt-16">
           {children}

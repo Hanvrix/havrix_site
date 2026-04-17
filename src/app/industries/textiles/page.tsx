@@ -18,6 +18,12 @@ import Button from "@/components/ui/Button";
 import Section, { SectionHeader } from "@/components/ui/Section";
 import Card from "@/components/ui/Card";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Textile Software Solutions | Best Software Company in Salem",
+  description: "Hanvrix provides the #1 textile software in Tamil Nadu. Our Salem IT experts deliver high-performance ERP and SaaS for garment manufacturers globally.",
+};
 
 export default function TextilesRedesign() {
   const capabilities = [
@@ -52,12 +58,11 @@ export default function TextilesRedesign() {
                    <span>Textiles & Apparel</span>
                 </div>
                 <h1 className="text-4xl md:text-7xl font-black text-white leading-[1.1] tracking-tighter">
-                  Weaving Efficiency <br />
-                  <span className="text-brand-primary">into Every Thread</span>
+                   The Best <span className="text-brand-primary">Textile Software</span> <br />
+                   <span className="text-brand-primary">from Hanvrix Salem</span>
                 </h1>
                 <p className="text-xl text-gray-400 leading-relaxed max-w-xl font-medium">
-                  Tailored ERP solutions for textile mills, garment manufacturers, fashion brands, 
-                  and trading houses designed for global scale and local precision.
+                   Hanvrix is the top **Software company in Salem** providing tailored ERP solutions for textile mills and garment manufacturers designed for global scale.
                 </p>
                 <div className="flex flex-wrap gap-6 pt-4 items-center">
                   <Link href="/contact">
@@ -79,7 +84,7 @@ export default function TextilesRedesign() {
                 <div className="relative rounded-[2.5rem] overflow-hidden border-[12px] border-white/10 shadow-2xl skew-x-1">
                   <img 
                     src="/images/textile-handloom.png" 
-                    alt="Professional Handloom Weaving" 
+                    alt="Best Software Company in Salem - Textile SaaS Application Support" 
                     className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/60 via-transparent to-transparent"></div>
@@ -145,6 +150,51 @@ export default function TextilesRedesign() {
                </Card>
              </FadeIn>
            ))}
+        </div>
+
+        {/* Detailed Industry Analysis Section (SEO Expansion) */}
+        <div className="mt-32 border-t border-white/10 pt-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+            <FadeIn direction="left">
+               <h2 className="text-3xl md:text-5xl font-black text-white mb-10 tracking-tighter uppercase leading-[1.1]">
+                 Solving <span className="text-brand-primary">Textile Manufacturing</span> Bottlenecks in Salem
+               </h2>
+               <div className="space-y-6 text-gray-400 text-lg leading-relaxed font-medium">
+                 <p>
+                   The textile industry in <span className="font-bold text-white">Salem, Tamil Nadu</span>, has long been the backbone of the regional economy. As a premier <span className="font-bold text-white">Software company in Salem</span>, Hanvrix understands that traditional manufacturing processes often suffer from data silos and supply chain delays.
+                 </p>
+                 <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
+                    <p className="text-brand-primary font-bold mb-2 uppercase tracking-widest text-xs">Industry Insight</p>
+                    <p className="text-white italic">
+                      &quot;Digital transformation is no longer optional; it&apos;s the baseline for global competition in the textile sector.&quot;
+                    </p>
+                 </div>
+               </div>
+            </FadeIn>
+
+            <FadeIn direction="right" delay={0.2}>
+               <div className="space-y-8">
+                  <p className="text-gray-400 text-lg leading-relaxed font-medium">
+                    Our specialized <span className="font-bold text-white">Textile SaaS Application</span> is engineered to bridge these gaps. By integrating real-time data from the loom to the warehouse, we empower manufacturers to make informed decisions.
+                  </p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                     <div className="p-4 bg-white/5 rounded-xl border border-white/5">
+                        <div className="text-white font-black mb-1 italic uppercase tracking-tighter text-lg">Salem IT</div>
+                        <p className="text-xs text-gray-500">Localized support for the Tamil Nadu textile belt.</p>
+                     </div>
+                     <div className="p-4 bg-white/5 rounded-xl border border-white/5">
+                        <div className="text-white font-black mb-1 italic uppercase tracking-tighter text-lg">Precision</div>
+                        <p className="text-xs text-gray-500">ROI-driven infrastructure built for scale.</p>
+                     </div>
+                  </div>
+
+                  <p className="text-gray-400 text-lg leading-relaxed font-medium">
+                    By choosing Hanvrix, you gain a strategic partner committed to the growth of the <span className="font-bold text-white">Tamil Nadu textile belt</span>, providing the technical infrastructure needed for local brands to lead.
+                  </p>
+               </div>
+            </FadeIn>
+          </div>
         </div>
       </Section>
 

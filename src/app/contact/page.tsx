@@ -3,6 +3,12 @@ import ContactForm from "@/components/ContactForm";
 import Card from "@/components/ui/Card";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Hanvrix | Best Software Company in Salem for IT Support",
+  description: "Get in touch with Hanvrix, the top software company in Salem. Contact us for Salem IT services, Textile software development, and SaaS solutions.",
+};
 
 export default function ContactPage() {
   const contactInfo = [
@@ -36,8 +42,8 @@ export default function ContactPage() {
                   <span>Get In Touch</span>
                 </div>
                 <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-tight mb-8">
-                  Let&apos;s Build Something <br />
-                  <span className="text-brand-primary">Exceptional Together</span>
+                  Contact the <span className="text-brand-primary">Best IT Company in Salem</span> <br />
+                  <span className="text-brand-primary">for Your Next Project</span>
                 </h1>
                 <p className="text-xl text-gray-400 font-medium leading-relaxed">
                    Have questions about Hanvrix? We&apos;re here to help. Reach out and we&apos;ll get back to you within 24 hours.

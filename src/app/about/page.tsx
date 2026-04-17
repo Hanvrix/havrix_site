@@ -5,6 +5,12 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Hanvrix | Top IT Company in Salem & Software Experts",
+  description: "Learn about Hanvrix, the best software company in Salem. We provide specialized textile software and Salem IT services for global businesses in Tamil Nadu.",
+};
 
 export default function AboutPage() {
   const aboutCards = [
@@ -38,11 +44,11 @@ export default function AboutPage() {
                   <span>About Our Company</span>
                 </div>
                 <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-tight mb-8">
-                  Innovating Technology <br />
-                  <span className="text-brand-primary">For A Smarter Future</span>
+                  The Best <span className="text-brand-primary">Software Company in Salem</span> <br />
+                  <span className="text-brand-primary">Engineering Your Success</span>
                 </h1>
                 <p className="text-xl text-gray-400 font-medium leading-relaxed">
-                   Hanvrix is a collective of elite software architects and designers dedicated to engineering the next generation of business technology.
+                   Hanvrix is the leading **IT company in Salem**, dedicated to providing world-class **Textile software** and specialized **Salem IT** services for modern enterprises in Tamil Nadu.
                 </p>
              </div>
           </FadeIn>

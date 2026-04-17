@@ -16,6 +16,12 @@ import {
   ArrowRight
 } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Web App Development Salem | Best Software Company in Salem",
+  description: "Hanvrix is the best software company in Salem for web application development. We build SEO-optimized, high-velocity websites and SaaS in Tamil Nadu.",
+};
 
 export default function WebAppDevelopmentPage() {
   const badge = {
@@ -24,8 +30,8 @@ export default function WebAppDevelopmentPage() {
   };
 
   const hero = {
-    title: "Architecting High-Velocity Web Ecosystems",
-    subtitle: "Enterprise-grade web architectures engineered for speed, conversion, and global demand with a focus on architectural integrity.",
+    title: "The Best Software Company in Salem for Web Engineering",
+    subtitle: "Enterprise-grade web architectures and **Textile software** ecosystems engineered for speed, conversion, and global demand in Tamil Nadu.",
     primaryCTA: "Initialize Development",
     secondaryCTA: "Explore Stack",
   };
