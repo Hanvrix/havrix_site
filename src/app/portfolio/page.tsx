@@ -4,6 +4,12 @@ import Button from "@/components/ui/Button";
 import { ArrowRight, Layers, Cpu, Zap, CheckCircle2, Rocket } from "lucide-react";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Portfolio | Hanvrix - Best Software Company in Salem Projects",
+  description: "View the portfolio of Hanvrix, the top software company in Salem. Discover our work in Textile software, SaaS development, and custom Salem IT solutions.",
+};
 
 export default function PortfolioPage() {
   const projects = [

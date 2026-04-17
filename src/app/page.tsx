@@ -91,11 +91,10 @@ export default function Home() {
                   <span>Technology Partner</span>
                 </div>
                 <h1 className="text-4xl md:text-6xl lg:text-[72px] font-black text-white tracking-tighter leading-[1] mb-8">
-                  Make Your Business <br />
-                  <span className="text-brand-primary">Smarter</span> and <span className="underline decoration-brand-primary/30">Easier.</span>
+                  The <span className="text-brand-primary">Best Software Company in Salem</span> for <span className="underline decoration-brand-primary/30 text-brand-primary">SaaS Solutions.</span>
                 </h1>
                 <p className="text-xl text-gray-400 mb-10 leading-relaxed font-medium">
-                  Powerful technology designed to streamline operations and unlock new opportunities. We build smart digital solutions that drive real-world impact.
+                  Hanvrix is the premier Software Development Company in Salem, Tamil Nadu. We build powerful multi-industry SaaS applications and custom digital solutions to streamline your operations in Salem and beyond.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center gap-6">
                   <Link href="/contact" className="w-full sm:w-auto">
@@ -186,8 +185,8 @@ export default function Home() {
               <SectionHeader
                 centered={false}
                 theme="dark"
-                title="Innovating Technology For A Smarter Future"
-                subtitle="Hanvrix is a technology-driven company focused on delivering innovative digital solutions for modern businesses. We help organizations improve efficiency and strengthen their digital presence."
+                title="Innovation in Software Development in Tamil Nadu"
+                subtitle="Based in Salem, Hanvrix is a technology-driven company delivering innovative multi-industry SaaS applications and ERP solutions. We help businesses optimize efficiency and dominate their market."
               />
               <div className="grid grid-cols-2 gap-8 mb-12">
                 {technologies.map((tech, idx) => (
@@ -293,6 +292,88 @@ export default function Home() {
             ))}
           </div>
         </FadeIn>
+      </Section>
+
+      {/* SEO Content Expansion: Salem Software Excellence */}
+      <Section light={true} className="border-t border-slate-100 !py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            centered={false}
+            title="Salem's Premier Software Ecosystem"
+            subtitle="Architecting high-performance digital infrastructure for the global stage from the heart of Tamil Nadu."
+          />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <FadeIn direction="left">
+              <div className="space-y-8">
+                <div className="p-6 bg-slate-50 rounded-[2.5rem] border border-slate-100 hover:shadow-2xl hover:shadow-brand-primary/5 transition-all">
+                  <h3 className="text-2xl font-black text-bg-dark mb-6 tracking-tight ">
+                    The #1 <span className="text-brand-primary">IT Company in Salem</span>
+                  </h3>
+                  <p className="text-gray-600 text-lg leading-relaxed font-medium">
+                    Finding a reliable <span className="font-bold text-bg-dark">Software company in Salem</span> is crucial for businesses aiming to transition into the digital age. Hanvrix stands as the benchmark for technical excellence in the region. We don&apos;t just build applications; we architect the future of your enterprise.
+                  </p>
+                </div>
+
+                <div className="p-6 bg-white rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/50">
+                   <div className="flex items-center space-x-4 mb-6">
+                      <div className="w-12 h-12 bg-brand-primary rounded-2xl flex items-center justify-center text-white">
+                         <MonitorCheck className="w-6 h-6" />
+                      </div>
+                      <h4 className="text-xl font-black text-bg-dark tracking-tight ">Software Excellence</h4>
+                   </div>
+                   <p className="text-gray-600 text-lg leading-relaxed font-medium">
+                     Our deep roots in <span className="font-bold text-bg-dark">Salem, Tamil Nadu</span>, allow us to understand the local business landscape while delivering solutions that meet international standards. As a leader in <span className="font-bold text-bg-dark">Software development in Tamil Nadu</span>, we specialize in creating high-performance <span className="font-bold text-bg-dark">Textile SaaS Applications</span>.
+                   </p>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn direction="right" delay={0.2}>
+              <div className="bg-bg-dark rounded-[3rem] p-10 text-white relative overflow-hidden group">
+                 <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 blur-[80px] rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-brand-primary/20 transition-all duration-1000"></div>
+                 
+                 <h3 className="text-2xl font-black text-white mb-8 tracking-tight relative z-10">
+                    Driving <span className="text-brand-primary">Digital Transformation</span>
+                 </h3>
+                 
+                 <div className="space-y-10 relative z-10">
+                    <div className="flex gap-6">
+                       <div className="shrink-0 w-10 h-10 rounded-xl bg-brand-primary/20 flex items-center justify-center text-brand-primary">
+                          <Cpu className="w-5 h-5" />
+                       </div>
+                       <div>
+                          <p className="text-gray-400 font-medium leading-relaxed">
+                            Digital transformation is more than just a buzzword at Hanvrix; it is a tactical necessity. We provide comprehensive <span className="font-bold text-white">Salem IT</span> services, including cloud migration and AI automation.
+                          </p>
+                       </div>
+                    </div>
+
+                    <div className="flex gap-6">
+                       <div className="shrink-0 w-10 h-10 rounded-xl bg-brand-primary/20 flex items-center justify-center text-brand-primary">
+                          <Rocket className="w-5 h-5" />
+                       </div>
+                       <div>
+                          <p className="text-gray-400 font-medium leading-relaxed">
+                            By choosing the <span className="font-bold text-white">best software company in Salem</span>, you ensure that your technical infrastructure is scalable, secure, and ready for global demand.
+                          </p>
+                       </div>
+                    </div>
+                 </div>
+
+                 <div className="mt-12 pt-8 border-t border-white/5 flex items-center justify-between relative z-10">
+                    <div>
+                       <div className="text-3xl font-black text-brand-primary">ROI</div>
+                       <div className="text-xs font-bold uppercase tracking-widest text-gray-500">Focused Design</div>
+                    </div>
+                    <Link href="/contact">
+                       <Button variant="white" className="px-8 !h-12 text-xs">Contact US</Button>
+                    </Link>
+                 </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
       </Section>
 
     </div>
