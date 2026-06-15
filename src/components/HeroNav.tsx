@@ -34,6 +34,7 @@ export const menuData: Record<string, { name: string; icon: React.ReactNode; hre
     // { name: "Construction ERP",   icon: <Ruler        className="w-4 h-4" /> },
     // { name: "Real Estate ERP",    icon: <Home         className="w-4 h-4" /> },
     { name: "E-commerce",         icon: <ShoppingCart className="w-4 h-4" /> },
+    { name: "Electrical ERP",         icon: <ShoppingCart className="w-4 h-4" /> },
     // { name: "Import / Export",    icon: <Globe2       className="w-4 h-4" /> },
     // { name: "Travel",             icon: <Plane        className="w-4 h-4" /> },
     // { name: "Finance",            icon: <LineChart    className="w-4 h-4" /> },
