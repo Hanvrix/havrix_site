@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin, Instagram, Twitter, Linkedin, Github, Facebook } from "lucide-react";
 import Image from "next/image";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -45,18 +46,12 @@ const Footer = () => {
     ],
   };
 
-  const socialLinks = [
-    { icon: <Facebook className="h-5 w-5" />, href: "#" },
-    { icon: <Twitter className="h-5 w-5" />, href: "#" },
-    { icon: <Linkedin className="h-5 w-5" />, href: "#" },
-    { icon: <Instagram className="h-5 w-5" />, href: "#" },
-    { icon: <Github className="h-5 w-5" />, href: "#" },
-  ];
+
 
   return (
-    <footer className="bg-bg-footer text-white pt-24 pb-12 overflow-hidden relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-20">
+    <footer className="bg-bg-footer text-white pt-15 pb-5 overflow-hidden relative">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-10">
           {/* Brand Identity */}
           <div className="space-y-8">
             <Link href="/" className="flex items-center space-x-2 group">
@@ -96,17 +91,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="flex space-x-4">
-              {socialLinks.slice(0, 4).map((social, idx) => (
-                <a
-                  key={idx}
-                  href={social.href}
-                  className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-bg-dark transition-all duration-300"
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
+            <SocialLinks />
           </div>
 
           <div>
@@ -160,8 +145,28 @@ const Footer = () => {
           </div>
 
         </div>
+      </div>
 
-        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-[14px]">
+      {/* Infinite Marquee Slider */}
+      <div className="w-full border-t border-b border-slate-800/40 py-5 overflow-hidden select-none bg-black/10 flex whitespace-nowrap mb-8 relative z-10">
+        <div className="animate-marquee flex gap-16 shrink-0">
+          {["Growth", "Web Development", "Mobile Apps", "Custom Solutions", "Digital Marketing", "Branding"].map((word, idx) => (
+            <div key={idx} className="flex items-center gap-16">
+              <span className="text-xl sm:text-2xl font-black uppercase text-white/10 tracking-widest select-none">{word}</span>
+              <span className="text-xl sm:text-2xl font-black text-white/5 select-none">•</span>
+            </div>
+          ))}
+          {["Growth", "Web Development", "Mobile Apps", "Custom Solutions", "Digital Marketing", "Branding"].map((word, idx) => (
+            <div key={`dup-${idx}`} className="flex items-center gap-16">
+              <span className="text-xl sm:text-2xl font-black uppercase text-white/10 tracking-widest select-none">{word}</span>
+              <span className="text-xl sm:text-2xl font-black text-white/5 select-none">•</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="pt-4 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-[14px]">
           <p>
             &copy; {currentYear} Hanvrix. All rights reserved.
           </p>

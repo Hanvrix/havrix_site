@@ -1,30 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Space+Grotesk:wght@300..700&family=Syne:wght@400..800&display=swap');
 @import "tailwindcss";
 
 :root {
-  --font-plus-jakarta: "Plus Jakarta Sans", "Inter", "sans-serif";
-  
-  --brand-primary: #FD4A18; /* Fexo Orange */
-  --brand-secondary: #000B1D; /* Fexo Navy Black */
-  --brand-accent: #FD4A18;
-  --brand-cta: #FD4A18;
+  --brand-primary: #1e8a8a; /* Accent Teal */
+  --brand-secondary: #0c1e21; /* Deep Teal-Charcoal */
+  --brand-accent: #1e8a8a;
+  --brand-cta: #1e8a8a;
 
   --bg-light: #ffffff;
-  --bg-dark: #000B1D;
-  --bg-footer: #00050E;
+  --bg-dark: #0c1e21;
+  --bg-footer: #202e30;
 
-  --text-primary: #000B1D;
-  --text-secondary: #586174;
+  --text-primary: #0c1e21;
+  --text-secondary: #364e52;
   --text-white: #ffffff;
   
-  --background: #ffffff;
-  --foreground: #000B1D;
+  --background: #ecf0f0; /* Soft off-teal background */
+  --foreground: #0c1e21;
 
-  --section-padding: 100px;
+  --section-padding: 120px;
 }
 
 @theme {
-  --font-sans: var(--font-plus-jakarta);
+  --font-sans: "Space Grotesk", "Inter", sans-serif;
+  --font-display: "Syne", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
   --color-brand-primary: var(--brand-primary);
   --color-brand-secondary: var(--brand-secondary);
   --color-brand-accent: var(--brand-accent);
@@ -46,14 +46,51 @@
   --spacing-section: var(--section-padding);
 }
 
+/* Base font size — 17px (browser default is 16px).
+   All rem units scale proportionally, so every element gets +1px equivalent. */
+html {
+  font-size: 17px;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-plus-jakarta);
+  font-family: var(--font-sans);
   font-feature-settings: "cv11", "ss01";
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global Heading Styles matching Akodefy.com style */
+h1, h2, h3 {
+  font-family: var(--font-serif);
+}
+h4, h5 {
+  font-family: var(--font-display);
+}
+h6 {
+  font-family: var(--font-sans);
+}
+
+/* Global Transition for smooth interactions */
+a,
+.btn,
+button,
+span,
+p,
+input,
+select,
+textarea,
+li,
+svg path,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  transition: all 0.3s ease-in-out 0s;
 }
 
 ::selection {
@@ -62,7 +99,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -71,29 +109,29 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: var(--brand-primary);
-  border: 3px solid var(--bg-dark);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #e13d10;
+  background: #156a6a;
 }
 
 /* Utilities */
 .text-gradient {
-  background: linear-gradient(90deg, var(--brand-primary), #ff8c00);
+  background: linear-gradient(90deg, var(--brand-primary), #3ca3a3);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .glass-morphism {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-morphism-dark {
-  background: rgba(0, 11, 29, 0.85);
+  background: rgba(12, 30, 33, 0.85);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -108,4 +146,18 @@ body {
 .section-fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Infinite Marquee Slider Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
 }

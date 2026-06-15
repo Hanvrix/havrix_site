@@ -1,381 +1,485 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
-  CheckCircle2,
-  Code2,
-  Globe2,
-  Layers,
-  MessageSquare,
-  Rocket,
-  Settings,
-  Terminal,
-  Server,
-  Zap,
-  Shield,
-  Smartphone,
-  Eye,
-  Activity,
-  ArrowRight,
-  TrendingUp,
-  Cpu,
-  Info,
-  MonitorCheck,
-  Calendar
+  CheckCircle2, Code2, Globe2, Layers, Settings, Server, Zap, Shield, Smartphone, 
+  Eye, Activity, ArrowRight, TrendingUp, Cpu, Info, Phone, ChevronDown, Calendar, MessageSquare
 } from "lucide-react";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
-import Card from "@/components/ui/Card";
-import Section, { SectionHeader } from "@/components/ui/Section";
 import ServicesSlider from "@/components/ui/ServicesSlider";
 import { FadeIn } from "@/components/ui/FadeIn";
+import ZoomOnScroll from "@/components/ui/ZoomOnScroll";
+import HeroNav from "@/components/HeroNav";
+import { SocialLinks } from "@/components/ui/SocialLinks";
+import AnimatedProgress from "@/components/ui/AnimatedProgress";
 
 export default function Home() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const technologies = [
-    { name: "SaaS Products", icon: <Layers className="h-5 w-5" /> },
-    { name: "Custom Apps", icon: <Smartphone className="h-5 w-5" /> },
-    { name: "Automation", icon: <Zap className="h-5 w-5" /> },
-    { name: "Support", icon: <Shield className="h-5 w-5" /> },
-  ];
-
-  const reasons = [
-    { title: "Architectural Integrity", desc: "Every line of code is written for scalability and security." },
-    { title: "Industry Precision", desc: "Deep expertise in Textile and SaaS market challenges." },
-    { title: "End-to-End Ownership", desc: "Your dedicated engineering partner from discovery to support." }
+  const chooseCards = [
+    {
+      title: "Innovative Solutions",
+      desc: "We create innovative technology solutions that help businesses grow and stay competitive in the digital age.",
+      icon: <Zap className="w-6 h-6" />
+    },
+    {
+      title: "Smart Technology",
+      desc: "We combine strategy, design, and reliable software architecture to build future-ready platforms.",
+      icon: <Cpu className="w-6 h-6" />
+    },
+    {
+      title: "Expert Team",
+      desc: "Our skilled developers and product managers transform complex ideas into high-performing SaaS products.",
+      icon: <Code2 className="w-6 h-6" />
+    },
+    {
+      title: "Dedicated Support",
+      desc: "We provide continuous system maintenance and quick technical assistance to keep your operations running.",
+      icon: <Shield className="w-6 h-6" />
+    }
   ];
 
   const steps = [
     {
-      title: "Discovery",
-      description: "High-fidelity analysis of your current bottlenecks and business objectives.",
-      icon: <Eye />,
+      step: "01",
+      title: "Discovery & Planning",
+      desc: "We begin by understanding your business goals and bottlenecks to define the ideal digital strategy."
     },
     {
-      title: "Architecture",
-      description: "Engineering the technical blueprint and user journey for maximum scalability.",
-      icon: <Terminal />,
+      step: "02",
+      title: "Design & Develop",
+      desc: "Our engineering team designs responsive user interfaces and develops secure, scalable SaaS applications."
     },
     {
-      title: "Development",
-      description: "Sprints focused on technical precision, security, and iterative value delivery.",
-      icon: <Code2 />,
+      step: "03",
+      title: "Deploy & Support",
+      desc: "We ensure smooth launch synchronizations and provide continuous technical maintenance."
+    }
+  ];
+
+  const faqs = [
+    {
+      q: "How can AI and software solutions improve my business operations?",
+      a: "AI and modern software solutions can automate repetitive tasks, streamline workflows, and provide valuable insights from your business data. This helps reduce manual work, improve productivity, and support smarter decision-making for long-term growth."
     },
     {
-      title: "Deployment",
-      description: "Rigorous testing and optimized launch into your live digital ecosystem.",
-      icon: <Rocket />,
+      q: "What types of businesses do you work with?",
+      a: "We work with textile mills, retail brands, agriculture distributors, and startups looking to implement cloud ERP systems, custom web dashboards, or mobile applications."
     },
     {
-      title: "Synchronization",
-      description: "Ongoing support and performance optimization.",
-      icon: <Activity />,
+      q: "Can you build a complete digital solution for my business?",
+      a: "Yes, we provide end-to-end digital solutions including web development, mobile app development, custom software, AI integration, digital marketing, and branding to support your entire business ecosystem."
     },
+    {
+      q: "How do you ensure the quality of your software solutions?",
+      a: "Our development process includes detailed planning, modern development practices, continuous testing, and post-deployment reviews to deliver high-fidelity platforms."
+    },
+    {
+      q: "What support do you provide after the project is completed?",
+      a: "We offer ongoing technical support, system maintenance, updates, and improvements to ensure your digital platforms continue to run smoothly and adapt to future business needs."
+    }
   ];
 
   return (
-    <div className="bg-white">
-      {/* Hero Section */}
-      <section className="relative pt-10 pb-10 lg:pt-20 lg:pb-10 overflow-hidden bg-bg-dark">
-        {/* Animated Background Gradients */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-primary/10 blur-[150px] -z-0 rounded-full -translate-y-1/2 translate-x-1/4"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500/5 blur-[120px] -z-0 rounded-full translate-y-1/2 -translate-x-1/4"></div>
-        
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)", backgroundSize: "40px 40px" }}></div>
+    <div className="bg-[#ecf0f0] overflow-hidden">
+      
+      {/* 1. HERO SECTION — Anhet.co style floating rounded card */}
+      <div className="px-3 pt-3 md:px-4 md:pt-4">
+        <section className="relative rounded-[20px] md:rounded-[28px] bg-[#0c1e21]">
+          {/* Background & Glow Wrapper to clip rounded corners and allow dropdown overflow */}
+          <div className="absolute inset-0 overflow-hidden rounded-[20px] md:rounded-[28px] pointer-events-none">
+            <div 
+              className="absolute inset-0"
+              style={{
+                backgroundImage: "url('/images/hero-bg.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            ></div>
+            {/* Very subtle teal glow — minimal so geometric pattern shows through */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[max(300px,50vw)] h-[max(300px,50vw)] bg-brand-primary/5 blur-[100px] md:blur-[150px] rounded-full"></div>
+          </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
-            {/* Left Side: Content */}
+          {/* ─── EMBEDDED NAVBAR ─── */}
+          <HeroNav />
+
+          {/* ─── HERO CONTENT ─── */}
+          <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 pb-8 md:pb-12 relative z-10 text-left">
+            {/* Huge Main Header */}
             <FadeIn direction="up">
-              <div className="max-w-2xl">
-                <div className="flex items-center space-x-3 text-brand-primary font-black uppercase tracking-[4px] text-[13px] mb-6">
-                  <span className="w-10 h-[2px] bg-brand-primary"></span>
-                  <span>Technology Partner</span>
-                </div>
-                <h1 className="text-4xl md:text-6xl lg:text-[72px] font-black text-white tracking-tighter leading-[1] mb-8">
-                  The <span className="text-brand-primary">Best Software Company in Salem</span> for <span className="underline decoration-brand-primary/30 text-brand-primary">SaaS Solutions.</span>
-                </h1>
-                <p className="text-xl text-gray-400 mb-10 leading-relaxed font-medium">
-                  Hanvrix is the premier Software Development Company in Salem, Tamil Nadu. We build powerful multi-industry SaaS applications and custom digital solutions to streamline your operations in Salem and beyond.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center gap-6">
-                  <Link href="/contact" className="w-full sm:w-auto">
-                    <Button className="w-full sm:w-auto px-12 h-[54px] shadow-2xl shadow-brand-primary/20">
-                      <Zap className="w-5 h-5" /> Initialize Integration
-                    </Button>
-                  </Link>
-                  <Link href="/about" className="group flex items-center space-x-3 text-white font-bold hover:text-brand-primary transition-colors">
-                    <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-brand-primary transition-colors">
-                      <ArrowRight className="w-5 h-5" />
-                    </div>
-                    <span>View Projects</span>
-                  </Link>
-                </div>
-              </div>
+              <h1 className="text-5xl sm:text-7xl md:text-[85px] lg:text-[110px] xl:text-[130px] font-medium text-white tracking-tighter leading-[1.05] mb-10 uppercase">
+                Empower{" "}
+                <span className="inline-flex items-center justify-start border-4 border-brand-primary w-[85px] sm:w-[130px] md:w-[150px] h-[40px] sm:h-[60px] md:h-[70px] rounded-full px-2 mx-1 sm:mx-3 align-middle">
+                  <span className="w-6 sm:w-10 md:w-12 h-6 sm:h-10 md:h-12 rounded-full bg-brand-primary block ml-auto"></span>
+                </span>{" "}
+                Your <br />
+                Business.
+              </h1>
             </FadeIn>
 
-            {/* Right Side: Visual Mockups */}
-            <FadeIn direction="right" delay={0.2}>
-              <div className="relative w-full aspect-square flex items-center justify-center">
-                <div className="absolute inset-0 bg-brand-primary/20 rounded-full blur-[100px] animate-pulse"></div>
-                <div className="relative z-10 w-full max-w-[500px] transform hover:scale-105 transition-transform duration-700">
-                   {/* Tech Mockup Stack */}
-                   <div className="relative border-8 border-white/10 rounded-[3rem] overflow-hidden shadow-2xl skew-x-[-2deg] skew-y-[1deg]">
-                      <img 
-                        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" 
-                        alt="IT Dashboard" 
-                        className="w-full h-auto"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/80 to-transparent"></div>
-                      <div className="absolute bottom-10 left-10 right-10 flex justify-between items-end">
-                        <div>
-                          <div className="text-brand-primary text-3xl font-black mb-1">99%</div>
-                          <div className="text-white text-xs font-bold uppercase tracking-wider">Uptime Rate</div>
-                        </div>
-                        <div className="p-4 bg-brand-primary rounded-2xl">
-                          <TrendingUp className="text-white w-6 h-6" />
-                        </div>
+            {/* Under-header Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mt-4">
+              {/* Left Column (col-span-7) */}
+              <div className="lg:col-span-7 space-y-6">
+                <FadeIn direction="up" delay={0.1}>
+                  <div className="space-y-4">
+                    <span className="w-12 h-[3px] bg-brand-primary block"></span>
+                    <h4 className="text-white text-xl font-bold uppercase tracking-wide">Solutions That Scale.</h4>
+                    <p className="text-gray-400 text-lg max-w-xl leading-relaxed font-medium">
+                      Recognized by industry leaders, Hanvrix is the premier Software Development Company in Salem, Tamil Nadu. We deliver innovative, scalable, high-performance IT solutions.
+                    </p>
+                  </div>
+                </FadeIn>
+
+                <FadeIn direction="up" delay={0.2}>
+                  <div className="pt-4 flex flex-col sm:flex-row items-center gap-6">
+                    <Link href="/contact" className="w-full sm:w-auto">
+                      <Button variant="primary" showArrow={true} className="w-full sm:w-auto px-10 h-[52px]">
+                        Get Started
+                      </Button>
+                    </Link>
+                    <Link href="/about" className="group flex items-center space-x-3 text-white font-bold hover:text-brand-primary transition-colors">
+                      <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-brand-primary transition-colors">
+                        <ArrowRight className="w-4 h-4" />
                       </div>
-                   </div>
-                </div>
+                      <span>View About us</span>
+                    </Link>
+                  </div>
+                </FadeIn>
               </div>
+
+              {/* Right Column (col-span-5) */}
+              <div className="lg:col-span-5 relative">
+                <FadeIn direction="right" delay={0.3}>
+                  <div className="relative border border-white/10 rounded-[24px] overflow-hidden shadow-2xl max-w-[500px] ml-auto">
+                    <img 
+                      src="/hero_software_engineer.jpg" 
+                      alt="Software Engineer" 
+                      className="w-full h-auto"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0c1e21]/70 to-transparent"></div>
+                    <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                      <div>
+                        <div className="text-brand-primary text-2xl font-black mb-0.5">99%</div>
+                        <div className="text-white text-[10px] font-bold uppercase tracking-wider">Uptime Reliability</div>
+                      </div>
+                      <div className="p-3 bg-brand-primary rounded-xl">
+                        <TrendingUp className="text-white w-5 h-5" />
+                      </div>
+                    </div>
+                  </div>
+                </FadeIn>
+              </div>
+            </div>
+
+            {/* Social Links on Bottom Left */}
+            <FadeIn direction="up" delay={0.4} className="mt-8 md:mt-12">
+              <SocialLinks />
             </FadeIn>
+          </div>
+        </section>
+      </div>
+
+      {/* 2. SERVICES SLIDER SECTION */}
+      <section className="py-20 lg:py-28 bg-[#f8fafa] w-full">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn direction="up">
+            <ServicesSlider />
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* 3. ABOUT SECTION WITH PROGRESS BARS */}
+      <section className="py-14 lg:py-14 bg-[#ecf0f0] border-t border-[#c9d1d1]/30">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Text Content */}
+            <div className="text-left">
+              <FadeIn direction="up">
+                <span className="inline-flex items-center gap-2 text-brand-primary font-bold uppercase tracking-[2px] text-xs mb-3">
+                  Get to Know Us
+                </span>
+                <h2 className="text-3xl md:text-5xl font-black text-brand-secondary tracking-tighter mb-8 leading-tight">
+                  Driving Innovation & Excellence for Sustainable Growth
+                </h2>
+                
+                {/* Mission & Vision Rows */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                  <div className="p-6 bg-white border-y-0 border-r-0 border-l-4 border-brand-primary rounded-[20px]">
+                    <h2 className="text-xl font-bold text-brand-secondary mb-2">Our Mission</h2>
+                    <p className="text-text-secondary text-[16px] leading-relaxed mb-4">
+                      To shape the future of business through innovative technology, seamless digital experiences, and scalable solutions that unlock new opportunities for growth and success.
+                    </p>
+                    <ul className="space-y-1 text-md font-bold text-brand-secondary">
+                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-brand-primary" /> Customer-Centric</li>
+                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-brand-primary" /> AI & Digital Solutions</li>
+                    </ul>
+                  </div>
+                  <div className="p-6 bg-white border-y-0 border-r-0 border-l-4 border-brand-primary rounded-[20px]">
+                    <h2 className="text-xl font-bold text-brand-secondary mb-2">Our Vision</h2>
+                    <p className="text-text-secondary text-[16px] leading-relaxed mb-4">
+                      To shape the future of business by delivering transformative technology solutions that inspire innovation, accelerate growth, and create meaningful impact across industries.
+                    </p>
+                    <ul className="space-y-1 text-md font-bold text-brand-secondary">
+                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-brand-primary" /> Tech Innovation</li>
+                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-brand-primary" /> Sustainable Scale</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <Link href="/about">
+                  <Button variant="primary" showArrow={true}>Learn More About Us</Button>
+                </Link>
+              </FadeIn>
+            </div>
+
+            {/* Right: Image & Progress Overlay */}
+            <div className="relative flex justify-center lg:justify-end mt-10 lg:mt-0">
+              <ZoomOnScroll className="relative w-full max-w-[560px]">
+
+                {/* Main Image with Bottom-Left Cutout */}
+                <div className="overflow-hidden rounded-[24px] shadow-2xl relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80"
+                    alt="Hanvrix Team"
+                    className="w-full h-auto object-cover aspect-[4/5]"
+                  />
+                  {/* Rounded Inner Corner Mask */}
+                  <div className="absolute bottom-0 left-0 w-[60%] h-[28%] bg-[#ecf0f0] rounded-tr-[32px]" />
+                </div>
+
+                {/* Progress Card Inside Cutout */}
+                <div
+                  className="
+                    absolute
+                    left-0
+                    bottom-0
+                    w-[calc(100%-2rem)]
+                    sm:w-[320px]
+                    max-w-[320px]
+                    bg-white
+                    rounded-tr-[24px]
+                    p-4
+                    z-20
+                    shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)]
+                  "
+                >
+                  <h4 className="text-[20px] font-bold text-brand-secondary mb-6 tracking-tight">
+                    Business Progress
+                  </h4>
+
+                  <div className="space-y-6">
+                    {/* Project Success */}
+                    <AnimatedProgress label="Project Success" percentage={98} />
+
+                    {/* Customer Satisfaction */}
+                    <AnimatedProgress label="Customer Satisfaction" percentage={90} />
+                  </div>
+                </div>
+
+              </ZoomOnScroll>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Stats / Logos Strip */}
-      <div className="bg-bg-dark border-y border-white/5 py-10 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-100">
-             {["Enterprise", "Saas Model", "Cloud Native", "AI Driven"].map((item) => (
-               <div key={item} className="flex items-center justify-center space-x-3">
-                 <Cpu className="text-brand-primary w-5 h-5" />
-                 <span className="text-white font-bold text-lg tracking-tight">{item}</span>
-               </div>
-             ))}
+      {/* 4. CHOOSE SECTION */}
+      <section className="py-16 lg:py-28 bg-[#ecf0f0]">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Centered Heading */}
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="inline-flex items-center gap-2 text-brand-primary font-bold uppercase tracking-[2px] text-xs mb-3">
+              Choose the Best
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black text-brand-secondary tracking-tighter">
+              Empowering Business with Expertise
+            </h2>
           </div>
+
+          {/* 4 Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {chooseCards.map((card, idx) => (
+              <ZoomOnScroll key={idx} className="flex">
+                <div className="flex flex-col w-full bg-white border-y-0 border-r-0 border-l-4 border-brand-primary p-8 rounded-[24px] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group">
+                  <div className="w-14 h-14 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center text-xl mb-6 transition-colors group-hover:bg-brand-primary group-hover:text-white">
+                    {card.icon}
+                  </div>
+                  <h4 className="text-xl font-bold text-brand-secondary mb-3">
+                    {card.title}
+                  </h4>
+                  <p className="text-text-secondary text-[15px] leading-relaxed font-medium">
+                    {card.desc}
+                  </p>
+                </div>
+              </ZoomOnScroll>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. INFINITE MARQUEE STRIP */}
+      <div className="bg-[#0c1e21] border-y border-white/5 py-10 overflow-hidden select-none flex whitespace-nowrap">
+        <div className="animate-marquee flex gap-20 shrink-0">
+          {["Enterprise Focus", "SaaS Model Architecture", "Cloud Native Deployments", "AI Driven Automation"].map((item, idx) => (
+            <div key={idx} className="flex items-center gap-4 text-white font-bold text-lg tracking-tight uppercase select-none mr-20">
+              <Cpu className="text-brand-primary w-5 h-5 shrink-0" />
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+        <div className="animate-marquee flex gap-20 shrink-0" aria-hidden="true">
+          {["Enterprise Focus", "SaaS Model Architecture", "Cloud Native Deployments", "AI Driven Automation"].map((item, idx) => (
+            <div key={`dup-${idx}`} className="flex items-center gap-4 text-white font-bold text-lg tracking-tight uppercase select-none mr-20">
+              <Cpu className="text-brand-primary w-5 h-5 shrink-0" />
+              <span>{item}</span>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Services Section */}
-      <Section light={true} className="relative overflow-hidden w-full">
-        <FadeIn direction="up">
-          <ServicesSlider />
-        </FadeIn>
-      </Section>
-
-      {/* Innovation Section */}
-      <Section light={false}>
-        <FadeIn direction="up">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="relative group">
-              <div className="absolute -inset-4 bg-brand-primary/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative rounded-[2.5rem] overflow-hidden border-[12px] border-white/10 shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80"
-                  alt="Tech Strategy"
-                  className="w-full h-auto scale-105 group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-              {/* <div className="absolute -bottom-8 -right-8 p-10 bg-brand-primary text-white rounded-[2rem] shadow-2xl hidden md:block">
-                <div className="text-4xl font-black mb-1">12+</div>
-                <div className="font-bold uppercase tracking-wider text-xs opacity-80">Years Experience</div>
-              </div> */}
-            </div>
-            <div>
-              <SectionHeader
-                centered={false}
-                theme="dark"
-                title="Innovation in Software Development in Tamil Nadu"
-                subtitle="Based in Salem, Hanvrix is a technology-driven company delivering innovative multi-industry SaaS applications and ERP solutions. We help businesses optimize efficiency and dominate their market."
-              />
-              <div className="grid grid-cols-2 gap-8 mb-12">
-                {technologies.map((tech, idx) => (
-                  <div key={idx} className="flex items-center space-x-4 bg-white/5 p-6 rounded-2xl border border-white/5 hover:border-brand-primary/30 transition-colors">
-                    <div className="text-brand-primary">
-                      {tech.icon}
-                    </div>
-                    <span className="font-bold text-white tracking-tight">{tech.name}</span>
-                  </div>
-                ))}
-              </div>
-              <Link href="/about">
-                <Button className="group"><Info className="w-5 h-5" /> Explore More About Us <ArrowRight className="w-5 h-5 transition-transform group-hover:-rotate-45" /></Button>
-              </Link>
-            </div>
+      {/* 6. WORKING PROCESS SECTION */}
+      <section className="py-20 lg:py-28 bg-[#0c1e21] relative overflow-hidden">
+        {/* Glow ambient */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[max(300px,50vw)] h-[max(300px,50vw)] bg-brand-primary/5 blur-[80px] md:blur-[120px] rounded-full"></div>
+        
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Centered Heading */}
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="inline-flex items-center gap-2 text-brand-primary font-bold uppercase tracking-[2px] text-xs mb-3">
+              Our Process
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter">
+              Seamless Process and Great Results
+            </h2>
           </div>
-        </FadeIn>
-      </Section>
 
-      {/* Tactical Advantage / Why Us */}
-      <Section light={true}>
-        <FadeIn direction="up">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div className="order-2 lg:order-1">
-               <SectionHeader
-                  centered={false}
-                  title="The Tactical Advantage"
-                  subtitle="We prioritize architectural integrity and industry-specific precision to ensure your digital systems are secure, scalable, and conversion-ready."
-               />
-               <div className="space-y-8 mb-12">
-                 {reasons.map((reason, index) => (
-                  <div key={index} className="flex items-start space-x-5 group">
-                    <div className="w-12 h-12 rounded-2xl bg-brand-primary/10 flex items-center justify-center text-brand-primary flex-shrink-0 group-hover:bg-brand-primary group-hover:text-white transition-all">
-                      <CheckCircle2 className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h4 className="font-black text-bg-dark text-xl mb-1 tracking-tight">{reason.title}</h4>
-                      <p className="text-gray-500 font-medium leading-relaxed">{reason.desc}</p>
-                    </div>
-                  </div>
-                ))}
-               </div>
-               <Link href="/contact">
-                 <Button variant="outline"><Calendar className="w-5 h-5" /> Schedule A Consultation</Button>
-               </Link>
-            </div>
-            
-            <div className="order-1 lg:order-2 grid grid-cols-2 gap-6">
-               <div className="space-y-6 pt-12">
-                 <Card className="bg-brand-primary border text-black p-6">
-                   <MonitorCheck className="w-12 h-12 mb-6 text-brand-primary" />
-                   <div className="text-2xl sm:text-3xl md:text-4xl font-black mb-2">100%</div>
-                   <div className="font-bold text-sm uppercase tracking-widest opacity-80">Security</div>
-                 </Card>
-                 <Card className="bg-bg-dark border text-black p-6">
-                   <Globe2 className="w-12 h-12 mb-6 text-brand-primary" />
-                   <div className="text-2xl sm:text-3xl md:text-4xl font-black mb-2 text-white">Global</div>
-                   <div className="font-bold text-sm uppercase tracking-widest opacity-80 text-white/80">Connectivity</div>
-                 </Card>
-               </div>
-               <div className="space-y-6">
-                  <Card className="bg-slate-50 p-6 border-[#eee]">
-                    <Layers className="w-12 h-12 mb-6 text-brand-primary" />
-                    <div className="text-2xl sm:text-3xl md:text-4xl font-black mb-2 text-bg-dark">Enterprise</div>
-                    <div className="font-bold text-sm uppercase tracking-widest text-gray-500">Solutions</div>
-                  </Card>
-                  <Card className="bg-brand-primary p-1 text-white overflow-hidden aspect-square h-auto">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80" className="w-full h-full object-cover rounded-[20px] opacity-80" />
-                  </Card>
-               </div>
-            </div>
-          </div>
-        </FadeIn>
-      </Section>
-
-      {/* Process Section */}
-      <Section light={false} className="relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] pointer-events-none" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/circuit-board.png')" }}></div>
-        <FadeIn direction="up">
-          <SectionHeader
-            theme="dark"
-            title="Deployment Workflow"
-            subtitle="A high-velocity methodology designed to take your vision from discovery to market dominance with zero friction."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 relative z-10">
-            {steps.map((step, index) => (
-              <div key={index} className="group relative text-center">
-                <div className="w-24 h-24 bg-white/5 rounded-[2rem] flex items-center justify-center mx-auto mb-8 border border-white/10 relative transition-transform group-hover:scale-110 group-hover:bg-brand-primary group-hover:border-brand-primary duration-500">
-                  <div className="text-brand-primary group-hover:text-white transition-colors">
-                    {step.icon}
-                  </div>
-                  <div className="absolute -top-3 -right-3 w-10 h-10 bg-brand-primary text-white rounded-2xl flex items-center justify-center font-black text-sm border-4 border-bg-dark group-hover:bg-bg-dark group-hover:text-brand-primary transition-colors">
-                    0{index + 1}
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-4 tracking-tight leading-none">{step.title}</h3>
-                <p className="text-gray-400 text-[15px] leading-relaxed font-medium">{step.description}</p>
+          {/* 3 Step Process Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 relative">
+            {steps.map((item, idx) => (
+              <FadeIn key={idx} delay={idx * 0.2} className="flex flex-col items-center text-center relative z-10 group">
+                <span className="text-[12px] font-black uppercase tracking-[2px] text-brand-primary mb-4">
+                  Step {item.step}
+                </span>
                 
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-12 left-[calc(100%-20px)] w-[calc(100%-60px)] h-[2px] bg-gradient-to-r from-brand-primary/20 to-transparent"></div>
+                {/* Round indicator */}
+                <div className="w-16 h-16 rounded-full border border-brand-primary flex items-center justify-center text-white font-black text-xl mb-6 bg-[#202e30]/40 transition-transform duration-300 group-hover:scale-110 shadow-[0_0_20px_rgba(32,192,151,0.15)]">
+                  {item.step}
+                </div>
+
+                <h4 className="text-xl font-bold text-white mb-3">
+                  {item.title}
+                </h4>
+                <p className="text-gray-400 text-[15px] leading-relaxed max-w-xs font-medium">
+                  {item.desc}
+                </p>
+
+                {/* Connecting arrow/line on desktop */}
+                {idx < steps.length - 1 && (
+                  <motion.div 
+                    initial={{ scaleX: 0, opacity: 0 }}
+                    whileInView={{ scaleX: 1, opacity: 1 }}
+                    transition={{ duration: 1, delay: 0.5 + (idx * 0.2), ease: "easeInOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="hidden md:block absolute top-[90px] left-[65%] w-[70%] h-[1px] border-t border-dashed border-brand-primary/50 origin-left -z-10"
+                  />
                 )}
-              </div>
+              </FadeIn>
             ))}
           </div>
-        </FadeIn>
-      </Section>
+        </div>
+      </section>
 
-      {/* SEO Content Expansion: Salem Software Excellence */}
-      <Section light={true} className="border-t border-slate-100 !py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            centered={false}
-            title="Salem's Premier Software Ecosystem"
-            subtitle="Architecting high-performance digital infrastructure for the global stage from the heart of Tamil Nadu."
-          />
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <FadeIn direction="left">
-              <div className="space-y-8">
-                <div className="p-6 bg-slate-50 rounded-[2.5rem] border border-slate-100 hover:shadow-2xl hover:shadow-brand-primary/5 transition-all">
-                  <h3 className="text-2xl font-black text-bg-dark mb-6 tracking-tight ">
-                    The #1 <span className="text-brand-primary">IT Company in Salem</span>
-                  </h3>
-                  <p className="text-gray-600 text-lg leading-relaxed font-medium">
-                    Finding a reliable <span className="font-bold text-bg-dark">Software company in Salem</span> is crucial for businesses aiming to transition into the digital age. Hanvrix stands as the benchmark for technical excellence in the region. We don&apos;t just build applications; we architect the future of your enterprise.
-                  </p>
-                </div>
-
-                <div className="p-6 bg-white rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/50">
-                   <div className="flex items-center space-x-4 mb-6">
-                      <div className="w-12 h-12 bg-brand-primary rounded-2xl flex items-center justify-center text-white">
-                         <MonitorCheck className="w-6 h-6" />
-                      </div>
-                      <h4 className="text-xl font-black text-bg-dark tracking-tight ">Software Excellence</h4>
-                   </div>
-                   <p className="text-gray-600 text-lg leading-relaxed font-medium">
-                     Our deep roots in <span className="font-bold text-bg-dark">Salem, Tamil Nadu</span>, allow us to understand the local business landscape while delivering solutions that meet international standards. As a leader in <span className="font-bold text-bg-dark">Software development in Tamil Nadu</span>, we specialize in creating high-performance <span className="font-bold text-bg-dark">Textile SaaS Applications</span>.
-                   </p>
-                </div>
+      {/* 7. FAQ ACCORDION SECTION */}
+      <section className="py-20 lg:py-28 bg-[#ecf0f0] border-t border-[#c9d1d1]/30">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
+            {/* Left: Heading & Call */}
+            <div className="text-left lg:col-span-1 lg:sticky lg:top-24">
+              <span className="inline-flex items-center gap-2 text-brand-primary font-bold uppercase tracking-[2px] text-xs mb-3">
+                Our Solutions
+              </span>
+              <h2 className="text-3xl md:text-5xl font-black text-brand-secondary tracking-tighter leading-tight">
+                Find answers to common questions
+              </h2>
+              
+              <div className="mt-8 pt-6 border-t border-[#c9d1d1]">
+                <a 
+                  href="tel:+918838213390" 
+                  className="inline-flex items-center gap-3 text-brand-secondary font-black text-xl hover:text-brand-primary transition-colors"
+                >
+                  <span className="w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary">
+                    <Phone className="w-5 h-5" />
+                  </span>
+                  <span>+91 8838213390</span>
+                </a>
               </div>
-            </FadeIn>
+            </div>
 
-            <FadeIn direction="right" delay={0.2}>
-              <div className="bg-bg-dark rounded-[3rem] p-10 text-white relative overflow-hidden group">
-                 <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 blur-[80px] rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-brand-primary/20 transition-all duration-1000"></div>
-                 
-                 <h3 className="text-2xl font-black text-white mb-8 tracking-tight relative z-10">
-                    Driving <span className="text-brand-primary">Digital Transformation</span>
-                 </h3>
-                 
-                 <div className="space-y-10 relative z-10">
-                    <div className="flex gap-6">
-                       <div className="shrink-0 w-10 h-10 rounded-xl bg-brand-primary/20 flex items-center justify-center text-brand-primary">
-                          <Cpu className="w-5 h-5" />
-                       </div>
-                       <div>
-                          <p className="text-gray-400 font-medium leading-relaxed">
-                            Digital transformation is more than just a buzzword at Hanvrix; it is a tactical necessity. We provide comprehensive <span className="font-bold text-white">Salem IT</span> services, including cloud migration and AI automation.
-                          </p>
-                       </div>
-                    </div>
+            {/* Right: Custom Accordion */}
+            <div className="lg:col-span-2 space-y-4">
+              {faqs.map((faq, index) => {
+                const isOpen = openFaq === index;
+                return (
+                  <div 
+                    key={index} 
+                    className={`bg-white rounded-[20px] border border-[#c9d1d1] transition-all duration-300 ${
+                      isOpen ? "shadow-lg border-brand-primary" : "hover:border-brand-primary/50"
+                    }`}
+                  >
+                    <button
+                      onClick={() => setOpenFaq(isOpen ? null : index)}
+                      className="flex items-center justify-between w-full p-6 text-left font-bold text-brand-secondary text-lg cursor-pointer"
+                    >
+                      <span className="pr-4">{faq.q}</span>
+                      <ChevronDown className={`w-5 h-5 text-brand-primary transition-transform duration-300 ${
+                        isOpen ? "rotate-180" : ""
+                      }`} />
+                    </button>
 
-                    <div className="flex gap-6">
-                       <div className="shrink-0 w-10 h-10 rounded-xl bg-brand-primary/20 flex items-center justify-center text-brand-primary">
-                          <Rocket className="w-5 h-5" />
-                       </div>
-                       <div>
-                          <p className="text-gray-400 font-medium leading-relaxed">
-                            By choosing the <span className="font-bold text-white">best software company in Salem</span>, you ensure that your technical infrastructure is scalable, secure, and ready for global demand.
-                          </p>
-                       </div>
-                    </div>
-                 </div>
-
-                 <div className="mt-12 pt-8 border-t border-white/5 flex items-center justify-between relative z-10">
-                    <div>
-                       <div className="text-3xl font-black text-brand-primary">ROI</div>
-                       <div className="text-xs font-bold uppercase tracking-widest text-gray-500">Focused Design</div>
-                    </div>
-                    <Link href="/contact">
-                       <Button variant="white" className="px-8 !h-12 text-xs">Contact US</Button>
-                    </Link>
-                 </div>
-              </div>
-            </FadeIn>
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.25 }}
+                          className="overflow-hidden"
+                        >
+                          <div className="p-6 pt-0 text-text-secondary text-[15px] leading-relaxed font-medium">
+                            {faq.a}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </Section>
+      </section>
 
+      {/* 8. CTA BANNER SECTION */}
+      <section className="py-16 lg:py-24 bg-[#202e30] relative overflow-hidden text-center">
+        {/* Glow shape */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 blur-[80px] rounded-full"></div>
+        
+        <div className="max-w-4xl mx-auto px-4 relative z-10 space-y-8">
+          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-tight">
+            Reach Out To Our Support Team?
+          </h2>
+          <div>
+            <Link href="/contact">
+              <Button variant="white" showArrow={true} className="px-10 h-[52px]">
+                Contact us
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

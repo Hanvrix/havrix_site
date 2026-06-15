@@ -1,3 +1,4 @@
+import BreadcrumbHeader from "@/components/ui/BreadcrumbHeader";
 import { 
   BarChart3, 
   Box, 
@@ -83,46 +84,8 @@ export default function TextileERP() {
   ];
 
   return (
-    <div className="bg-white min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-bg-dark pt-32 pb-16 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-primary/10 blur-[150px] rounded-full"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <FadeIn direction="up">
-             <div className="max-w-4xl mx-auto">
-                <div className="inline-flex items-center space-x-3 text-brand-primary font-black uppercase tracking-[4px] text-[13px] mb-8 bg-white/5 px-6 py-2 rounded-full border border-white/10">
-                  <CheckCircle2 className="h-4 w-4" />
-                  <span>Enterprise Grade ERP</span>
-                </div>
-                <h1 className="text-4xl md:text-7xl font-black text-white tracking-tighter leading-[1] mb-10 uppercase">
-                   Textile <span className="text-brand-primary underline decoration-white/20">ERP</span> Software
-                </h1>
-                <p className="text-xl text-gray-400 font-medium leading-relaxed max-w-2xl mx-auto mb-12">
-                   The Complete Digital Nervous System for Garment & Textile Manufacturers.
-                </p>
-                <div className="flex justify-center mb-16">
-                   <Link href="/contact">
-                     <Button className="px-12 shadow-2xl shadow-brand-primary/20">
-                       <PlayCircle className="w-5 h-5" /> Get Free Demo
-                     </Button>
-                   </Link>
-                </div>
-             </div>
-
-             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 bg-white/5 rounded-[40px] border border-white/10 backdrop-blur-sm max-w-4xl mx-auto">
-                {highlights.map((h, i) => (
-                  <div key={i} className="flex flex-col items-center group">
-                    <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-brand-primary mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
-                      {h.icon}
-                    </div>
-                    <div className="text-2xl font-black text-white group-hover:text-brand-primary transition-colors">{h.value}</div>
-                    <div className="text-[11px] text-gray-400 font-black tracking-[1px]">{h.label}</div>
-                  </div>
-                ))}
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+    <div className="bg-[#ecf0f0] min-h-screen">
+      <BreadcrumbHeader title="Textile ERP Software" pageName="Textile ERP" parentLink={{ name: "Products", href: "/#services" }} />
 
       {/* Core Features Section */}
       <Section light={true}>
@@ -135,7 +98,7 @@ export default function TextileERP() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <FadeIn key={index} delay={index * 0.1}>
-              <Card className="flex flex-col !p-8 h-full border-none bg-slate-50 hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative overflow-hidden">
+              <Card className="flex flex-col !p-8 h-full border-none bg-white border border-[#c9d1d1] hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
                 <div className="flex items-center space-x-5 mb-6 relative z-10">
                   <div className="flex-shrink-0 w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-brand-primary shadow-sm group-hover:bg-brand-primary group-hover:text-white group-hover:scale-110 transition-all duration-500">
@@ -225,7 +188,7 @@ export default function TextileERP() {
             { title: "Local Expertise", desc: "Deep understanding of bottlenecks.", icon: <Users2 className="h-5 w-5" /> },
           ].map((item, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <Card className="!p-8 border bg-slate-50 hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative overflow-hidden h-full flex flex-col">
+              <Card className="!p-8 border bg-white border border-[#c9d1d1] hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative overflow-hidden h-full flex flex-col">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
                 <div className="flex items-center space-x-4 mb-6 relative z-10">
                   <div className="shrink-0 w-12 h-12 rounded-xl bg-white flex items-center justify-center text-brand-primary shadow-sm group-hover:bg-brand-primary group-hover:text-white transition-all duration-500 relative">
@@ -242,7 +205,7 @@ export default function TextileERP() {
 
       {/* Timeline Section */}
       <Section light={false} className="relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-primary/5 blur-[120px] rounded-full"></div>
+        <div className="absolute top-0 right-0 w-[max(300px,50vw)] h-[max(300px,50vw)] bg-brand-primary/5 blur-[120px] rounded-full"></div>
         <FadeIn>
           <SectionHeader 
             theme="dark"
@@ -277,7 +240,7 @@ export default function TextileERP() {
             </p>
             <div className="flex justify-center">
               <Link href="/contact">
-                <Button variant="white" className="px-12 shadow-2xl shadow-brand-primary/20"><Settings className="w-5 h-5" /> Request Access</Button>
+                <Button variant="white" showArrow={true} className="px-10 h-[52px]"><Settings className="w-5 h-5" /> Request Access</Button>
               </Link>
             </div>
           </div>
@@ -286,3 +249,4 @@ export default function TextileERP() {
     </div>
   );
 }
+
