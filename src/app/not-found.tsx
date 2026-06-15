@@ -6,7 +6,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-bg-dark flex items-center justify-center px-4 relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-primary/10 blur-[150px] rounded-full"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[max(300px,60vw)] h-[max(300px,60vw)] bg-brand-primary/10 blur-[150px] rounded-full"></div>
       
       <FadeIn direction="up">
         <div className="max-w-lg w-full text-center bg-white/5 p-16 rounded-[40px] border border-white/10 backdrop-blur-xl shadow-2xl relative z-10">
@@ -40,3 +40,4 @@ export default function NotFound() {
     </div>
   );
 }
+

@@ -1,3 +1,4 @@
+import BreadcrumbHeader from "@/components/ui/BreadcrumbHeader";
 import { 
   Check, 
   ArrowRight,
@@ -45,55 +46,8 @@ export default function TextilesRedesign() {
   ];
 
   return (
-    <div className="bg-white min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-bg-dark pt-32 pb-16 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-primary/10 blur-[150px] rounded-full"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <FadeIn direction="left">
-              <div className="space-y-8">
-                <div className="flex items-center space-x-3 text-brand-primary font-black uppercase tracking-[4px] text-[13px]">
-                   <span className="w-10 h-[2px] bg-brand-primary"></span>
-                   <span>Textiles & Apparel</span>
-                </div>
-                <h1 className="text-4xl md:text-7xl font-black text-white leading-[1.1] tracking-tighter">
-                   The Best <span className="text-brand-primary">Textile Software</span> <br />
-                   <span className="text-brand-primary">from Hanvrix Salem</span>
-                </h1>
-                <p className="text-xl text-gray-400 leading-relaxed max-w-xl font-medium">
-                   Hanvrix is the top **Software company in Salem** providing tailored ERP solutions for textile mills and garment manufacturers designed for global scale.
-                </p>
-                <div className="flex flex-wrap gap-6 pt-4 items-center">
-                  <Link href="/contact">
-                    <Button className="px-10"><Calendar className="w-5 h-5" /> Request Demo</Button>
-                  </Link>
-                  <Link href="/products/textile-erp" className="group inline-flex items-center text-white font-bold hover:text-brand-primary transition-colors text-[16px]">
-                    View Product Details
-                    <div className="ml-3 w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all">
-                       <ArrowRight className="h-4 w-4 transition-transform group-hover:-rotate-45" />
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            </FadeIn>
-
-            <FadeIn direction="right">
-              <div className="relative group">
-                <div className="absolute -inset-4 bg-brand-primary/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="relative rounded-[2.5rem] overflow-hidden border-[12px] border-white/10 shadow-2xl skew-x-1">
-                  <img 
-                    src="/images/textile-handloom.png" 
-                    alt="Best Software Company in Salem - Textile SaaS Application Support" 
-                    className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/60 via-transparent to-transparent"></div>
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
+    <div className="bg-[#ecf0f0] min-h-screen">
+      <BreadcrumbHeader title="Textile Software Solutions" pageName="Textiles" parentLink={{ name: "Industries", href: "/#services" }} />
       
       {/* Capabilities Section */}
       <Section light={true}>
@@ -108,7 +62,7 @@ export default function TextilesRedesign() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {capabilities.map((cap, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <Card className="group !p-8 border-none bg-slate-50 hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 relative overflow-hidden">
+              <Card className="group px-6 py-4 bg-white border-y-0 border-r-0 border-l-4 border-brand-primary hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
                 <div className="flex items-center gap-5 mb-6 relative z-10">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white flex items-center justify-center text-brand-primary shadow-sm group-hover:bg-brand-primary group-hover:text-white transition-all duration-500 group-hover:scale-110">
@@ -125,7 +79,7 @@ export default function TextilesRedesign() {
 
       {/* Benefits Section */}
       <Section light={false} className="relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-primary/5 blur-[100px] rounded-full"></div>
+        <div className="absolute top-0 right-0 w-[max(300px,40vw)] h-[max(300px,40vw)] bg-brand-primary/5 blur-[100px] rounded-full"></div>
         <FadeIn>
            <SectionHeader
               centered={true}
@@ -138,7 +92,7 @@ export default function TextilesRedesign() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
            {benefits.map((benefit, i) => (
              <FadeIn key={i} delay={i * 0.1}>
-               <Card className="flex flex-col !p-8 h-full border-none bg-white/5 hover:bg-white hover:text-bg-dark transition-all duration-500 group relative overflow-hidden">
+               <Card className="flex flex-col px-6 py-4 h-full border-none bg-white/5 hover:bg-white hover:text-bg-dark transition-all duration-500 group relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/10 group-hover:bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
                   <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all duration-500 mb-6 relative z-10">
                     {benefit.icon}
@@ -230,7 +184,7 @@ export default function TextilesRedesign() {
 
                 <div className="pt-6">
                   <Link href="/products/textile-erp">
-                     <Button variant="outline" className="px-10"><Layers className="w-5 h-5" /> View Full Product Details</Button>
+                     <Button variant="outline" showArrow={true} className="px-10 h-[52px]"><Layers className="w-5 h-5" /> View Full Product Details</Button>
                   </Link>
                 </div>
               </div>
@@ -294,10 +248,10 @@ export default function TextilesRedesign() {
               </p>
               <div className="flex justify-center flex-col sm:flex-row gap-6">
                 <Link href="/contact">
-                  <Button className="px-12 shadow-2xl shadow-brand-primary/20"><Calendar className="w-5 h-5" /> Book a Strategic Demo</Button>
+                  <Button variant="primary" showArrow={true} className="px-10 h-[52px]"><Calendar className="w-5 h-5" /> Book a Strategic Demo</Button>
                 </Link>
                 <Link href="/about">
-                   <Button variant="white" className="px-12 shadow-2xl shadow-brand-primary/20"><LayoutGrid className="w-5 h-5" /> Read Case Studies</Button>
+                   <Button variant="white" showArrow={true} className="px-10 h-[52px]"><LayoutGrid className="w-5 h-5" /> Read Case Studies</Button>
                 </Link>
               </div>
            </div>
@@ -306,3 +260,4 @@ export default function TextilesRedesign() {
     </div>
   );
 }
+

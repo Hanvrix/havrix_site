@@ -32,9 +32,11 @@ export const FadeIn = ({ children, delay = 0, className = "", direction = "up" }
       }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ 
-        duration: 0.8, 
+        type: "spring",
+        stiffness: 70,
+        damping: 15,
+        mass: 0.8,
         delay: delay, 
-        ease: [0.16, 1, 0.3, 1] // Snappier corporate easing
       }}
       className={className}
     >

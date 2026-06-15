@@ -50,109 +50,109 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="w-full bg-slate-50 rounded-[10px] p-4 md:p-6 border border-gray-200">
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold text-slate-900 tracking-tight mb-2">Send us a message</h2>
-        <p className="text-slate-600 font-medium text-[14px]">
-            We&apos;ll get back to you within 24 hours
+    <div className="w-full bg-white rounded-[24px] p-2 md:p-10 border border-[#c9d1d1] shadow-xl">
+      <div className="mb-4 border-b border-[#c9d1d1]/50 pb-6">
+        <h2 className="text-2xl font-black text-[#0c1e21] tracking-tight mb-2 ">Send us a message</h2>
+        <p className="text-[#364e52] font-semibold text-[14px]">
+          We&apos;ll get back to you within 24 hours.
         </p>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <label className="text-[13px] font-semibold text-slate-700">Name *</label>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-2 text-left">
+            <label className="text-[13px] font-bold text-[#0c1e21]  tracking-wider">Name *</label>
             <input
               {...register("name")}
               placeholder="John Doe"
-              className={`w-full px-4 h-10 rounded-md bg-white border ${errors.name ? "border-red-500" : "border-gray-200"} focus:border-slate-400 focus:outline-none transition-all placeholder:text-gray-400 text-slate-900 text-[14px]`}
+              className={`w-full px-5 h-12 rounded-[10px] bg-slate-50 border ${errors.name ? "border-red-500" : "border-[#c9d1d1]"} focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 placeholder:text-gray-400 text-[#0c1e21] text-[14px] font-medium`}
             />
           </div>
 
-          <div className="space-y-2">
-            <label className="text-[13px] font-semibold text-slate-700">Email *</label>
+          <div className="space-y-2 text-left">
+            <label className="text-[13px] font-bold text-[#0c1e21]  tracking-wider">Email *</label>
             <input
               {...register("email")}
               type="email"
               placeholder="john@company.com"
-              className={`w-full px-4 h-10 rounded-md bg-white border ${errors.email ? "border-red-500" : "border-gray-200"} focus:border-slate-400 focus:outline-none transition-all placeholder:text-gray-400 text-slate-900 text-[14px]`}
+              className={`w-full px-5 h-12 rounded-[10px] bg-slate-50 border ${errors.email ? "border-red-500" : "border-[#c9d1d1]"} focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 placeholder:text-gray-400 text-[#0c1e21] text-[14px] font-medium`}
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          <div className="space-y-2">
-            <label className="text-[13px] font-semibold text-slate-700">Company *</label>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+          <div className="space-y-2 text-left">
+            <label className="text-[13px] font-bold text-[#0c1e21]  tracking-wider">Company *</label>
             <input
               {...register("company")}
               placeholder="Your Company Inc."
-              className={`w-full px-4 h-10 rounded-md bg-white border ${errors.company ? "border-red-500" : "border-gray-200"} focus:border-slate-400 focus:outline-none transition-all placeholder:text-gray-400 text-slate-900 text-[14px]`}
+              className={`w-full px-5 h-12 rounded-[10px] bg-slate-50 border ${errors.company ? "border-red-500" : "border-[#c9d1d1]"} focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 placeholder:text-gray-400 text-[#0c1e21] text-[14px] font-medium`}
             />
           </div>
 
-          <div className="space-y-2">
-            <label className="text-[13px] font-semibold text-slate-700">Job Title *</label>
+          <div className="space-y-2 text-left">
+            <label className="text-[13px] font-bold text-[#0c1e21]  tracking-wider">Job Title *</label>
             <input
               {...register("jobTitle")}
               placeholder="e.g. CTO, Director"
-              className={`w-full px-4 h-10 rounded-md bg-white border ${errors.jobTitle ? "border-red-500" : "border-gray-200"} focus:border-slate-400 focus:outline-none transition-all placeholder:text-gray-400 text-slate-900 text-[14px]`}
+              className={`w-full px-5 h-12 rounded-[10px] bg-slate-50 border ${errors.jobTitle ? "border-red-500" : "border-[#c9d1d1]"} focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 placeholder:text-gray-400 text-[#0c1e21] text-[14px] font-medium`}
             />
           </div>
         </div>
 
-        <div className="space-y-2 mt-6">
-          <label className="text-[13px] font-semibold text-slate-700">Phone Number *</label>
+        <div className="space-y-2 mt-6 text-left">
+          <label className="text-[13px] font-bold text-[#0c1e21]  tracking-wider">Phone Number *</label>
           <input
             {...register("phone")}
             placeholder="+91 98765 43210"
-            className={`w-full px-4 h-10 rounded-md bg-white border ${errors.phone ? "border-red-500" : "border-gray-200"} focus:border-slate-400 focus:outline-none transition-all placeholder:text-gray-400 text-slate-900 text-[14px]`}
+            className={`w-full px-5 h-12 rounded-[10px] bg-slate-50 border ${errors.phone ? "border-red-500" : "border-[#c9d1d1]"} focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 placeholder:text-gray-400 text-[#0c1e21] text-[14px] font-medium`}
           />
         </div>
 
-        <div className="space-y-2 mt-6">
-          <label className="text-[13px] font-semibold text-slate-700">Message *</label>
+        <div className="space-y-2 mt-6 text-left">
+          <label className="text-[13px] font-bold text-[#0c1e21]  tracking-wider">Message *</label>
           <textarea
             {...register("message")}
             rows={4}
             placeholder="Tell us about your specific needs..."
-            className={`w-full px-4 py-3 rounded-md bg-white border ${errors.message ? "border-red-500" : "border-gray-200"} focus:border-slate-400 focus:outline-none transition-all resize-none placeholder:text-gray-400 text-slate-900 text-[14px]`}
+            className={`w-full px-5 py-3 rounded-[10px] bg-slate-50 border ${errors.message ? "border-red-500" : "border-[#c9d1d1]"} focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 resize-none placeholder:text-gray-400 text-[#0c1e21] text-[14px] font-medium`}
           />
         </div>
 
-        <div className="space-y-2 mt-6 mb-8">
-          <label className="text-[13px] font-semibold text-slate-700">Additional Details</label>
+        <div className="space-y-2 mt-6 mb-8 text-left">
+          <label className="text-[13px] font-bold text-[#0c1e21]  tracking-wider">Additional Details</label>
           <input
             {...register("details")}
-            className="w-full px-4 h-10 rounded-md bg-white border border-gray-200 focus:border-slate-400 focus:outline-none transition-all placeholder:text-gray-400 text-slate-900 text-[14px]"
+            placeholder="Any additional software specs or scale details..."
+            className="w-full px-5 h-12 rounded-[10px] bg-slate-50 border border-[#c9d1d1] focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 placeholder:text-gray-400 text-[#0c1e21] text-[14px] font-medium"
           />
         </div>
 
         <div>
-          <Button type="submit" disabled={isSubmitting} className="w-full">
-            {isSubmitting ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
-            ) : (
-              <>
-                <span>Send Message</span>
-                <ArrowRight className="h-4 w-4 ml-2" />
-              </>
-            )}
+          <Button 
+            type="submit" 
+            disabled={isSubmitting} 
+            variant="primary" 
+            showArrow={true}
+            className="w-full justify-center h-[52px]"
+          >
+            {isSubmitting ? "Sending Message..." : "Submit Message"}
           </Button>
-          <p className="text-center text-[11px] text-slate-400 mt-4 font-medium">
+          <p className="text-center text-[11px] text-gray-400 mt-4 font-semibold">
             By submitting, you agree to our Privacy Policy and Terms of Service.
           </p>
         </div>
 
         {status === "success" && (
-          <div className="mt-6 flex items-center space-x-3 text-emerald-700 bg-emerald-50 p-4 rounded-md border border-emerald-200">
-            <CheckCircle2 className="h-4 w-4" />
+          <div className="mt-6 flex items-center space-x-3 text-emerald-700 bg-emerald-50 p-4 rounded-[10px] border border-emerald-200">
+            <CheckCircle2 className="h-4 w-4 shrink-0" />
             <p className="font-semibold text-[13px]">{message}</p>
           </div>
         )}
 
         {status === "error" && (
-          <div className="mt-6 flex items-center space-x-3 text-red-700 bg-red-50 p-4 rounded-md border border-red-200">
-            <AlertCircle className="h-4 w-4" />
+          <div className="mt-6 flex items-center space-x-3 text-red-700 bg-red-50 p-4 rounded-[10px] border border-red-200">
+            <AlertCircle className="h-4 w-4 shrink-0" />
             <p className="font-semibold text-[13px]">{message}</p>
           </div>
         )}

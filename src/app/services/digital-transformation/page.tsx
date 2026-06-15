@@ -1,3 +1,4 @@
+import BreadcrumbHeader from "@/components/ui/BreadcrumbHeader";
 import Section, { SectionHeader } from "@/components/ui/Section";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
@@ -139,46 +140,15 @@ export default function DigitalTransformationPage() {
   const BadgeIcon = badge.icon;
 
   return (
-    <div className="bg-white min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-bg-dark pt-32 pb-16 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-primary/10 blur-[150px] rounded-full"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <FadeIn direction="up">
-             <div className="max-w-4xl mx-auto text-center">
-                <div className="inline-flex items-center space-x-3 text-brand-primary font-black uppercase tracking-[4px] text-[13px] mb-8 bg-white/5 px-6 py-2 rounded-full border border-white/10">
-                  <BadgeIcon className="h-4 w-4" />
-                  <span>{badge.text}</span>
-                </div>
-                <h1 className="text-4xl md:text-7xl font-black text-white tracking-tighter leading-[1] mb-10 uppercase">
-                   {hero.title}
-                </h1>
-                <p className="text-xl text-gray-400 font-medium leading-relaxed max-w-3xl mx-auto mb-12">
-                   {hero.subtitle}
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                   <Link href="/contact">
-                     <Button className="px-12 h-[54px] shadow-2xl shadow-brand-primary/20">
-                       <Activity className="w-4 h-4" /> {hero.primaryCTA}
-                     </Button>
-                   </Link>
-                   <Link href="#overview">
-                     <Button variant="white" className="px-12 h-[54px] font-black uppercase tracking-widest text-sm">
-                        <Layers className="w-4 h-4" /> {hero.secondaryCTA}
-                     </Button>
-                   </Link>
-                </div>
-             </div>
-          </FadeIn>
-        </div>
-      </section>
+    <div className="bg-[#ecf0f0] min-h-screen">
+      <BreadcrumbHeader title={hero.title} pageName={badge.text} parentLink={{ name: "Services", href: "/services" }} />
 
       {/* Stats Section */}
       <Section id="stats" light={true}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <Card className="text-center !p-8 border bg-slate-50 hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative overflow-hidden">
+              <Card className="text-center !p-8 border bg-white border border-[#c9d1d1] hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
                 <div className="text-5xl font-black text-bg-dark mb-2 tracking-tighter group-hover:text-brand-primary transition-colors relative z-10">{stat.value}</div>
                 <div className="text-[13px] font-black text-gray-400 uppercase tracking-[3px] mb-2 relative z-10">{stat.label}</div>
@@ -191,7 +161,7 @@ export default function DigitalTransformationPage() {
 
       {/* Overview Section */}
       <Section id="overview" light={false} className="relative overflow-hidden !pb-0">
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-primary/5 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-0 right-0 w-[max(300px,50vw)] h-[max(300px,50vw)] bg-brand-primary/5 blur-[120px] rounded-full"></div>
         <FadeIn>
           <div className="max-w-4xl mx-auto text-center relative z-10 -mb-8 md:-mb-12">
               <SectionHeader
@@ -214,7 +184,7 @@ export default function DigitalTransformationPage() {
             const Icon = feature.icon;
             return (
               <FadeIn key={i} delay={i * 0.1}>
-                <Card className="flex flex-col !p-8 h-full border-none bg-slate-50 hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative overflow-hidden">
+                <Card className="flex flex-col !p-8 h-full border-none bg-white border border-[#c9d1d1] hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
                   <div className="flex items-center space-x-4 mb-6 relative z-10">
                     <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-brand-primary shadow-sm group-hover:bg-brand-primary group-hover:text-white group-hover:scale-110 transition-all duration-500 shrink-0">
@@ -242,7 +212,7 @@ export default function DigitalTransformationPage() {
 
       {/* Benefits Section */}
       <Section light={false} className="relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-primary/5 blur-[100px] rounded-full"></div>
+        <div className="absolute top-0 right-0 w-[max(300px,40vw)] h-[max(300px,40vw)] bg-brand-primary/5 blur-[100px] rounded-full"></div>
         <FadeIn>
           <SectionHeader theme="dark" title="Business Outcomes" subtitle="What you can expect from a strategic integration." />
         </FadeIn>
@@ -277,7 +247,7 @@ export default function DigitalTransformationPage() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             {process.map((step, i) => (
                 <FadeIn key={i} delay={i * 0.1}>
-                    <div className="text-center group relative overflow-hidden bg-slate-50 p-6 rounded-[2.5rem] border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500">
+                    <div className="text-center group relative overflow-hidden bg-white border border-[#c9d1d1] p-6 rounded-[2.5rem] border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500">
                         <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
                         <div className="relative z-10 w-16 h-16 bg-white rounded-3xl flex items-center justify-center mb-8 shadow-sm mx-auto group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
                             <span className="text-2xl font-black">{i + 1}</span>
@@ -327,7 +297,7 @@ export default function DigitalTransformationPage() {
             </p>
             <div className="flex justify-center">
               <Link href="/contact">
-                <Button variant="white" className="px-12 shadow-2xl shadow-brand-primary/20"><Rocket className="w-5 h-5" /> {finalCTA.buttonText}</Button>
+                <Button variant="white" showArrow={true} className="px-10 h-[52px]"><Rocket className="w-5 h-5" /> {finalCTA.buttonText}</Button>
               </Link>
             </div>
           </div>
@@ -336,3 +306,4 @@ export default function DigitalTransformationPage() {
     </div>
   );
 }
+

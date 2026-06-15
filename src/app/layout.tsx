@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import { StickyNav } from "@/components/HeroNav";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-[#0c1e21] overflow-x-hidden`}
       >
         <Script id="schema-local-business" type="application/ld+json">
           {`
@@ -77,10 +78,11 @@ export default function RootLayout({
             }
           `}
         </Script>
-        <Navbar />
-        <main className="min-h-screen pt-16">
+        <StickyNav />
+        <main className="min-h-[100dvh]">
           {children}
         </main>
+        <ScrollToTop />
         <Footer />
       </body>
     </html>
