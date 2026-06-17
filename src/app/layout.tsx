@@ -5,6 +5,8 @@ import "./globals.css";
 import { StickyNav } from "@/components/HeroNav";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
+import GetQuoteBadge from "@/components/ui/GetQuoteBadge";
+import FloatingActions from "@/components/ui/FloatingActions";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -82,6 +84,8 @@ export default function RootLayout({
         <main className="min-h-[100dvh]">
           {children}
         </main>
+        <GetQuoteBadge />
+        <FloatingActions />
         <ScrollToTop />
         <Footer />
       </body>
