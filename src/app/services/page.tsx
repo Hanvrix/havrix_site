@@ -74,7 +74,7 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="bg-[#ecf0f0] min-h-screen">
+    <div className="bg-background min-h-screen">
       {/* 1. Breadcrumb Header */}
       <BreadcrumbHeader title="Our Solutions & Capabilities" pageName="Services" />
 
@@ -83,23 +83,23 @@ export default function ServicesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((s, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <Card className="flex flex-col h-full group !p-10 border border-[#c9d1d1] bg-white hover:bg-white transition-all duration-500 hover:shadow-2xl hover:shadow-brand-primary/10 relative overflow-hidden text-left">
+              <Card className="flex flex-col h-full group !p-10 border border-border-light bg-white hover:bg-white transition-all duration-500 hover:shadow-2xl hover:shadow-brand-primary/10 relative overflow-hidden text-left">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
-                <div className="w-16 h-16 bg-slate-50 border border-[#c9d1d1] rounded-2xl flex items-center justify-center mb-8 text-brand-primary group-hover:bg-brand-primary group-hover:text-white group-hover:scale-110 transition-all duration-500 relative z-10">
+                <div className="w-16 h-16 bg-slate-50 border border-border-light rounded-2xl flex items-center justify-center mb-8 text-brand-primary group-hover:bg-brand-primary group-hover:text-white group-hover:scale-110 transition-all duration-500 relative z-10">
                   {s.icon}
                 </div>
-                <h3 className="text-2xl font-black text-[#0c1e21] mb-4 tracking-tight leading-none uppercase relative z-10">{s.title}</h3>
-                <p className="text-[16px] text-[#364e52] font-semibold mb-6 leading-relaxed relative z-10">
+                <h3 className="text-2xl font-black text-brand-secondary mb-4 tracking-tight leading-none uppercase relative z-10">{s.title}</h3>
+                <p className="text-[16px] text-text-secondary font-semibold mb-6 leading-relaxed relative z-10">
                   {s.description}
                 </p>
                 
                 <div className="mt-auto relative z-10">
-                  <div className="h-px w-full bg-[#c9d1d1]/50 mb-8"></div>
+                  <div className="h-px w-full bg-border-light/50 mb-8"></div>
                   <ul className="space-y-4 mb-10">
                     {s.features.map((f, idx) => (
                       <li key={idx} className="flex items-center space-x-3">
                         <CheckCircle2 className="text-brand-primary h-5 w-5 shrink-0" />
-                        <span className="font-bold text-[#0c1e21] text-[15px]">{f}</span>
+                        <span className="font-bold text-brand-secondary text-[15px]">{f}</span>
                       </li>
                     ))}
                   </ul>
@@ -165,15 +165,15 @@ export default function ServicesPage() {
                 <div className="mb-10 text-brand-primary">
                   <Rocket className="h-12 w-12" />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-black text-[#0c1e21] mb-12 italic leading-tight tracking-tight">
+                 <h3 className="text-2xl md:text-3xl font-black text-brand-secondary mb-12 italic leading-tight tracking-tight">
                   &quot;They helped us redefine our entire supply chain logic. Our operational efficiency increased by 40% in six months.&quot;
                 </h3>
                 <div className="flex items-center space-x-5 border-t border-slate-100 pt-8">
-                  <div className="w-14 h-14 bg-[#0c1e21] text-white rounded-[20px] flex items-center justify-center font-black text-lg tracking-tighter">
+                  <div className="w-14 h-14 bg-brand-secondary text-white rounded-[20px] flex items-center justify-center font-black text-lg tracking-tighter">
                     SK
                   </div>
                   <div>
-                    <p className="font-black text-[#0c1e21] text-lg tracking-tight leading-none mb-1">Sarah Kensington</p>
+                    <p className="font-black text-brand-secondary text-lg tracking-tight leading-none mb-1">Sarah Kensington</p>
                     <p className="text-brand-primary text-sm font-bold uppercase tracking-widest">CTO @ Hanvrix</p>
                   </div>
                 </div>

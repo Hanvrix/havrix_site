@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-[#0c1e21] overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-brand-secondary overflow-x-hidden`}
       >
         <Script id="schema-local-business" type="application/ld+json">
           {`

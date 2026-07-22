@@ -50,10 +50,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="w-full bg-white rounded-[24px] p-2 md:p-10 border border-[#c9d1d1] shadow-xl">
-      <div className="mb-4 border-b border-[#c9d1d1]/50 pb-6">
-        <h2 className="text-2xl font-black text-[#0c1e21] tracking-tight mb-2 ">Send us a message</h2>
-        <p className="text-[#364e52] font-semibold text-[14px]">
+    <div className="w-full bg-white rounded-[24px] p-2 md:p-10 border border-border-light shadow-xl">
+      <div className="mb-4 border-b border-border-light/50 pb-6">
+        <h2 className="text-2xl font-black text-brand-secondary tracking-tight mb-2 ">Send us a message</h2>
+        <p className="text-text-secondary font-semibold text-[14px]">
           We&apos;ll get back to you within 24 hours.
         </p>
       </div>
@@ -61,70 +61,70 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2 text-left">
-            <label className="text-[13px] font-bold text-[#0c1e21]  tracking-wider">Name *</label>
+            <label className="text-[13px] font-bold text-brand-secondary  tracking-wider">Name *</label>
             <input
               {...register("name")}
               placeholder="John Doe"
-              className={`w-full px-5 h-12 rounded-[10px] bg-slate-50 border ${errors.name ? "border-red-500" : "border-[#c9d1d1]"} focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 placeholder:text-gray-400 text-[#0c1e21] text-[14px] font-medium`}
+              className={`w-full px-5 h-12 rounded-[10px] bg-slate-50 border ${errors.name ? "border-red-500" : "border-border-light"} focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 placeholder:text-gray-400 text-brand-secondary text-[14px] font-medium`}
             />
           </div>
 
           <div className="space-y-2 text-left">
-            <label className="text-[13px] font-bold text-[#0c1e21]  tracking-wider">Email *</label>
+            <label className="text-[13px] font-bold text-brand-secondary  tracking-wider">Email *</label>
             <input
               {...register("email")}
               type="email"
               placeholder="john@company.com"
-              className={`w-full px-5 h-12 rounded-[10px] bg-slate-50 border ${errors.email ? "border-red-500" : "border-[#c9d1d1]"} focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 placeholder:text-gray-400 text-[#0c1e21] text-[14px] font-medium`}
+              className={`w-full px-5 h-12 rounded-[10px] bg-slate-50 border ${errors.email ? "border-red-500" : "border-border-light"} focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 placeholder:text-gray-400 text-brand-secondary text-[14px] font-medium`}
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
           <div className="space-y-2 text-left">
-            <label className="text-[13px] font-bold text-[#0c1e21]  tracking-wider">Company *</label>
+            <label className="text-[13px] font-bold text-brand-secondary  tracking-wider">Company *</label>
             <input
               {...register("company")}
               placeholder="Your Company Inc."
-              className={`w-full px-5 h-12 rounded-[10px] bg-slate-50 border ${errors.company ? "border-red-500" : "border-[#c9d1d1]"} focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 placeholder:text-gray-400 text-[#0c1e21] text-[14px] font-medium`}
+              className={`w-full px-5 h-12 rounded-[10px] bg-slate-50 border ${errors.company ? "border-red-500" : "border-border-light"} focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 placeholder:text-gray-400 text-brand-secondary text-[14px] font-medium`}
             />
           </div>
 
           <div className="space-y-2 text-left">
-            <label className="text-[13px] font-bold text-[#0c1e21]  tracking-wider">Job Title *</label>
+            <label className="text-[13px] font-bold text-brand-secondary  tracking-wider">Job Title *</label>
             <input
               {...register("jobTitle")}
               placeholder="e.g. CTO, Director"
-              className={`w-full px-5 h-12 rounded-[10px] bg-slate-50 border ${errors.jobTitle ? "border-red-500" : "border-[#c9d1d1]"} focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 placeholder:text-gray-400 text-[#0c1e21] text-[14px] font-medium`}
+              className={`w-full px-5 h-12 rounded-[10px] bg-slate-50 border ${errors.jobTitle ? "border-red-500" : "border-border-light"} focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 placeholder:text-gray-400 text-brand-secondary text-[14px] font-medium`}
             />
           </div>
         </div>
 
         <div className="space-y-2 mt-6 text-left">
-          <label className="text-[13px] font-bold text-[#0c1e21]  tracking-wider">Phone Number *</label>
+          <label className="text-[13px] font-bold text-brand-secondary  tracking-wider">Phone Number *</label>
           <input
             {...register("phone")}
             placeholder="+91 98765 43210"
-            className={`w-full px-5 h-12 rounded-[10px] bg-slate-50 border ${errors.phone ? "border-red-500" : "border-[#c9d1d1]"} focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 placeholder:text-gray-400 text-[#0c1e21] text-[14px] font-medium`}
+            className={`w-full px-5 h-12 rounded-[10px] bg-slate-50 border ${errors.phone ? "border-red-500" : "border-border-light"} focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 placeholder:text-gray-400 text-brand-secondary text-[14px] font-medium`}
           />
         </div>
 
         <div className="space-y-2 mt-6 text-left">
-          <label className="text-[13px] font-bold text-[#0c1e21]  tracking-wider">Message *</label>
+          <label className="text-[13px] font-bold text-brand-secondary  tracking-wider">Message *</label>
           <textarea
             {...register("message")}
             rows={4}
             placeholder="Tell us about your specific needs..."
-            className={`w-full px-5 py-3 rounded-[10px] bg-slate-50 border ${errors.message ? "border-red-500" : "border-[#c9d1d1]"} focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 resize-none placeholder:text-gray-400 text-[#0c1e21] text-[14px] font-medium`}
+            className={`w-full px-5 py-3 rounded-[10px] bg-slate-50 border ${errors.message ? "border-red-500" : "border-border-light"} focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 resize-none placeholder:text-gray-400 text-brand-secondary text-[14px] font-medium`}
           />
         </div>
 
         <div className="space-y-2 mt-6 mb-8 text-left">
-          <label className="text-[13px] font-bold text-[#0c1e21]  tracking-wider">Additional Details</label>
+          <label className="text-[13px] font-bold text-brand-secondary  tracking-wider">Additional Details</label>
           <input
             {...register("details")}
             placeholder="Any additional software specs or scale details..."
-            className="w-full px-5 h-12 rounded-[10px] bg-slate-50 border border-[#c9d1d1] focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 placeholder:text-gray-400 text-[#0c1e21] text-[14px] font-medium"
+            className="w-full px-5 h-12 rounded-[10px] bg-slate-50 border border-border-light focus:border-brand-primary focus:bg-white focus:outline-none transition-all duration-300 placeholder:text-gray-400 text-brand-secondary text-[14px] font-medium"
           />
         </div>
 

@@ -46,7 +46,7 @@ export default function TextilesRedesign() {
   ];
 
   return (
-    <div className="bg-[#ecf0f0] min-h-screen">
+    <div className="bg-background min-h-screen">
       <BreadcrumbHeader title="Textile Software Solutions" pageName="Textiles" parentLink={{ name: "Industries", href: "/#services" }} />
       
       {/* Capabilities Section */}

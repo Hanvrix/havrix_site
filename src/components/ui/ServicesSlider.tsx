@@ -91,7 +91,7 @@ export default function ServicesSlider() {
           <button
             onClick={scrollPrev}
             disabled={!prevBtnEnabled}
-            className="w-10 h-10 rounded-full border border-[#c9d1d1] bg-white flex items-center justify-center text-brand-secondary hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed group cursor-pointer"
+            className="w-10 h-10 rounded-full border border-border-light bg-white flex items-center justify-center text-brand-secondary hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed group cursor-pointer"
             aria-label="Previous service"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -99,7 +99,7 @@ export default function ServicesSlider() {
           <button
             onClick={scrollNext}
             disabled={!nextBtnEnabled}
-            className="w-10 h-10 rounded-full border border-[#c9d1d1] bg-white flex items-center justify-center text-brand-secondary hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed group cursor-pointer"
+            className="w-10 h-10 rounded-full border border-border-light bg-white flex items-center justify-center text-brand-secondary hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed group cursor-pointer"
             aria-label="Next service"
           >
             <ChevronRight className="w-5 h-5" />
@@ -116,7 +116,7 @@ export default function ServicesSlider() {
                 
                 {/* Header Row: Number + Icon + Title */}
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="flex items-center justify-center w-6 h-6 bg-[#f4f7f7] text-brand-primary rounded-xl transition-all duration-500 shadow-sm shrink-0 border border-black/5">
+                  <div className="flex items-center justify-center w-6 h-6 bg-background text-brand-primary rounded-xl transition-all duration-500 shadow-sm shrink-0 border border-black/5">
                     <service.icon className="w-4 h-4" />
                   </div>
 
@@ -131,13 +131,13 @@ export default function ServicesSlider() {
                 </p>
 
                 {/* Footer Row: Action */}
-                <div className="mt-auto pt-2 border-t border-[#c9d1d1]/40 flex items-center justify-between">
+                <div className="mt-auto pt-2 border-t border-border-light/40 flex items-center justify-between">
                   <span className="text-[13px] font-bold text-brand-secondary group-hover:text-brand-primary transition-colors duration-500">
                     Learn More
                   </span>
                   <Link 
                     href={service.href} 
-                    className="flex items-center justify-center w-8 h-8 rounded-full border border-[#c9d1d1]/80 text-brand-secondary group-hover:bg-brand-primary group-hover:border-brand-primary group-hover:text-white transition-all duration-500 shadow-sm"
+                    className="flex items-center justify-center w-8 h-8 rounded-full border border-border-light/80 text-brand-secondary group-hover:bg-brand-primary group-hover:border-brand-primary group-hover:text-white transition-all duration-500 shadow-sm"
                   >
                     <ArrowRight className="w-4 h-4 -rotate-45 transition-transform duration-500 group-hover:rotate-0" />
                   </Link>

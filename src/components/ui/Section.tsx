@@ -40,11 +40,11 @@ export const SectionHeader = ({
       <span>//</span>
       <span>Our Capabilities</span>
     </div>
-    <h2 className={`text-3xl md:text-5xl font-black tracking-tighter leading-tight mb-6 ${theme === "dark" ? "text-white" : "text-[#0c1e21]"}`}>
+    <h2 className={`text-3xl md:text-5xl font-black tracking-tighter leading-tight mb-6 ${theme === "dark" ? "text-white" : "text-brand-secondary"}`}>
       {title}
     </h2>
     {subtitle && (
-      <p className={`text-lg max-w-3xl leading-relaxed font-medium ${centered ? "mx-auto" : ""} ${theme === "dark" ? "text-gray-400" : "text-[#364e52]"}`}>
+      <p className={`text-lg max-w-3xl leading-relaxed font-medium ${centered ? "mx-auto" : ""} ${theme === "dark" ? "text-gray-400" : "text-text-secondary"}`}>
         {subtitle}
       </p>
     )}

@@ -140,7 +140,7 @@ export default function CustomDevelopmentPage() {
   const BadgeIcon = badge.icon;
 
   return (
-    <div className="bg-[#ecf0f0] min-h-screen">
+    <div className="bg-background min-h-screen">
       <BreadcrumbHeader title={hero.title} pageName={badge.text} parentLink={{ name: "Services", href: "/services" }} />
 
       {/* Stats Section */}
@@ -148,7 +148,7 @@ export default function CustomDevelopmentPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <Card className="text-center !p-8 border bg-white border border-[#c9d1d1] hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative overflow-hidden">
+              <Card className="text-center !p-8 bg-white border border-border-light hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
                 <div className="text-5xl font-black text-bg-dark mb-2 tracking-tighter group-hover:text-brand-primary transition-colors relative z-10">{stat.value}</div>
                 <div className="text-[13px] font-black text-gray-400 uppercase tracking-[3px] mb-2 relative z-10">{stat.label}</div>
@@ -184,7 +184,7 @@ export default function CustomDevelopmentPage() {
             const Icon = feature.icon;
             return (
               <FadeIn key={i} delay={i * 0.1}>
-                <Card className="flex flex-col !p-8 h-full border bg-white border border-[#c9d1d1] hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative overflow-hidden">
+                <Card className="flex flex-col !p-8 h-full bg-white border border-border-light hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
                   <div className="flex items-center space-x-4 mb-6 relative z-10">
                     <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-brand-primary shadow-sm group-hover:bg-brand-primary group-hover:text-white group-hover:scale-110 transition-all duration-500 shrink-0">
@@ -247,7 +247,7 @@ export default function CustomDevelopmentPage() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 pt-10">
             {process.map((step, i) => (
                 <FadeIn key={i} delay={i * 0.1}>
-                    <div className="text-center group relative overflow-hidden bg-white border border-[#c9d1d1] p-6 rounded-[2.5rem] border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500">
+                    <div className="text-center group relative overflow-hidden bg-white border border-border-light p-6 rounded-[2.5rem] hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500">
                         <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
                         <div className="relative z-10 w-16 h-16 bg-white rounded-3xl flex items-center justify-center mb-6 shadow-sm mx-auto group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
                             <span className="text-2xl font-black">{i + 1}</span>

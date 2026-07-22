@@ -83,11 +83,11 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-[#ecf0f0] overflow-hidden">
+    <div className="bg-background overflow-hidden">
       
       {/* 1. HERO SECTION — Anhet.co style floating rounded card */}
       <div className="px-3 pt-3 md:px-4 md:pt-4">
-        <section className="relative rounded-[20px] md:rounded-[28px] bg-[#0c1e21]">
+        <section className="relative rounded-[20px] md:rounded-[28px] bg-bg-dark">
           {/* Background & Glow Wrapper to clip rounded corners and allow dropdown overflow */}
           <div className="absolute inset-0 overflow-hidden rounded-[20px] md:rounded-[28px] pointer-events-none">
             <div 
@@ -160,7 +160,7 @@ export default function Home() {
                       alt="Software Engineer" 
                       className="w-full h-auto"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0c1e21]/70 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/70 to-transparent"></div>
                     <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
                       <div>
                         <div className="text-brand-primary text-2xl font-black mb-0.5">99%</div>
@@ -184,7 +184,7 @@ export default function Home() {
       </div>
 
       {/* 2. SERVICES SLIDER SECTION */}
-      <section className="py-20 lg:py-28 bg-[#f8fafa] w-full">
+      <section className="py-20 lg:py-28 bg-services-bg w-full">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
             <ServicesSlider />
@@ -193,7 +193,7 @@ export default function Home() {
       </section>
 
       {/* 3. ABOUT SECTION WITH PROGRESS BARS */}
-      <section className="py-14 lg:py-14 bg-[#ecf0f0] border-t border-[#c9d1d1]/30">
+      <section className="py-14 lg:py-14 bg-background border-t border-border-light/30">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left: Text Content */}
@@ -248,7 +248,7 @@ export default function Home() {
                     className="w-full h-auto object-cover aspect-[4/5]"
                   />
                   {/* Rounded Inner Corner Mask */}
-                  <div className="absolute bottom-0 left-0 w-[60%] h-[28%] bg-[#ecf0f0] rounded-tr-[32px]" />
+                  <div className="absolute bottom-0 left-0 w-[60%] h-[28%] bg-background rounded-tr-[32px]" />
                 </div>
 
                 {/* Progress Card Inside Cutout */}
@@ -287,7 +287,7 @@ export default function Home() {
       </section>
 
       {/* 4. CHOOSE SECTION */}
-      <section className="py-16 lg:py-28 bg-[#ecf0f0]">
+      <section className="py-16 lg:py-28 bg-background">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Centered Heading */}
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -321,7 +321,7 @@ export default function Home() {
       </section>
 
       {/* 5. INFINITE MARQUEE STRIP */}
-      <div className="bg-[#0c1e21] border-y border-white/5 py-10 overflow-hidden select-none flex whitespace-nowrap">
+      <div className="bg-bg-dark border-y border-white/5 py-10 overflow-hidden select-none flex whitespace-nowrap">
         <div className="animate-marquee flex gap-20 shrink-0">
           {["Enterprise Focus", "SaaS Model Architecture", "Cloud Native Deployments", "AI Driven Automation"].map((item, idx) => (
             <div key={idx} className="flex items-center gap-4 text-white font-bold text-lg tracking-tight uppercase select-none mr-20">
@@ -341,7 +341,7 @@ export default function Home() {
       </div>
 
       {/* 6. WORKING PROCESS SECTION */}
-      <section className="py-20 lg:py-28 bg-[#0c1e21] relative overflow-hidden">
+      <section className="py-20 lg:py-28 bg-bg-dark relative overflow-hidden">
         {/* Glow ambient */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[max(300px,50vw)] h-[max(300px,50vw)] bg-brand-primary/5 blur-[80px] md:blur-[120px] rounded-full"></div>
         
@@ -365,7 +365,7 @@ export default function Home() {
                 </span>
                 
                 {/* Round indicator */}
-                <div className="w-16 h-16 rounded-full border border-brand-primary flex items-center justify-center text-white font-black text-xl mb-6 bg-[#202e30]/40 transition-transform duration-300 group-hover:scale-110 shadow-[0_0_20px_rgba(32,192,151,0.15)]">
+                <div className="w-16 h-16 rounded-full border border-brand-primary flex items-center justify-center text-white font-black text-xl mb-6 bg-bg-footer/40 transition-transform duration-300 group-hover:scale-110 shadow-[0_0_20px_rgba(30,138,138,0.15)]">
                   {item.step}
                 </div>
 
@@ -393,7 +393,7 @@ export default function Home() {
       </section>
 
       {/* 7. FAQ ACCORDION SECTION */}
-      <section className="py-20 lg:py-28 bg-[#ecf0f0] border-t border-[#c9d1d1]/30">
+      <section className="py-20 lg:py-28 bg-background border-t border-border-light/30">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
             {/* Left: Heading & Call */}
@@ -405,7 +405,7 @@ export default function Home() {
                 Find answers to common questions
               </h2>
               
-              <div className="mt-8 pt-6 border-t border-[#c9d1d1]">
+              <div className="mt-8 pt-6 border-t border-border-light">
                 <a 
                   href="tel:+918838213390" 
                   className="inline-flex items-center gap-3 text-brand-secondary font-black text-xl hover:text-brand-primary transition-colors"
@@ -425,7 +425,7 @@ export default function Home() {
                 return (
                   <div 
                     key={index} 
-                    className={`bg-white rounded-[20px] border border-[#c9d1d1] transition-all duration-300 ${
+                    className={`bg-white rounded-[20px] border border-border-light transition-all duration-300 ${
                       isOpen ? "shadow-lg border-brand-primary" : "hover:border-brand-primary/50"
                     }`}
                   >
@@ -463,7 +463,7 @@ export default function Home() {
       </section>
 
       {/* 8. CTA BANNER SECTION */}
-      <section className="py-16 lg:py-24 bg-[#202e30] relative overflow-hidden text-center">
+      <section className="py-16 lg:py-24 bg-bg-footer relative overflow-hidden text-center">
         {/* Glow shape */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 blur-[80px] rounded-full"></div>
         
