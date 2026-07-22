@@ -39,7 +39,7 @@ export default function AnimatedProgress({ label, percentage }: AnimatedProgress
         <span>{label}</span>
         <span>{count}%</span>
       </div>
-      <div className="w-full bg-[#d7dede] h-[4px] rounded-full overflow-hidden">
+      <div className="w-full bg-border-light h-[4px] rounded-full overflow-hidden">
         <motion.div
           className="bg-brand-primary h-full rounded-full"
           initial={{ width: 0 }}

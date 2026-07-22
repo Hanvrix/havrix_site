@@ -20,7 +20,7 @@ const Button = ({
   const getVariantClasses = () => {
     switch (variant) {
       case "outline":
-        return "bg-transparent border border-[#c9d1d1] text-brand-secondary hover:border-brand-primary hover:text-brand-primary";
+        return "bg-transparent border border-border-light text-brand-secondary hover:border-brand-primary hover:text-brand-primary";
       case "white":
         return "bg-white text-brand-secondary border-none hover:bg-brand-primary hover:text-white";
       default: // primary

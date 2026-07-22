@@ -84,7 +84,7 @@ export default function TextileERP() {
   ];
 
   return (
-    <div className="bg-[#ecf0f0] min-h-screen">
+    <div className="bg-background min-h-screen">
       <BreadcrumbHeader title="Textile ERP Software" pageName="Textile ERP" parentLink={{ name: "Products", href: "/#services" }} />
 
       {/* Core Features Section */}
@@ -98,7 +98,7 @@ export default function TextileERP() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <FadeIn key={index} delay={index * 0.1}>
-              <Card className="flex flex-col !p-8 h-full border-none bg-white border border-[#c9d1d1] hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative overflow-hidden">
+              <Card className="flex flex-col !p-8 h-full bg-white border border-border-light hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
                 <div className="flex items-center space-x-5 mb-6 relative z-10">
                   <div className="flex-shrink-0 w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-brand-primary shadow-sm group-hover:bg-brand-primary group-hover:text-white group-hover:scale-110 transition-all duration-500">
@@ -188,7 +188,7 @@ export default function TextileERP() {
             { title: "Local Expertise", desc: "Deep understanding of bottlenecks.", icon: <Users2 className="h-5 w-5" /> },
           ].map((item, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <Card className="!p-8 border bg-white border border-[#c9d1d1] hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative overflow-hidden h-full flex flex-col">
+              <Card className="!p-8 bg-white border border-border-light hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 group relative overflow-hidden h-full flex flex-col">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
                 <div className="flex items-center space-x-4 mb-6 relative z-10">
                   <div className="shrink-0 w-12 h-12 rounded-xl bg-white flex items-center justify-center text-brand-primary shadow-sm group-hover:bg-brand-primary group-hover:text-white transition-all duration-500 relative">

@@ -31,7 +31,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="bg-[#ecf0f0] min-h-screen">
+    <div className="bg-background min-h-screen">
       {/* 1. Breadcrumb Header */}
       <BreadcrumbHeader title="Contact Our Salem Experts" pageName="Contact" />
 
@@ -45,10 +45,10 @@ export default function ContactPage() {
               <span className="inline-flex items-center gap-2 text-brand-primary font-bold  tracking-[2px] text-xs mb-3">
                 Get In Touch
               </span>
-              <h2 className="text-3xl md:text-5xl font-black text-[#0c1e21] tracking-tighter mb-6 leading-tight ">
+              <h2 className="text-3xl md:text-5xl font-black text-brand-secondary tracking-tighter mb-6 leading-tight ">
                 Connect With Our Team
               </h2>
-              <p className="text-lg text-[#364e52] leading-relaxed font-medium mb-6">
+              <p className="text-lg text-text-secondary leading-relaxed font-medium mb-6">
                 We bridge the gap between technical features and business value. Every project is an ROI-driven infrastructure that is built to last.
               </p>
 
@@ -56,15 +56,15 @@ export default function ContactPage() {
                 {contactInfo.map((info, i) => (
                   <Card key={i} className="group !px-6 py-4 border-y-0 border-r-0 border-l-4 border-brand-primary bg-white hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500 relative text-left">
                     <div className="flex items-center justify-between mb-2">
-                       <h3 className="text-xl font-black text-[#0c1e21] tracking-tight leading-none ">{info.title}</h3>
+                       <h3 className="text-xl font-black text-brand-secondary tracking-tight leading-none ">{info.title}</h3>
                        <div className="w-10 h-10 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all">
                           <Mail className="w-5 h-5" />
                        </div>
                     </div>
-                    <p className="text-[#364e52] font-semibold text-[15px] mb-2 leading-relaxed">{info.description}</p>
+                    <p className="text-text-secondary font-semibold text-[15px] mb-2 leading-relaxed">{info.description}</p>
                     <a 
                       href={`mailto:${info.email}`} 
-                      className="inline-flex items-center text-[#0c1e21] font-black text-[15px] hover:text-brand-primary transition-colors group"
+                      className="inline-flex items-center text-brand-secondary font-black text-[15px] hover:text-brand-primary transition-colors group"
                     >
                       {info.email}
                       <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:-rotate-45 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -73,7 +73,7 @@ export default function ContactPage() {
                 ))}
               </div>
               
-              <div className="p-6 bg-[#0c1e21] rounded-[20px] text-white mt-8 border border-white/5 relative overflow-hidden group">
+              <div className="p-6 bg-bg-dark rounded-[20px] text-white mt-8 border border-white/5 relative overflow-hidden group">
                  <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/10 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
                  <div className="flex items-center space-x-4 mb-3 relative z-10">
                     <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>

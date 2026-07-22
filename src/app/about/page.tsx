@@ -35,7 +35,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="bg-[#ecf0f0] min-h-screen">
+    <div className="bg-background min-h-screen">
       {/* 1. Header / Intro */}
       <BreadcrumbHeader title="About Our Company" pageName="About Us" />
 
@@ -61,10 +61,10 @@ export default function AboutPage() {
               <span className="inline-flex items-center gap-2 text-brand-primary font-bold  tracking-[2px] text-xs mb-3">
                 Get to Know Us
               </span>
-              <h2 className="text-3xl md:text-5xl font-black text-[#0c1e21] tracking-tighter mb-8 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-black text-brand-secondary tracking-tighter mb-8 leading-tight">
                 Our Engineering Philosophy
               </h2>
-              <div className="space-y-6 text-[#364e52] text-lg font-medium leading-relaxed mb-10">
+              <div className="space-y-6 text-text-secondary text-lg font-medium leading-relaxed mb-10">
                 <p>
                   We simplify complex business challenges through smart technology, creative thinking, and reliable solutions that provide the foundations required to lead your industry in a digital-first economy.
                 </p>
@@ -74,7 +74,7 @@ export default function AboutPage() {
               </div>
               <div className="flex flex-wrap gap-4">
                 {["Elite Architects", "Scalable Systems", "ROI Driven"].map(tag => (
-                  <span key={tag} className="px-6 py-2.5 bg-white border border-[#c9d1d1] rounded-full text-[#0c1e21] font-bold text-sm tracking-tight hover:bg-brand-primary hover:text-white hover:-translate-y-1 transition-all duration-300 hover:shadow-lg hover:shadow-brand-primary/20 cursor-default">
+                  <span key={tag} className="px-6 py-2.5 bg-white border border-border-light rounded-full text-brand-secondary font-bold text-sm tracking-tight hover:bg-brand-primary hover:text-white hover:-translate-y-1 transition-all duration-300 hover:shadow-lg hover:shadow-brand-primary/20 cursor-default">
                     {tag}
                   </span>
                 ))}
@@ -100,11 +100,11 @@ export default function AboutPage() {
                     <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary transition-all group-hover:bg-brand-primary group-hover:text-white group-hover:scale-110 duration-500">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <h3 className="text-xl font-black text-[#0c1e21] tracking-tighter  leading-none">
+                    <h3 className="text-xl font-black text-brand-secondary tracking-tighter  leading-none">
                       {card.title}
                     </h3>
                   </div>
-                  <p className="text-[#364e52] leading-relaxed font-medium text-[16px] relative z-10">
+                  <p className="text-text-secondary leading-relaxed font-medium text-[16px] relative z-10">
                     {card.description}
                   </p>
                 </Card>
@@ -114,22 +114,22 @@ export default function AboutPage() {
         </div>
 
         {/* 4. Why Choose Us Content */}
-        <div className="mt-15 pt-15 border-t border-[#c9d1d1]/50">
+        <div className="mt-15 pt-15 border-t border-border-light/50">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             
             <div className="flex flex-col text-left">
               <span className="inline-flex items-center gap-2 text-brand-primary font-bold  tracking-[2px] text-lg mb-3">
                 Why Partners Choose Hanvrix
               </span>
-              <h2 className="text-3xl md:text-5xl font-black text-[#0c1e21] tracking-tighter mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-black text-brand-secondary tracking-tighter mb-4 leading-tight">
                 A Technology Partner You Can Trust
               </h2>
-              <p className="text-lg text-[#364e52] leading-relaxed font-medium mb-10">
+              <p className="text-lg text-text-secondary leading-relaxed font-medium mb-10">
                 We combine innovation, expertise, and strategic thinking to deliver high-quality digital solutions tailored to business needs.
               </p>
 
               {/* Repaired text colors on dark card */}
-              <div className="bg-[#0c1e21] text-white rounded-[24px] p-6 md:p-8 border border-white/5 relative overflow-hidden group">
+              <div className="bg-bg-dark text-white rounded-[24px] p-6 md:p-8 border border-white/5 relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/10 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
                 <div className="flex items-center space-x-4 mb-8">
                   <div className="w-12 h-12 bg-brand-primary rounded-2xl flex items-center justify-center text-white">
@@ -153,8 +153,8 @@ export default function AboutPage() {
                   <Target className="w-8 h-8" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-black text-[#0c1e21] mb-3 tracking-tight ">Technical Strategy</h4>
-                  <p className="text-[#364e52] leading-relaxed font-medium text-[15px]">
+                  <h4 className="text-xl font-black text-brand-secondary mb-3 tracking-tight ">Technical Strategy</h4>
+                  <p className="text-text-secondary leading-relaxed font-medium text-[15px]">
                     Our strategic approach focuses on understanding business needs and delivering solutions that drive efficiency.
                   </p>
                 </div>  
@@ -165,8 +165,8 @@ export default function AboutPage() {
                   <Users2 className="w-8 h-8" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-black text-[#0c1e21] mb-3 tracking-tight ">Global Audience</h4>
-                  <p className="text-[#364e52] leading-relaxed font-medium text-[15px]">
+                  <h4 className="text-xl font-black text-brand-secondary mb-3 tracking-tight ">Global Audience</h4>
+                  <p className="text-text-secondary leading-relaxed font-medium text-[15px]">
                     We deliver technology solutions that create meaningful impact and long-term value for a global client base.
                   </p>
                 </div>

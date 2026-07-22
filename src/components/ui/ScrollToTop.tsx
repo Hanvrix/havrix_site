@@ -52,7 +52,7 @@ export default function ScrollToTop() {
           }}
         >
           {/* Inner Core Circle */}
-          <div className="w-full h-full rounded-full bg-[#0c1e21] flex items-center justify-center text-white select-none">
+          <div className="w-full h-full rounded-full bg-bg-dark flex items-center justify-center text-white select-none">
             {isNearEnd ? (
               <motion.div
                 initial={{ y: 5 }}

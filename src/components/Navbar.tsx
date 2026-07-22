@@ -98,8 +98,8 @@ const Navbar = () => {
       <nav
         className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 flex items-center justify-between ${
           isScrolled
-            ? "top-0 w-full bg-[#0c1e21]/95 backdrop-blur-md py-3 shadow-xl border-b border-white/5 px-4 sm:px-6 lg:px-8"
-            : "top-4 w-[calc(100%-32px)] max-w-[1400px] bg-[#0c1e21]/40 backdrop-blur-md py-4 rounded-2xl border border-white/10 px-6 sm:px-8"
+            ? "top-0 w-full bg-bg-dark/95 backdrop-blur-md py-3 shadow-xl border-b border-white/5 px-4 sm:px-6 lg:px-8"
+            : "top-4 w-[calc(100%-32px)] max-w-[1400px] bg-bg-dark/40 backdrop-blur-md py-4 rounded-2xl border border-white/10 px-6 sm:px-8"
         }`}
       >
         {/* Logo */}
@@ -170,7 +170,7 @@ const Navbar = () => {
                       animate={{ opacity: 1, scaleY: 1 }}
                       exit={{ opacity: 0, scaleY: 0.8 }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 w-[280px] bg-[#202e30] rounded-2xl shadow-2xl border border-white/5 py-4 z-50 origin-top"
+                      className="absolute top-full left-1/2 -translate-x-1/2 w-[280px] bg-bg-footer rounded-2xl shadow-2xl border border-white/5 py-4 z-50 origin-top"
                     >
                       <div className="grid grid-cols-1 gap-1 px-3">
                         {items.map((item) => {
@@ -239,10 +239,10 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20, transition: { duration: 0.2 } }}
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            className="fixed inset-0 bg-[#0c1e21] z-[100] flex flex-col overflow-y-auto"
+            className="fixed inset-0 bg-bg-dark z-[100] flex flex-col overflow-y-auto"
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 sm:px-8 border-b border-white/5 bg-[#0c1e21]/80 backdrop-blur-md sticky top-0 z-10">
+            <div className="flex items-center justify-between p-6 sm:px-8 border-b border-white/5 bg-bg-dark/80 backdrop-blur-md sticky top-0 z-10">
               <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
                 <div className="p-1.5 bg-brand-primary rounded-lg">
                   <Image
@@ -364,7 +364,7 @@ const Navbar = () => {
                       <a
                         key={idx}
                         href={social.href}
-                        className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:bg-brand-primary hover:text-[#0c1e21] transition-all duration-300"
+                        className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:bg-brand-primary hover:text-bg-dark transition-all duration-300"
                       >
                         {social.icon}
                       </a>

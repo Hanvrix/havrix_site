@@ -2,21 +2,30 @@
 @import "tailwindcss";
 
 :root {
-  --brand-primary: #1e8a8a; /* Accent Teal */
-  --brand-secondary: #0c1e21; /* Deep Teal-Charcoal */
-  --brand-accent: #1e8a8a;
-  --brand-cta: #1e8a8a;
 
-  --bg-light: #ffffff;
-  --bg-dark: #0c1e21;
-  --bg-footer: #202e30;
+  /* ── Brand Colors ── */
+  --brand-primary:    #1e8a8a;   /* Teal — buttons, icons, accents */
+  --brand-secondary:  #0c1e21;   /* Deep Teal-Charcoal — headings, dark text */
+  --brand-accent:     #1e8a8a;   /* Same as primary */
+  --brand-cta:        #1e8a8a;   /* CTA buttons */
 
-  --text-primary: #0c1e21;
-  --text-secondary: #364e52;
-  --text-white: #ffffff;
-  
-  --background: #ecf0f0; /* Soft off-teal background */
-  --foreground: #0c1e21;
+  /* ── Background Colors ── */
+  --background:       #ecf0f0;   /* Page background — soft off-white teal */
+  --bg-light:         #ffffff;   /* White cards, sections */
+  --bg-dark:          #0c1e21;   /* Dark sections, hero, process */
+  --bg-footer:        #202e30;   /* Footer, CTA banner */
+
+  /* ── Text Colors ── */
+  --text-primary:     #0c1e21;   /* Main body text */
+  --text-secondary:   #364e52;   /* Muted / paragraph text */
+  --text-white:       #ffffff;   /* Text on dark backgrounds */
+  --foreground:       #0c1e21;
+
+  /* ── Extra ── */
+  --teal-hover:       #156a6a;   /* Scrollbar hover, darker teal */
+  --teal-gradient:    #3ca3a3;   /* Text gradient end color */
+  --services-bg:      #f8fafa;   /* Services slider section bg */
+  --border-light:     #c9d1d1;   /* Borders, dividers */
 
   --section-padding: 120px;
 }
@@ -25,6 +34,7 @@
   --font-sans: "Space Grotesk", "Inter", sans-serif;
   --font-display: "Syne", sans-serif;
   --font-serif: "Cormorant Garamond", serif;
+
   --color-brand-primary: var(--brand-primary);
   --color-brand-secondary: var(--brand-secondary);
   --color-brand-accent: var(--brand-accent);
@@ -37,6 +47,12 @@
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-text-white: var(--text-white);
+
+  /* ── Extra tokens ── */
+  --color-teal-hover: var(--teal-hover);
+  --color-teal-gradient: var(--teal-gradient);
+  --color-services-bg: var(--services-bg);
+  --color-border-light: var(--border-light);
   
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem; /* 24px */
@@ -113,12 +129,12 @@ h6 {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #156a6a;
+  background: var(--teal-hover);
 }
 
 /* Utilities */
 .text-gradient {
-  background: linear-gradient(90deg, var(--brand-primary), #3ca3a3);
+  background: linear-gradient(90deg, var(--brand-primary), var(--teal-gradient));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

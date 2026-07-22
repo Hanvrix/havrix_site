@@ -15,7 +15,7 @@ interface BreadcrumbHeaderProps {
 
 export default function BreadcrumbHeader({ title, pageName, parentLink }: BreadcrumbHeaderProps) {
   return (
-    <section className="bg-[#0c1e21] pb-20 relative">
+    <section className="bg-bg-dark pb-20 relative">
       {/* Background & Glow Wrapper to allow dropdown menu to overflow vertically */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Ambient background glows matching Anhet.co */}

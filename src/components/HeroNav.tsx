@@ -101,7 +101,7 @@ export function NavDropdowns({
                     : "border-white/15 text-white/80 hover:border-brand-primary/60 hover:text-white"
                   : isActive
                   ? "border-brand-primary text-brand-primary"
-                  : "border-[#c9d1d1] text-[#364e52] hover:border-brand-primary hover:text-brand-primary"
+                  : "border-border-light text-text-secondary hover:border-brand-primary hover:text-brand-primary"
               }`}
             >
               {title}
@@ -117,7 +117,7 @@ export function NavDropdowns({
                   animate={{ opacity: 1, scaleY: 1, y: 0 }}
                   exit={{ opacity: 0, scaleY: 0.85, y: -4 }}
                   transition={{ duration: 0.18, ease: "easeOut" }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 w-[270px] bg-[#0f2628] rounded-2xl shadow-2xl border border-white/10 py-3 z-50 origin-top"
+                  className="absolute top-full left-1/2 -translate-x-1/2 w-[270px] bg-bg-dark rounded-2xl shadow-2xl border border-white/10 py-3 z-50 origin-top"
                 >
                   <div className="grid grid-cols-1 gap-0.5 px-2">
                     {items.map((item) => {
@@ -174,7 +174,7 @@ export function NavDropdownsPlain({
           >
             <button
               className={`flex items-center gap-1 font-semibold text-[13px] tracking-wide px-3 py-1.5 transition-all duration-300 ${
-                isActive ? "text-brand-primary" : "text-[#364e52] hover:text-brand-primary"
+                isActive ? "text-brand-primary" : "text-text-secondary hover:text-brand-primary"
               }`}
             >
               {title}
@@ -190,7 +190,7 @@ export function NavDropdownsPlain({
                   animate={{ opacity: 1, scaleY: 1, y: 0 }}
                   exit={{ opacity: 0, scaleY: 0.85, y: -4 }}
                   transition={{ duration: 0.18, ease: "easeOut" }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 w-[270px] bg-[#0f2628] rounded-2xl shadow-2xl border border-white/10 py-3 z-50 origin-top"
+                  className="absolute top-full left-1/2 -translate-x-1/2 w-[270px] bg-bg-dark rounded-2xl shadow-2xl border border-white/10 py-3 z-50 origin-top"
                 >
                   <div className="grid grid-cols-1 gap-0.5 px-2">
                     {items.map((item) => {
@@ -243,10 +243,10 @@ export function MobileDrawer({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20, transition: { duration: 0.2 } }}
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            className="fixed inset-0 bg-[#0c1e21] z-[120] flex flex-col overflow-y-auto"
+            className="fixed inset-0 bg-bg-dark z-[120] flex flex-col overflow-y-auto"
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 sm:px-8 border-b border-white/5 bg-[#0c1e21]/80 backdrop-blur-md sticky top-0 z-10">
+            <div className="flex items-center justify-between p-6 sm:px-8 border-b border-white/5 bg-bg-dark/80 backdrop-blur-md sticky top-0 z-10">
               <Link href="/" className="flex items-center space-x-2" onClick={onClose}>
                 <div className="p-1.5 bg-brand-primary rounded-lg">
                   <Image
@@ -373,7 +373,7 @@ export function MobileDrawer({
                       <a
                         key={i}
                         href="#"
-                        className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:bg-brand-primary hover:text-[#0c1e21] transition-all duration-300"
+                        className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:bg-brand-primary hover:text-bg-dark transition-all duration-300"
                       >
                         {icon}
                       </a>
@@ -494,14 +494,14 @@ export function StickyNav() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -70, opacity: 0 }}
             transition={{ duration: 0.28, ease: "easeOut" }}
-            className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 sm:px-8 lg:px-12 py-5 bg-white/95 backdrop-blur-md shadow-md border-b border-[#c9d1d1]/60"
+            className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 sm:px-8 lg:px-12 py-5 bg-white/95 backdrop-blur-md shadow-md border-b border-border-light/60"
           >
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 group shrink-0">
               <div className="p-1.5 bg-brand-primary rounded-lg transition-transform duration-300 group-hover:rotate-12">
                 <Image src="/logo.png" alt="Hanvrix Logo" width={24} height={24} className="w-5 h-5 object-contain brightness-0 invert" />
               </div>
-              <span className="text-lg font-black tracking-tighter text-[#0c1e21]">
+              <span className="text-lg font-black tracking-tighter text-brand-secondary">
                 HANVRIX<span className="text-brand-primary">.</span>
               </span>
             </Link>
@@ -517,7 +517,7 @@ export function StickyNav() {
                     className={`font-semibold text-[13px] tracking-wide px-4 py-1.5 transition-all duration-300 ${
                       isActive
                         ? "text-brand-primary"
-                        : "text-[#364e52] hover:text-brand-primary"
+                        : "text-text-secondary hover:text-brand-primary"
                     }`}
                   >
                     {link.name}
@@ -540,7 +540,7 @@ export function StickyNav() {
               </Link>
               <button
                 onClick={() => setMobileOpen(true)}
-                className="lg:hidden p-2 text-[#0c1e21] hover:text-brand-primary transition-colors"
+                className="lg:hidden p-2 text-brand-secondary hover:text-brand-primary transition-colors"
               >
                 <Menu className="w-6 h-6" />
               </button>
