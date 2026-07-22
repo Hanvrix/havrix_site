@@ -19,12 +19,38 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hanvrix.vercel.app"),
   title: "Hanvrix | Best Software Company in Salem & Top IT Solutions Tamil Nadu",
   description: "Hanvrix is the #1 software company in Salem, offering expert IT services, Textile software solutions, and SaaS development in Tamil Nadu. Your top choice for Salem IT services.",
+  applicationName: "Hanvrix",
   icons: {
-    icon: "/logo.png",
+    icon: [
+      { url: "/logo.png", type: "image/png" },
+    ],
     shortcut: "/logo.png",
     apple: "/logo.png",
+  },
+  openGraph: {
+    siteName: "Hanvrix",
+    title: "Hanvrix | Best Software Company in Salem & Top IT Solutions Tamil Nadu",
+    description: "Hanvrix is the #1 software company in Salem, offering expert IT services, Textile software solutions, and SaaS development in Tamil Nadu.",
+    url: "https://hanvrix.vercel.app",
+    images: [
+      {
+        url: "/logo.png",
+        width: 512,
+        height: 512,
+        alt: "Hanvrix Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hanvrix | Best Software Company in Salem",
+    description: "Hanvrix is the #1 software company in Salem, offering expert IT services, Textile software solutions, and SaaS development in Tamil Nadu.",
+    images: ["/logo.png"],
   },
   verification: {
     google: "kpcpABNaPjW58RcNnWFw9fzJYE5JgIxTX3DHqphVfaI",
@@ -41,12 +67,24 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-brand-secondary overflow-x-hidden`}
       >
+        <Script id="schema-website" type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Hanvrix",
+              "alternateName": ["Hanvrix Technologies", "Hanvrix Tech"],
+              "url": "https://hanvrix.vercel.app/"
+            }
+          `}
+        </Script>
         <Script id="schema-local-business" type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "Hanvrix",
+              "logo": "https://hanvrix.vercel.app/logo.png",
               "image": "https://hanvrix.vercel.app/logo.png",
               "@id": "https://hanvrix.vercel.app",
               "url": "https://hanvrix.vercel.app",
