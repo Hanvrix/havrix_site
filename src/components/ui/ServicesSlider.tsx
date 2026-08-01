@@ -1,153 +1,76 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
-import { ChevronLeft, ChevronRight, Zap, Code2, Globe2, Settings, Server, MessageSquare, ArrowRight } from "lucide-react";
+import React from "react";
+import { 
+  Cpu, Code2, Layers, Users, Globe, Smartphone, ShoppingCart, 
+  Zap, Search, Target, Megaphone, BarChart3, Share2, Server, 
+  Headphones, Palette, Wrench, Cloud 
+} from "lucide-react";
 import Link from "next/link";
 
-const services = [
-  {
-    title: "Digital Transformation",
-    description: "We help businesses adopt modern technologies and digital strategies to optimize processes, increase productivity, and stay competitive.",
-    icon: Zap,
-    href: "/services/digital-transformation",
-  },
-  {
-    title: "Web Development",
-    description: "Web development is the process of creating websites and web applications for the internet or intranet.",
-    icon: Code2,
-    href: "/services/web-app-development",
-  },
-  {
-    title: "Software Development",
-    description: "We build scalable web and mobile applications that improve business operations, enhance user experience, and support digital growth.",
-    icon: Globe2,
-    href: "/services/mobile-app-development",
-  },
-  {
-    title: "Custom Software",
-    description: "We develop tailored software solutions designed specifically to meet unique business requirements and streamline internal processes.",
-    icon: Settings,
-    href: "/services/custom-development",
-  },
-  {
-    title: "CMS, E-Commerce & ERP",
-    description: "We provide CMS, e-commerce, and ERP solutions that help businesses manage content, sales, and operations efficiently.",
-    icon: Server,
-    href: "/services/cms-ecommerce-erp",
-  },
-  {
-    title: "BPO Support Services",
-    description: "Our BPO support services deliver reliable customer assistance through chat, email, and voice channels to improve engagement and satisfaction.",
-    icon: MessageSquare,
-    href: "/services/support",
-  },
+const servicesGridData = [
+  { title: "Website Development", icon: Globe, href: "/services/web-app-development" },
+  { title: "E-Commerce Development", icon: ShoppingCart, href: "/services/cms-ecommerce-erp" },
+  { title: "Mobile App Development", icon: Smartphone, href: "/services/mobile-app-development" },
+  
+  { title: "Custom Software Development", icon: Code2, href: "/services/custom-development" },
+  { title: "Search Engine Optimization (SEO)", icon: Search, href: "/services/digital-transformation" },
+  { title: "Lead Generation", icon: Target, href: "/services/digital-transformation" },
+
+  { title: "Digital Transformation", icon: Cpu, href: "/services/digital-transformation" },
+  { title: "Social Media Management", icon: Share2, href: "/services/digital-transformation" },
+  { title: "Graphic Design", icon: Palette, href: "/services/custom-development" },
+
+  { title: "Programmatic Advertising", icon: BarChart3, href: "/services/digital-transformation" },
+  { title: "ERP Solutions", icon: Layers, href: "/products/textile-erp" },
+  { title: "Google Ads", icon: Megaphone, href: "/services/digital-transformation" },
+
+  { title: "CRM Solutions", icon: Users, href: "/services/custom-development" },
+  { title: "Business Process Automation", icon: Zap, href: "/services/custom-development" },
+  { title: "IT Backend Support", icon: Server, href: "/services/support" },
+
+  { title: "BPO Support Services", icon: Headphones, href: "/services/support" },
+  { title: "Website Maintenance & Support", icon: Wrench, href: "/services/support" },
+  { title: "Cloud & Hosting Support", icon: Cloud, href: "/services/support" },
 ];
 
 export default function ServicesSlider() {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: "start" },
-    [Autoplay({ delay: 3500, stopOnInteraction: false })]
-  );
-  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
-  const [nextBtnEnabled, setNextBtnEnabled] = useState(true);
-
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setPrevBtnEnabled(emblaApi.canScrollPrev());
-    setNextBtnEnabled(emblaApi.canScrollNext());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
-  }, [emblaApi, onSelect]);
-
   return (
-    <div className="relative">
-      {/* Title & Navigation Row */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-        <div className="text-left w-full md:w-auto mb-8 md:mb-0">
-          <div className="flex items-center space-x-3 text-brand-primary font-black uppercase tracking-[3px] text-[12px] mb-3">
-            <span className="w-8 h-[2px] bg-brand-primary"></span>
-            <span>Our Solutions</span>
-          </div>
-          <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tighter text-brand-secondary">
-            Transforming Ideas Into Digital Success
-          </h2>
-          <p className="text-lg text-text-secondary max-w-2xl leading-relaxed font-medium">
-            Precision-engineered services designed to eliminate technical debt and accelerate your digital dominance.
-          </p>
-        </div>
-        
-        {/* Navigation Buttons */}
-        <div className="flex items-center space-x-4 shrink-0">
-          <button
-            onClick={scrollPrev}
-            disabled={!prevBtnEnabled}
-            className="w-10 h-10 rounded-full border border-border-light bg-white flex items-center justify-center text-brand-secondary hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed group cursor-pointer"
-            aria-label="Previous service"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-          <button
-            onClick={scrollNext}
-            disabled={!nextBtnEnabled}
-            className="w-10 h-10 rounded-full border border-border-light bg-white flex items-center justify-center text-brand-secondary hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed group cursor-pointer"
-            aria-label="Next service"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-        </div>
+    <div className="relative w-full pt-2 pb-1 px-4 sm:px-8">
+      
+      {/* Mobile/Tablet Section Header */}
+      <div className="xl:hidden text-center max-w-2xl mx-auto mb-10 space-y-3">
+        <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-wider">
+          <span className="text-[#0F2D5C]">WHAT WE </span>
+          <span className="text-primary-green">DO</span>
+        </h2>
+        <div className="w-16 h-1.5 bg-primary-green mx-auto rounded-full"></div>
       </div>
 
-      {/* Slider Viewport */}
-      <div className="overflow-hidden -mx-4 px-4 -my-12 py-12" ref={emblaRef}>
-        <div className="flex -ml-6 touch-pan-y">
-          {services.map((service, index) => (
-            <div key={index} className="flex-[0_0_100%] min-w-0 pl-4 sm:flex-[0_0_50%] lg:flex-[0_0_33.33%]">
-              <div className="flex flex-col h-full bg-white group border-y-0 border-r-0 border-l-4 border-brand-primary hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] transition-all duration-500 p-6 rounded-[20px] relative">
-                
-                {/* Header Row: Number + Icon + Title */}
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="flex items-center justify-center w-6 h-6 bg-background text-brand-primary rounded-xl transition-all duration-500 shadow-sm shrink-0 border border-black/5">
-                    <service.icon className="w-4 h-4" />
-                  </div>
-
-                  <h3 className="text-[22px] font-bold text-brand-primary tracking-tight leading-tight">
-                    {service.title}
-                  </h3>
-                 
-                </div>
-
-                <p className="text-text-secondary text-[16px] leading-relaxed mb-4 flex-grow font-medium">
-                  {service.description}
-                </p>
-
-                {/* Footer Row: Action */}
-                <div className="mt-auto pt-2 border-t border-border-light/40 flex items-center justify-between">
-                  <span className="text-[13px] font-bold text-brand-secondary group-hover:text-brand-primary transition-colors duration-500">
-                    Learn More
-                  </span>
-                  <Link 
-                    href={service.href} 
-                    className="flex items-center justify-center w-8 h-8 rounded-full border border-border-light/80 text-brand-secondary group-hover:bg-brand-primary group-hover:border-brand-primary group-hover:text-white transition-all duration-500 shadow-sm"
-                  >
-                    <ArrowRight className="w-4 h-4 -rotate-45 transition-transform duration-500 group-hover:rotate-0" />
-                  </Link>
-                </div>
+      {/* 18 Services Grid shifted right on desktop for left vertical title banner */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-10 max-w-[1240px] xl:ml-32 mx-auto relative z-10">
+        {servicesGridData.map((item, idx) => {
+          const IconComp = item.icon;
+          return (
+            <Link
+              key={idx}
+              href={item.href}
+              className="group flex items-center gap-4.5 transition-transform duration-300 hover:translate-x-1.5 select-none"
+            >
+              {/* Amber Outline Icon Box Matching Reference Image */}
+              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/40 text-amber-600 flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
+                <IconComp className="w-7 h-7 stroke-[1.8]" />
               </div>
-            </div>
-          ))}
-        </div>
+
+              {/* Service Title */}
+              <h3 className="text-base sm:text-lg font-extrabold text-[#1E293B] group-hover:text-primary-green transition-colors leading-snug">
+                {item.title}
+              </h3>
+            </Link>
+          );
+        })}
       </div>
+
     </div>
   );
 }
-

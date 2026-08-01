@@ -49,7 +49,18 @@ const Footer = () => {
 
 
   return (
-    <footer className="bg-bg-footer text-white pt-15 pb-5 overflow-hidden relative">
+    <footer 
+      className="relative w-full text-white pt-16 pb-5 overflow-hidden bg-[#0B0F17] bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/images/heroBG.png')" }}
+    >
+      {/* Dark Overlay for contrast & text legibility */}
+      <div className="absolute inset-0 bg-black/60 pointer-events-none"></div>
+
+      {/* Ambient Green Glow */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-primary-green/10 blur-[150px] rounded-full"></div>
+      </div>
+
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-10">
           {/* Brand Identity */}
@@ -118,23 +129,12 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-            
-            <h3 className="text-white font-semibold mb-6 mt-8 text-[15px]">Products</h3>
-            <ul className="space-y-4 text-[14px]">
-              {footerLinks.products.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="hover:text-white transition-colors">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-6 text-[15px]">Industries</h3>
+            <h3 className="text-white font-semibold mb-6 text-[15px]">Products</h3>
             <ul className="space-y-4 text-[14px]">
-              {footerLinks.Industries.map((link) => (
+              {footerLinks.products.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="hover:text-white transition-colors">
                     {link.name}

@@ -561,9 +561,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. SERVICES (OUR SOLUTIONS / SERVICES SLIDER) */}
-      <section className="py-20 lg:py-28 bg-services-bg w-full">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 5. SERVICES (WHAT WE DO — FULL WIDTH WARM PARCHMENT PAPER SECTION) */}
+      <section 
+        className="pt-4 pb-6 lg:pt-8 lg:pb-10 w-full relative overflow-hidden bg-cover bg-center bg-no-repeat border-y border-slate-200/60 isolate"
+        style={{ backgroundImage: "url('/images/paper-texture.png')" }}
+      >
+        <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          {/* Left Vertical Rotated Title Banner — Exact Straight-Line Alignment with OUR PROCESS */}
+          <div className="hidden xl:flex absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-20 items-center justify-center">
+            <h2 className="text-4xl sm:text-5xl lg:text-5xl font-black uppercase tracking-wider [writing-mode:vertical-rl] rotate-180 select-none">
+              <span className="text-[#0F2D5C]">WHAT WE </span>
+              <span className="text-primary-green">DO</span>
+            </h2>
+          </div>
+
           <FadeIn direction="up">
             <ServicesSlider />
           </FadeIn>
@@ -640,116 +652,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. ABOUT SECTION WITH PROGRESS BARS */}
-      <section className="py-14 lg:py-20 bg-background border-t border-border-light/30">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left: Text Content */}
-            <div className="text-left">
-              <FadeIn direction="up">
-                <span className="inline-flex items-center gap-2 text-brand-primary font-bold uppercase tracking-[2px] text-xs mb-3">
-                  Get to Know Us
-                </span>
-                <h2 className="text-3xl md:text-5xl font-black text-brand-secondary tracking-tighter mb-8 leading-tight">
-                  Driving Innovation & Excellence for Sustainable Growth
-                </h2>
-                
-                {/* Mission & Vision Rows */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                  <div className="p-6 bg-white border-y-0 border-r-0 border-l-4 border-brand-primary rounded-[20px]">
-                    <h2 className="text-xl font-bold text-brand-secondary mb-2">Our Mission</h2>
-                    <p className="text-text-secondary text-[16px] leading-relaxed mb-4">
-                      To shape the future of business through innovative technology, seamless digital experiences, and scalable solutions that unlock new opportunities for growth and success.
-                    </p>
-                    <ul className="space-y-1 text-md font-bold text-brand-secondary">
-                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-brand-primary" /> Customer-Centric</li>
-                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-brand-primary" /> AI & Digital Solutions</li>
-                    </ul>
-                  </div>
-                  <div className="p-6 bg-white border-y-0 border-r-0 border-l-4 border-brand-primary rounded-[20px]">
-                    <h2 className="text-xl font-bold text-brand-secondary mb-2">Our Vision</h2>
-                    <p className="text-text-secondary text-[16px] leading-relaxed mb-4">
-                      To shape the future of business by delivering transformative technology solutions that inspire innovation, accelerate growth, and create meaningful impact across industries.
-                    </p>
-                    <ul className="space-y-1 text-md font-bold text-brand-secondary">
-                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-brand-primary" /> Tech Innovation</li>
-                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-brand-primary" /> Sustainable Scale</li>
-                    </ul>
-                  </div>
-                </div>
+      {/* 8. CTA BANNER SECTION — Reduced Padding & Filled Background */}
+      <section className="py-10 lg:py-14 bg-[#090D16] relative overflow-hidden text-center border-t border-slate-800/60">
+        {/* Background Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-35 pointer-events-none"></div>
 
-                <Link href="/about">
-                  <Button variant="primary" showArrow={true}>Learn More About Us</Button>
-                </Link>
-              </FadeIn>
-            </div>
-
-            {/* Right: Image & Progress Overlay */}
-            <div className="relative flex justify-center lg:justify-end mt-10 lg:mt-0">
-              <ZoomOnScroll className="relative w-full max-w-[560px]">
-
-                {/* Main Image with Bottom-Left Cutout */}
-                <div className="overflow-hidden rounded-[24px] shadow-2xl relative">
-                  <img
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80"
-                    alt="Hanvrix Team"
-                    className="w-full h-auto object-cover aspect-[4/5]"
-                  />
-                  {/* Rounded Inner Corner Mask */}
-                  <div className="absolute bottom-0 left-0 w-[60%] h-[28%] bg-background rounded-tr-[32px]" />
-                </div>
-
-                {/* Progress Card Inside Cutout */}
-                <div
-                  className="
-                    absolute
-                    left-0
-                    bottom-0
-                    w-[calc(100%-2rem)]
-                    sm:w-[320px]
-                    max-w-[320px]
-                    bg-white
-                    rounded-tr-[24px]
-                    p-4
-                    z-20
-                    shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)]
-                  "
-                >
-                  <h4 className="text-[20px] font-bold text-brand-secondary mb-6 tracking-tight">
-                    Business Progress
-                  </h4>
-
-                  <div className="space-y-6">
-                    {/* Project Success */}
-                    <AnimatedProgress label="Project Success" percentage={98} />
-
-                    {/* Customer Satisfaction */}
-                    <AnimatedProgress label="Customer Satisfaction" percentage={90} />
-                  </div>
-                </div>
-
-              </ZoomOnScroll>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 8. CTA BANNER SECTION */}
-      <section className="py-16 lg:py-24 bg-bg-footer relative overflow-hidden text-center">
-        {/* Glow shape */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 blur-[80px] rounded-full"></div>
+        {/* Ambient Glowing Orbs */}
+        <div className="absolute -top-24 -left-24 w-80 h-80 bg-primary-green/20 blur-[100px] rounded-full pointer-events-none"></div>
+        <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-emerald-500/15 blur-[100px] rounded-full pointer-events-none"></div>
         
-        <div className="max-w-4xl mx-auto px-4 relative z-10 space-y-8">
-          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-tight">
-            Reach Out To Our Support Team?
-          </h2>
-          <div>
-            <Link href="/contact">
-              <Button variant="white" showArrow={true} className="px-10 h-[52px]">
-                Contact us
-              </Button>
-            </Link>
-          </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-6">
+          <FadeIn direction="up">
+            {/* Top Badge */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
+              <span className="w-2 h-2 rounded-full bg-primary-green animate-pulse"></span>
+              <span className="text-gray-300 uppercase tracking-widest text-[11px] font-bold">24/7 Dedicated Technical Support</span>
+            </div>
+          </FadeIn>
+
+          <FadeIn direction="up" delay={0.1}>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+              Ready to Accelerate Your <span className="text-primary-green font-handwriting text-4xl sm:text-5xl lg:text-6xl font-normal">Digital Growth?</span>
+            </h2>
+          </FadeIn>
+
+          <FadeIn direction="up" delay={0.2}>
+            <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto font-medium">
+              Have a project in mind or need expert technical guidance? Our engineering support team is ready to assist you.
+            </p>
+          </FadeIn>
+
+          <FadeIn direction="up" delay={0.3}>
+            <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+              <Link href="/contact">
+                <Button variant="white" showArrow={true} className="px-8 py-3.5 text-base font-bold rounded-xl shadow-lg">
+                  Contact Us Now
+                </Button>
+              </Link>
+              <a href="tel:+919876543210" className="inline-flex items-center space-x-2.5 px-7 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-white font-bold text-base transition-all backdrop-blur-sm">
+                <Phone className="w-4 h-4 text-primary-green" />
+                <span>+91 88382 13390</span>
+              </a>
+            </div>
+          </FadeIn>
         </div>
       </section>
     </div>
