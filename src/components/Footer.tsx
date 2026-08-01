@@ -55,13 +55,13 @@ const Footer = () => {
           {/* Brand Identity */}
           <div className="space-y-8">
             <Link href="/" className="flex items-center space-x-2 group">
-              <div className="p-1.5 bg-brand-primary rounded-lg">
+              <div className="relative transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src="/logo.png"
                   alt="Hanvrix Logo"
-                  width={24}
-                  height={24}
-                  className="w-6 h-6 object-contain brightness-0 invert"
+                  width={36}
+                  height={36}
+                  className="w-9 h-9 object-contain"
                 />
               </div>
               <span className="text-2xl font-black tracking-tighter text-white uppercase">

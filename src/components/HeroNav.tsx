@@ -5,10 +5,9 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Search, Menu, X, ChevronDown,
-  Shirt, Zap, Hammer, Car, HardHat, Building2, Landmark, Store, Wheat,
-  Box, Database, Utensils, Ruler, Home, ShoppingCart, Globe2, Plane, LineChart, Leaf, ShoppingBag,
-  Code2, Sparkles, Monitor, Smartphone, Headset, Phone, Mail, MapPin,
+  Menu, X, ChevronDown,
+  Shirt, Zap, Hammer, Car, HardHat, Building2, Landmark, Store, Wheat, Box,
+  Code2, Sparkles, Monitor, Smartphone, Headset, ShoppingCart,
   Facebook, Twitter, Linkedin, Instagram
 } from "lucide-react";
 import Image from "next/image";
@@ -29,17 +28,6 @@ export const menuData: Record<string, { name: string; icon: React.ReactNode; hre
   ],
   Products: [
     { name: "Textile ERP",        icon: <Box          className="w-4 h-4" />, href: "/products/textile-erp" },
-    // { name: "Steel ERP",          icon: <Database     className="w-4 h-4" /> },
-    // { name: "Food & Beverage ERP",icon: <Utensils     className="w-4 h-4" /> },
-    // { name: "Construction ERP",   icon: <Ruler        className="w-4 h-4" /> },
-    // { name: "Real Estate ERP",    icon: <Home         className="w-4 h-4" /> },
-    { name: "E-commerce",         icon: <ShoppingCart className="w-4 h-4" /> },
-    { name: "Electrical ERP",         icon: <ShoppingCart className="w-4 h-4" /> },
-    // { name: "Import / Export",    icon: <Globe2       className="w-4 h-4" /> },
-    // { name: "Travel",             icon: <Plane        className="w-4 h-4" /> },
-    // { name: "Finance",            icon: <LineChart    className="w-4 h-4" /> },
-    // { name: "Agriculture",        icon: <Leaf         className="w-4 h-4" /> },
-    // { name: "Retail",             icon: <ShoppingBag  className="w-4 h-4" /> },
   ],
   Services: [
     { name: "Digital Transformation",  icon: <Sparkles    className="w-4 h-4" />, href: "/services/digital-transformation" },
@@ -117,24 +105,31 @@ export function NavDropdowns({
                   animate={{ opacity: 1, scaleY: 1, y: 0 }}
                   exit={{ opacity: 0, scaleY: 0.85, y: -4 }}
                   transition={{ duration: 0.18, ease: "easeOut" }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 w-[270px] bg-bg-dark rounded-2xl shadow-2xl border border-white/10 py-3 z-50 origin-top"
+                  className="absolute top-full left-1/2 -translate-x-1/2 w-[280px] bg-white rounded-2xl shadow-2xl border border-gray-200/80 py-3 z-50 origin-top overflow-hidden"
                 >
-                  <div className="grid grid-cols-1 gap-0.5 px-2">
+                  <div className="grid grid-cols-1 gap-1 px-2">
                     {items.map((item) => {
                       const p = itemPath(title, item);
+                      const isItemActive = pathname === p;
                       return (
                         <Link
                           key={item.name}
                           href={p}
-                          className={`flex items-center gap-3 px-4 py-2.5 text-[13px] rounded-xl transition-all ${
-                            pathname === p
-                              ? "text-white bg-brand-primary"
-                              : "text-white/60 hover:bg-white/5 hover:text-white"
+                          className={`flex items-center gap-3 px-4 py-2.5 text-[14px] rounded-xl transition-all group ${
+                            isItemActive
+                              ? "bg-primary-green text-white shadow-md shadow-primary-green/20 font-bold"
+                              : "text-gray-800 hover:bg-[#DCFCE7]/70 hover:text-navy-blue font-semibold"
                           }`}
                           onClick={() => setActiveDropdown(null)}
                         >
-                          <span className={pathname === p ? "text-white" : "text-brand-primary"}>{item.icon}</span>
-                          <span className="font-semibold">{item.name}</span>
+                          <span
+                            className={`transition-transform duration-200 group-hover:scale-110 ${
+                              isItemActive ? "text-white" : "text-navy-blue"
+                            }`}
+                          >
+                            {item.icon}
+                          </span>
+                          <span>{item.name}</span>
                         </Link>
                       );
                     })}
@@ -190,24 +185,31 @@ export function NavDropdownsPlain({
                   animate={{ opacity: 1, scaleY: 1, y: 0 }}
                   exit={{ opacity: 0, scaleY: 0.85, y: -4 }}
                   transition={{ duration: 0.18, ease: "easeOut" }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 w-[270px] bg-bg-dark rounded-2xl shadow-2xl border border-white/10 py-3 z-50 origin-top"
+                  className="absolute top-full left-1/2 -translate-x-1/2 w-[280px] bg-white rounded-2xl shadow-2xl border border-gray-200/80 py-3 z-50 origin-top overflow-hidden"
                 >
-                  <div className="grid grid-cols-1 gap-0.5 px-2">
+                  <div className="grid grid-cols-1 gap-1 px-2">
                     {items.map((item) => {
                       const p = itemPath(title, item);
+                      const isItemActive = pathname === p;
                       return (
                         <Link
                           key={item.name}
                           href={p}
-                          className={`flex items-center gap-3 px-4 py-2.5 text-[13px] rounded-xl transition-all ${
-                            pathname === p
-                              ? "text-white bg-brand-primary"
-                              : "text-white/60 hover:bg-white/5 hover:text-white"
+                          className={`flex items-center gap-3 px-4 py-2.5 text-[14px] rounded-xl transition-all group ${
+                            isItemActive
+                              ? "bg-primary-green text-white shadow-md shadow-primary-green/20 font-bold"
+                              : "text-gray-800 hover:bg-[#DCFCE7]/70 hover:text-navy-blue font-semibold"
                           }`}
                           onClick={() => setActiveDropdown(null)}
                         >
-                          <span className={pathname === p ? "text-white" : "text-brand-primary"}>{item.icon}</span>
-                          <span className="font-semibold">{item.name}</span>
+                          <span
+                            className={`transition-transform duration-200 group-hover:scale-110 ${
+                              isItemActive ? "text-white" : "text-navy-blue"
+                            }`}
+                          >
+                            {item.icon}
+                          </span>
+                          <span>{item.name}</span>
                         </Link>
                       );
                     })}
@@ -248,13 +250,13 @@ export function MobileDrawer({
             {/* Header */}
             <div className="flex items-center justify-between p-6 sm:px-8 border-b border-white/5 bg-bg-dark/80 backdrop-blur-md sticky top-0 z-10">
               <Link href="/" className="flex items-center space-x-2" onClick={onClose}>
-                <div className="p-1.5 bg-brand-primary rounded-lg">
+                <div className="relative">
                   <Image
                     src="/logo.png"
                     alt="Hanvrix Logo"
-                    width={24}
-                    height={24}
-                    className="w-6 h-6 object-contain brightness-0 invert"
+                    width={44}
+                    height={44}
+                    className="w-10 h-10 object-contain"
                   />
                 </div>
                 <span className="text-xl font-black tracking-tighter text-white">
@@ -395,7 +397,7 @@ export function MobileDrawer({
 }
 
 /* ══════════════════════════════════════════════════════════
-   EmbeddedNav — the dark nav INSIDE any hero section/card
+   EmbeddedNav — nav INSIDE any hero section/card
    Used by: HeroNav (homepage) and BreadcrumbHeader (inner pages)
 ══════════════════════════════════════════════════════════ */
 export function EmbeddedNav() {
@@ -405,16 +407,16 @@ export function EmbeddedNav() {
 
   return (
     <>
-      <nav className="relative z-30 flex items-center justify-between px-6 sm:px-8 lg:px-12 py-5">
+      <nav className="relative z-30 flex items-center justify-between px-6 sm:px-8 lg:px-12 py-3">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 group shrink-0">
-          <div className="p-1.5 bg-brand-primary rounded-lg transition-transform duration-300 group-hover:rotate-12">
+          <div className="relative transition-transform duration-300 group-hover:scale-105">
             <Image
               src="/logo.png"
               alt="Hanvrix Logo"
-              width={26}
-              height={26}
-              className="w-6 h-6 object-contain brightness-0 invert"
+              width={44}
+              height={44}
+              className="w-10 h-10 object-contain"
             />
           </div>
           <span className="text-xl font-black tracking-tighter text-white">
@@ -451,7 +453,7 @@ export function EmbeddedNav() {
         {/* Right */}
         <div className="flex items-center gap-3 shrink-0">
           <Link href="/contact" className="hidden lg:block">
-            <Button variant="primary" showArrow={true} className="h-[40px] px-5 text-[13px]">
+            <Button variant="primary" showArrow={true} className="h-[36px] px-4 text-[12px]">
               Contact Us
             </Button>
           </Link>
@@ -494,12 +496,12 @@ export function StickyNav() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -70, opacity: 0 }}
             transition={{ duration: 0.28, ease: "easeOut" }}
-            className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 sm:px-8 lg:px-12 py-5 bg-white/95 backdrop-blur-md shadow-md border-b border-border-light/60"
+            className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 sm:px-8 lg:px-12 py-2.5 bg-white/95 backdrop-blur-md shadow-md border-b border-border-light/60"
           >
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 group shrink-0">
-              <div className="p-1.5 bg-brand-primary rounded-lg transition-transform duration-300 group-hover:rotate-12">
-                <Image src="/logo.png" alt="Hanvrix Logo" width={24} height={24} className="w-5 h-5 object-contain brightness-0 invert" />
+              <div className="relative transition-transform duration-300 group-hover:scale-105">
+                <Image src="/logo.png" alt="Hanvrix Logo" width={40} height={40} className="w-10 h-10 object-contain" />
               </div>
               <span className="text-lg font-black tracking-tighter text-brand-secondary">
                 HANVRIX<span className="text-brand-primary">.</span>
@@ -534,7 +536,7 @@ export function StickyNav() {
             {/* Right */}
             <div className="flex items-center gap-3 shrink-0">
               <Link href="/contact" className="hidden lg:block">
-                <Button variant="primary" showArrow={true} className="h-[40px] px-5 text-[13px]">
+                <Button variant="primary" showArrow={true} className="h-[36px] px-4 text-[12px]">
                   Contact Us
                 </Button>
               </Link>

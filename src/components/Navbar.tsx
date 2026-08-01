@@ -5,9 +5,8 @@ import { useState, useEffect, ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Menu, X, ChevronDown, Phone, Mail, MapPin,
-  Shirt, Zap, Hammer, Car, HardHat, Building2, Landmark, Store, Wheat,
-  Box, Database, Utensils, Ruler, Home, ShoppingCart, Globe2, Plane, LineChart, Leaf, ShoppingBag,
+  Menu, X, ChevronDown,
+  Shirt, Zap, Hammer, Car, HardHat, Building2, Landmark, Store, Wheat, Box,
   Code2, Sparkles, Monitor, Smartphone, Headset, Facebook, Twitter, Linkedin, Instagram, Github
 } from "lucide-react";
 import Image from "next/image";
@@ -48,16 +47,6 @@ const Navbar = () => {
     ],
     Products: [
       { name: "Textile ERP", icon: <Box className="w-4 h-4" /> },
-      // { name: "Steel ERP", icon: <Database className="w-4 h-4" /> },
-      // { name: "Food & Beverage ERP", icon: <Utensils className="w-4 h-4" /> },
-      // { name: "Construction ERP", icon: <Ruler className="w-4 h-4" /> },
-      // { name: "Real Estate ERP", icon: <Home className="w-4 h-4" /> },
-      // { name: "E-commerce", icon: <ShoppingCart className="w-4 h-4" /> },
-      // { name: "Import / Export", icon: <Globe2 className="w-4 h-4" /> },
-      // { name: "Travel", icon: <Plane className="w-4 h-4" /> },
-      // { name: "Finance", icon: <LineChart className="w-4 h-4" /> },
-      // { name: "Agriculture", icon: <Leaf className="w-4 h-4" /> },
-      // { name: "Retail", icon: <ShoppingBag className="w-4 h-4" /> },
     ],
     Services: [
       { name: "Digital Transformation", icon: <Sparkles className="w-4 h-4" />, href: "/services/digital-transformation" },
@@ -98,23 +87,23 @@ const Navbar = () => {
       <nav
         className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 flex items-center justify-between ${
           isScrolled
-            ? "top-0 w-full bg-bg-dark/95 backdrop-blur-md py-3 shadow-xl border-b border-white/5 px-4 sm:px-6 lg:px-8"
-            : "top-4 w-[calc(100%-32px)] max-w-[1400px] bg-bg-dark/40 backdrop-blur-md py-4 rounded-2xl border border-white/10 px-6 sm:px-8"
+            ? "top-0 w-full bg-bg-dark/95 backdrop-blur-md py-2 shadow-xl border-b border-white/5 px-4 sm:px-6 lg:px-8"
+            : "top-3 w-[calc(100%-32px)] max-w-[1400px] bg-bg-dark/40 backdrop-blur-md py-2.5 rounded-xl border border-white/10 px-5 sm:px-6"
         }`}
       >
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="p-1.5 bg-brand-primary rounded-lg transition-transform duration-300 group-hover:rotate-12">
+            <div className="relative transition-transform duration-300 group-hover:scale-105">
               <Image
                 src="/logo.png"
                 alt="Hanvrix Logo"
-                width={28}
-                height={28}
-                className="w-7 h-7 object-contain brightness-0 invert"
+                width={44}
+                height={44}
+                className="w-10 h-10 object-contain"
               />
             </div>
-            <span className="text-2xl font-black tracking-tighter text-white">
+            <span className="text-xl font-black tracking-tighter text-white">
               HANVRIX<span className="text-brand-primary">.</span>
             </span>
           </Link>
@@ -170,9 +159,9 @@ const Navbar = () => {
                       animate={{ opacity: 1, scaleY: 1 }}
                       exit={{ opacity: 0, scaleY: 0.8 }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 w-[280px] bg-bg-footer rounded-2xl shadow-2xl border border-white/5 py-4 z-50 origin-top"
+                      className="absolute top-full left-1/2 -translate-x-1/2 w-[280px] bg-white rounded-2xl shadow-2xl border border-gray-200/80 py-3 z-50 origin-top overflow-hidden"
                     >
-                      <div className="grid grid-cols-1 gap-1 px-3">
+                      <div className="grid grid-cols-1 gap-1 px-2">
                         {items.map((item) => {
                           const itemPath = item.href || `/${title.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-")}/${item.name.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-")}`;
                           const isItemActive = pathname === itemPath;
@@ -180,17 +169,21 @@ const Navbar = () => {
                             <Link
                               key={item.name}
                               href={itemPath}
-                              className={`flex items-center space-x-3 px-4 py-3 text-[14px] rounded-xl transition-all ${
+                              className={`flex items-center space-x-3 px-4 py-2.5 text-[14px] rounded-xl transition-all group ${
                                 isItemActive
-                                  ? "text-white bg-brand-primary shadow-lg shadow-brand-primary/20"
-                                  : "text-white/60 hover:bg-white/5 hover:text-white"
+                                  ? "bg-primary-green text-white shadow-md shadow-primary-green/20 font-bold"
+                                  : "text-gray-800 hover:bg-[#DCFCE7]/70 hover:text-navy-blue font-semibold"
                               }`}
                               onClick={() => setActiveDropdown(null)}
                             >
-                              <span className={isItemActive ? "text-white" : "text-brand-primary"}>
+                              <span
+                                className={`transition-transform duration-200 group-hover:scale-110 ${
+                                  isItemActive ? "text-white" : "text-navy-blue"
+                                }`}
+                              >
                                 {item.icon}
                               </span>
-                              <span className="font-semibold">{item.name}</span>
+                              <span>{item.name}</span>
                             </Link>
                           );
                         })}
@@ -214,7 +207,7 @@ const Navbar = () => {
           </Link>
 
           <Link href="/contact" className="ml-2">
-            <Button className="h-[44px] px-6 text-xs uppercase tracking-wider" showArrow={true} variant="primary">
+            <Button className="h-[36px] px-5 text-xs uppercase tracking-wider" showArrow={true} variant="primary">
               Contact
             </Button>
           </Link>
@@ -244,13 +237,13 @@ const Navbar = () => {
             {/* Header */}
             <div className="flex items-center justify-between p-6 sm:px-8 border-b border-white/5 bg-bg-dark/80 backdrop-blur-md sticky top-0 z-10">
               <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
-                <div className="p-1.5 bg-brand-primary rounded-lg">
+                <div className="relative">
                   <Image
                     src="/logo.png"
                     alt="Hanvrix Logo"
-                    width={24}
-                    height={24}
-                    className="w-6 h-6 object-contain brightness-0 invert"
+                    width={44}
+                    height={44}
+                    className="w-10 h-10 object-contain"
                   />
                 </div>
                 <span className="text-xl font-black tracking-tighter text-white">

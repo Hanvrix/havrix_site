@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  CheckCircle2, Code2, Globe2, Layers, Settings, Server, Zap, Shield, Smartphone, 
-  Eye, Activity, ArrowRight, TrendingUp, Cpu, Info, Phone, ChevronDown, Calendar, MessageSquare
+  CheckCircle2, Code2, Layers, Zap, Shield, Smartphone, 
+  ArrowRight, ArrowDown, Cpu, ChevronDown, Phone
 } from "lucide-react";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
@@ -17,6 +17,30 @@ import AnimatedProgress from "@/components/ui/AnimatedProgress";
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  const headlines = [
+    {
+      line1: "Turn Your Dreams into",
+      highlight: "Digital Reality."
+    },
+    {
+      line1: "Run Your Business",
+      highlight: "from Anywhere."
+    },
+    {
+      line1: "Wake Up. It's Time to",
+      highlight: "Take Your Business Online."
+    }
+  ];
+
+  const [currentHeadline, setCurrentHeadline] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentHeadline((prev) => (prev + 1) % headlines.length);
+    }, 10000);
+    return () => clearInterval(timer);
+  }, [headlines.length]);
 
   const chooseCards = [
     {
@@ -85,103 +109,212 @@ export default function Home() {
   return (
     <div className="bg-background overflow-hidden">
       
-      {/* 1. HERO SECTION — Anhet.co style floating rounded card */}
-      <div className="px-3 pt-3 md:px-4 md:pt-4">
-        <section className="relative rounded-[20px] md:rounded-[28px] bg-bg-dark">
-          {/* Background & Glow Wrapper to clip rounded corners and allow dropdown overflow */}
-          <div className="absolute inset-0 overflow-hidden rounded-[20px] md:rounded-[28px] pointer-events-none">
-            <div 
-              className="absolute inset-0"
-              style={{
-                backgroundImage: "url('/images/hero-bg.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-              }}
-            ></div>
-            {/* Very subtle teal glow — minimal so geometric pattern shows through */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[max(300px,50vw)] h-[max(300px,50vw)] bg-brand-primary/5 blur-[100px] md:blur-[150px] rounded-full"></div>
-          </div>
+      {/* 1. HERO SECTION — Full Width Hero with heroBG.png Background */}
+      <section 
+        className="relative w-full bg-[#0B0F17] overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/images/heroBG.png')" }}
+      >
+        {/* Subtle Dark Overlay for contrast & text legibility */}
+        <div className="absolute inset-0 bg-black/40 pointer-events-none"></div>
+
+        {/* Ambient Glow & Bottom Fade */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute -top-32 -right-32 w-[650px] h-[650px] bg-primary-green/15 blur-[160px] rounded-full"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-[#0B0F17]"></div>
+        </div>
 
           {/* ─── EMBEDDED NAVBAR ─── */}
           <HeroNav />
 
           {/* ─── HERO CONTENT ─── */}
-          <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 pb-8 md:pb-12 relative z-10 text-left">
-            {/* Huge Main Header */}
-            <FadeIn direction="up">
-              <h1 className="text-5xl sm:text-7xl md:text-[85px] lg:text-[110px] xl:text-[130px] font-medium text-white tracking-tighter leading-[1.05] mb-10 uppercase">
-                Empower{" "}
-                <span className="inline-flex items-center justify-start border-4 border-brand-primary w-[85px] sm:w-[130px] md:w-[150px] h-[40px] sm:h-[60px] md:h-[70px] rounded-full px-2 mx-1 sm:mx-3 align-middle">
-                  <span className="w-6 sm:w-10 md:w-12 h-6 sm:h-10 md:h-12 rounded-full bg-brand-primary block ml-auto"></span>
-                </span>{" "}
-                Your <br />
-                Business.
-              </h1>
-            </FadeIn>
-
-            {/* Under-header Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mt-4">
-              {/* Left Column (col-span-7) */}
-              <div className="lg:col-span-7 space-y-6">
-                <FadeIn direction="up" delay={0.1}>
-                  <div className="space-y-4">
-                    <span className="w-12 h-[3px] bg-brand-primary block"></span>
-                    <h4 className="text-white text-xl font-bold uppercase tracking-wide">Solutions That Scale.</h4>
-                    <p className="text-gray-400 text-lg max-w-xl leading-relaxed font-medium">
-                      Recognized by industry leaders, Hanvrix is the premier Software Development Company in Salem, Tamil Nadu. We deliver innovative, scalable, high-performance IT solutions.
-                    </p>
-                  </div>
-                </FadeIn>
-
-                <FadeIn direction="up" delay={0.2}>
-                  <div className="pt-4 flex flex-col sm:flex-row items-center gap-6">
-                    <Link href="/contact" className="w-full sm:w-auto">
-                      <Button variant="primary" showArrow={true} className="w-full sm:w-auto px-10 h-[52px]">
-                        Get Started
-                      </Button>
-                    </Link>
-                    <Link href="/about" className="group flex items-center space-x-3 text-white font-bold hover:text-brand-primary transition-colors">
-                      <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-brand-primary transition-colors">
-                        <ArrowRight className="w-4 h-4" />
-                      </div>
-                      <span>View About us</span>
-                    </Link>
-                  </div>
-                </FadeIn>
-              </div>
-
-              {/* Right Column (col-span-5) */}
-              <div className="lg:col-span-5 relative">
-                <FadeIn direction="right" delay={0.3}>
-                  <div className="relative border border-white/10 rounded-[24px] overflow-hidden shadow-2xl max-w-[500px] ml-auto">
-                    <img 
-                      src="/hero_software_engineer.jpg" 
-                      alt="Software Engineer" 
-                      className="w-full h-auto"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/70 to-transparent"></div>
-                    <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-                      <div>
-                        <div className="text-brand-primary text-2xl font-black mb-0.5">99%</div>
-                        <div className="text-white text-[10px] font-bold uppercase tracking-wider">Uptime Reliability</div>
-                      </div>
-                      <div className="p-3 bg-brand-primary rounded-xl">
-                        <TrendingUp className="text-white w-5 h-5" />
-                      </div>
+          <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 pt-4 pb-6 md:pb-8 relative z-10 text-left">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+              
+              {/* Left Column (Main Copy & Actions) */}
+              <div className="lg:col-span-7 space-y-8">
+                {/* Top Badge & Ticker Dots */}
+                <FadeIn direction="up">
+                  <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
+                    <span className="w-2.5 h-2.5 rounded-full bg-primary-green animate-pulse"></span>
+                    <span className="text-gray-200 uppercase tracking-widest text-[12px] font-semibold">Salem&apos;s Premier Software & IT Company</span>
+                    <div className="hidden sm:flex items-center gap-1.5 ml-2 border-l border-white/10 pl-3">
+                      {headlines.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setCurrentHeadline(idx)}
+                          className={`h-1.5 rounded-full transition-all duration-500 ${
+                            currentHeadline === idx ? "w-5 bg-primary-green" : "w-1.5 bg-white/20 hover:bg-white/40"
+                          }`}
+                          aria-label={`Slide ${idx + 1}`}
+                        />
+                      ))}
                     </div>
                   </div>
                 </FadeIn>
+
+                {/* Rotating Main Headline with Handwriting Font Format (Fixed Height - No Layout Shift) */}
+                <FadeIn direction="up" delay={0.1}>
+                  <div className="h-[180px] sm:h-[220px] lg:h-[260px] xl:h-[280px] flex items-center overflow-hidden">
+                    <AnimatePresence mode="wait">
+                      <motion.h1
+                        key={currentHeadline}
+                        initial={{ opacity: 0, y: 15, filter: "blur(4px)" }}
+                        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        exit={{ opacity: 0, y: -15, filter: "blur(4px)" }}
+                        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                        className="text-4xl sm:text-5xl lg:text-6xl xl:text-[68px] font-black text-white tracking-tight leading-[1.1]"
+                      >
+                        {headlines[currentHeadline].line1}{" "}
+                        <br />
+                        <span className="text-primary-green font-handwriting text-5xl sm:text-6xl lg:text-7xl xl:text-[84px] font-normal block sm:inline leading-none">
+                          {headlines[currentHeadline].highlight}
+                        </span>
+                      </motion.h1>
+                    </AnimatePresence>
+                  </div>
+                </FadeIn>
+
+                {/* Subtitle Paragraph */}
+                <FadeIn direction="up" delay={0.2}>
+                  <p className="text-gray-300 text-lg sm:text-xl max-w-2xl leading-relaxed font-normal">
+                    Hanvrix builds enterprise-grade software applications, scalable web & mobile platforms, and customized ERP systems for forward-thinking businesses.
+                  </p>
+                </FadeIn>
+
+                {/* CTA Buttons */}
+                <FadeIn direction="up" delay={0.3}>
+                  <div className="flex flex-wrap items-center gap-4 pt-2">
+                    <Link href="/contact">
+                      <Button variant="primary" showArrow={true} className="px-8 py-4 text-base font-bold rounded-xl shadow-lg shadow-primary-green/20">
+                        Book Free Consultation
+                      </Button>
+                    </Link>
+                    <Link href="/services" className="group flex items-center space-x-3 px-7 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold text-base transition-all backdrop-blur-sm">
+                      <span>Our Services</span>
+                      <ArrowRight className="w-4 h-4 text-primary-green group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
+                </FadeIn>
               </div>
+
+              {/* Right Column (Modern Interactive Software Showcase Deck) */}
+              <div className="lg:col-span-5 relative">
+                <FadeIn direction="left" delay={0.3}>
+                  <div className="relative border border-white/10 rounded-2xl bg-white/5 backdrop-blur-xl p-6 shadow-2xl space-y-6">
+                    
+                    {/* Window Header */}
+                    <div className="flex items-center justify-between pb-4 border-b border-white/10">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                        <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                        <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                      </div>
+                      <div className="text-[11px] font-mono text-gray-400 bg-black/30 px-3 py-1 rounded-md border border-white/5">
+                        hanvrix.app/system-status
+                      </div>
+                    </div>
+
+                    {/* Active Architecture Status */}
+                    <div className="p-4 rounded-xl bg-black/40 border border-white/10 flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <div className="p-2.5 bg-primary-green/20 rounded-lg text-primary-green">
+                          <Cpu className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <div className="text-white font-bold text-sm">Enterprise Microservices</div>
+                          <div className="text-xs text-gray-400">High-Availability Cloud Architecture</div>
+                        </div>
+                      </div>
+                      <span className="flex h-3 w-3 relative">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-green opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-3 w-3 bg-primary-green"></span>
+                      </span>
+                    </div>
+
+                    {/* Tech Stack Cards Grid */}
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-primary-green/50 transition-colors">
+                        <Code2 className="w-6 h-6 text-primary-green mb-2" />
+                        <div className="text-white font-bold text-sm">Custom Web & SaaS</div>
+                        <div className="text-xs text-gray-400 mt-0.5">Next.js & Node Platforms</div>
+                      </div>
+                      <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-primary-green/50 transition-colors">
+                        <Smartphone className="w-6 h-6 text-primary-green mb-2" />
+                        <div className="text-white font-bold text-sm">Mobile Apps</div>
+                        <div className="text-xs text-gray-400 mt-0.5">iOS & Android Solutions</div>
+                      </div>
+                      <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-primary-green/50 transition-colors">
+                        <Layers className="w-6 h-6 text-primary-green mb-2" />
+                        <div className="text-white font-bold text-sm">Textile & Retail ERP</div>
+                        <div className="text-xs text-gray-400 mt-0.5">End-to-End Automation</div>
+                      </div>
+                      <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-primary-green/50 transition-colors">
+                        <Shield className="w-6 h-6 text-primary-green mb-2" />
+                        <div className="text-white font-bold text-sm">Cloud & Security</div>
+                        <div className="text-xs text-gray-400 mt-0.5">99.9% Uptime SLA</div>
+                      </div>
+                    </div>
+
+                    {/* Footer Social / Trust Info */}
+                    <div className="pt-2 flex items-center justify-between text-xs text-gray-400">
+                      <div className="flex items-center space-x-2">
+                        <CheckCircle2 className="w-4 h-4 text-primary-green" />
+                        <span>ISO Standard Code Quality</span>
+                      </div>
+                      <div className="text-primary-green font-semibold">Ready to Scale</div>
+                    </div>
+
+                  </div>
+                </FadeIn>
+              </div>
+
             </div>
 
-            {/* Social Links on Bottom Left */}
-            <FadeIn direction="up" delay={0.4} className="mt-8 md:mt-12">
-              <SocialLinks />
-            </FadeIn>
+            {/* Bottom Content: Row 1 Social Links, Row 2 Scroll to Explore */}
+            <div className="mt-10 pt-4 space-y-6">
+              {/* Row 1: Social Links */}
+              <FadeIn direction="up" delay={0.5} className="flex items-center justify-start">
+                <SocialLinks />
+              </FadeIn>
+
+              {/* Row 2: Centered Scroll to Explore Widget */}
+              <FadeIn direction="up" delay={0.6} className="flex items-center justify-center pt-2">
+                <button
+                  onClick={() => {
+                    window.scrollTo({
+                      top: window.innerHeight * 0.88,
+                      behavior: "smooth"
+                    });
+                  }}
+                  className="group flex items-center gap-3 cursor-pointer opacity-90 hover:opacity-100 transition-opacity"
+                >
+                  <div className="flex flex-col items-center">
+                    {/* Animated Mouse Pill Icon */}
+                    <div className="w-5 h-8 border-2 border-white/40 group-hover:border-primary-green rounded-full flex justify-center p-1 transition-colors">
+                      <motion.div
+                        animate={{ y: [0, 8, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                        className="w-1 h-1.5 bg-primary-green rounded-full"
+                      />
+                    </div>
+                    {/* Bouncing Arrow Down */}
+                    <motion.div
+                      animate={{ y: [0, 3, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+                      className="mt-0.5 text-white/60 group-hover:text-primary-green transition-colors"
+                    >
+                      <ArrowDown className="w-3.5 h-3.5" />
+                    </motion.div>
+                  </div>
+
+                  <span className="text-xs font-semibold text-gray-300 group-hover:text-white uppercase tracking-wider transition-colors">
+                    Scroll to <span className="text-primary-green font-bold">Explore</span>
+                  </span>
+                </button>
+              </FadeIn>
+            </div>
           </div>
         </section>
-      </div>
 
       {/* 2. SERVICES SLIDER SECTION */}
       <section className="py-20 lg:py-28 bg-services-bg w-full">
