@@ -12,10 +12,8 @@ import Link from "next/link";
 import Button from "@/components/ui/Button";
 import ServicesSlider from "@/components/ui/ServicesSlider";
 import { FadeIn } from "@/components/ui/FadeIn";
-import ZoomOnScroll from "@/components/ui/ZoomOnScroll";
 import HeroNav from "@/components/HeroNav";
 import { SocialLinks } from "@/components/ui/SocialLinks";
-import AnimatedProgress from "@/components/ui/AnimatedProgress";
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);

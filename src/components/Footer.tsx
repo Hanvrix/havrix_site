@@ -7,19 +7,6 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
-    Industries: [
-      { name: "Textiles & apparel", href: "/industries/textiles" },
-      { name: "Electrical & Electronics", href: "/industries/electrical" },
-      { name: "Steel & Metals", href: "/industries/steel-metals" },
-      { name: "Automotive", href: "/industries/automotive" },
-      { name: "Construction & Infrastructure", href: "/industries/construction" },
-      { name: "Real Estate", href: "/industries/real-estate" },
-      { name: "Banking & Finance", href: "/industries/banking-finance" },
-      { name: "E-Commerce", href: "/industries/e-commerce" },
-      { name: "Agriculture", href: "/industries/agriculture" },
-      { name: "Education", href: "/industries/education" },
-      { name: "Logistics", href: "/industries/logistics" },
-    ],
     company: [
       { name: "About Us", href: "/about" },
       { name: "Services", href: "/services" },
@@ -27,9 +14,9 @@ const Footer = () => {
       { name: "Contact", href: "/contact" },
     ],
     products: [
-      { name: "Textile ERP", href: "/products/textile-erp" },
-      { name: "E-Commerce ERP", href: "/products/e-commerce-erp" },
-      { name: "Electrical ERP", href: "/products/electrical-erp" },
+      { name: "Textiles ERP (Silks)", href: "/products/textile-erp" },
+      { name: "Garments ERP", href: "/products/garments-erp" },
+      { name: "Lead Management CRM", href: "/products/lead-management-crm" },
     ],
     services: [
       { name: "Digital Transformation", href: "/services" },

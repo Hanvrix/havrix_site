@@ -9,29 +9,29 @@ import {
 import Link from "next/link";
 
 const servicesGridData = [
-  { title: "Website Development", icon: Globe, href: "/services/web-app-development" },
-  { title: "E-Commerce Development", icon: ShoppingCart, href: "/services/cms-ecommerce-erp" },
-  { title: "Mobile App Development", icon: Smartphone, href: "/services/mobile-app-development" },
+  { title: "Website Development", icon: Globe, href: "/services" },
+  { title: "E-Commerce Development", icon: ShoppingCart, href: "/services" },
+  { title: "Mobile App Development", icon: Smartphone, href: "/services" },
   
-  { title: "Custom Software Development", icon: Code2, href: "/services/custom-development" },
-  { title: "Search Engine Optimization (SEO)", icon: Search, href: "/services/digital-transformation" },
-  { title: "Lead Generation", icon: Target, href: "/services/digital-transformation" },
+  { title: "Custom Software Development", icon: Code2, href: "/services" },
+  { title: "Search Engine Optimization (SEO)", icon: Search, href: "/services" },
+  { title: "Lead Generation", icon: Target, href: "/services" },
 
-  { title: "Digital Transformation", icon: Cpu, href: "/services/digital-transformation" },
-  { title: "Social Media Management", icon: Share2, href: "/services/digital-transformation" },
-  { title: "Graphic Design", icon: Palette, href: "/services/custom-development" },
+  { title: "Digital Transformation", icon: Cpu, href: "/services" },
+  { title: "Social Media Management", icon: Share2, href: "/services" },
+  { title: "Graphic Design", icon: Palette, href: "/services" },
 
-  { title: "Programmatic Advertising", icon: BarChart3, href: "/services/digital-transformation" },
+  { title: "Programmatic Advertising", icon: BarChart3, href: "/services" },
   { title: "ERP Solutions", icon: Layers, href: "/products/textile-erp" },
-  { title: "Google Ads", icon: Megaphone, href: "/services/digital-transformation" },
+  { title: "Google Ads", icon: Megaphone, href: "/services" },
 
-  { title: "CRM Solutions", icon: Users, href: "/services/custom-development" },
-  { title: "Business Process Automation", icon: Zap, href: "/services/custom-development" },
-  { title: "IT Backend Support", icon: Server, href: "/services/support" },
+  { title: "CRM Solutions", icon: Users, href: "/services" },
+  { title: "Business Process Automation", icon: Zap, href: "/services" },
+  { title: "IT Backend Support", icon: Server, href: "/services" },
 
-  { title: "BPO Support Services", icon: Headphones, href: "/services/support" },
-  { title: "Website Maintenance & Support", icon: Wrench, href: "/services/support" },
-  { title: "Cloud & Hosting Support", icon: Cloud, href: "/services/support" },
+  { title: "BPO Support Services", icon: Headphones, href: "/services" },
+  { title: "Website Maintenance & Support", icon: Wrench, href: "/services" },
+  { title: "Cloud & Hosting Support", icon: Cloud, href: "/services" },
 ];
 
 export default function ServicesSlider() {
@@ -57,9 +57,9 @@ export default function ServicesSlider() {
               href={item.href}
               className="group flex items-center gap-4.5 transition-transform duration-300 hover:translate-x-1.5 select-none"
             >
-              {/* Amber Outline Icon Box Matching Reference Image */}
-              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/40 text-amber-600 flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
-                <IconComp className="w-7 h-7 stroke-[1.8]" />
+              {/* Outside Navy Blue Box with Inside Brand Green Icon */}
+              <div className="w-14 h-14 rounded-2xl bg-[#0F2D5C]/10 border border-[#0F2D5C]/30 flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-110 group-hover:bg-[#0F2D5C] group-hover:border-[#0F2D5C] transition-all duration-300">
+                <IconComp className="w-7 h-7 stroke-[1.8] text-primary-green group-hover:text-white transition-colors duration-300" />
               </div>
 
               {/* Service Title */}

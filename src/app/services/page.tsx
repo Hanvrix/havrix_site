@@ -2,74 +2,120 @@ import Section, { SectionHeader } from "@/components/ui/Section";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import {
-  Smartphone,
-  ShieldCheck,
-  Zap,
-  Activity,
-  Code2,
-  Rocket,
-  ShieldAlert,
-  Sparkles,
-  Headset,
-  Monitor,
-  Database,
-  ArrowRight,
+  MessageSquare,
+  Phone,
   CheckCircle2,
-  Info
+  Activity,
+  ShieldAlert,
+  Rocket,
+  Target,
+  Share2,
+  Palette,
+  BarChart3,
+  Megaphone,
+  Users,
+  Zap,
+  Server,
+  Wrench,
+  Cloud
 } from "lucide-react";
 import Link from "next/link";
+import ServicesSlider from "@/components/ui/ServicesSlider";
 import { FadeIn } from "@/components/ui/FadeIn";
 import BreadcrumbHeader from "@/components/ui/BreadcrumbHeader";
+import { 
+  WebVectorImage, 
+  MobileVectorImage, 
+  SoftwareVectorImage, 
+  SeoVectorImage, 
+  ErpVectorImage, 
+  SupportVectorImage 
+} from "@/components/ui/ServiceVectors";
 
 export default function ServicesPage() {
   const services = [
     {
-      title: "Digital Transformation",
-      description: "Strategic evolution of your business infrastructure with AI, Cloud, and IoT integration.",
-      benefit: "Eliminate technical debt and accelerate your market dominance with precision-engineered strategy.",
-      icon: <Sparkles className="w-6 h-6" />,
-      features: ["AI/ML Integration", "Cloud-Native Adoption", "Process Optimization"],
-      href: "/services/digital-transformation"
-    },
-    {
-      title: "Web & App Development",
-      description: "Enterprise-grade web architectures engineered for speed, conversion, and global demand.",
-      benefit: "Eliminate technical debt and provide a seamless, high-velocity user experience.",
-      icon: <Monitor className="w-6 h-6" />,
-      features: ["Next.js Excellence", "SEO Mastery", "Edge Performance"],
-      href: "/services/web-app-development"
+      title: "Website / Interactive",
+      description: "Your website is the first impression for your company and where customers make the decision to do business with you. We design and build responsive, high-converting digital web experiences.",
+      vector: WebVectorImage,
     },
     {
       title: "Mobile App Development",
-      description: "Custom mobile applications designed with architectural integrity and pixel-perfect native UX.",
-      benefit: "Empower your workforce and engage your customers with native-performance tools.",
-      icon: <Smartphone className="w-6 h-6" />,
-      features: ["React Native", "Cross-Platform Sync", "Biometric Security"],
-      href: "/services/mobile-app-development"
+      description: "We build intuitive, high-performance mobile applications for Android and iOS that deliver seamless user experiences, powerful features, and native performance.",
+      vector: MobileVectorImage,
     },
     {
-      title: "Custom Development",
-      description: "Bespoke software solutions engineered for high-performance scalability and complex logic.",
-      benefit: "Build exactly what your business needs with architectural integrity and pixel-perfect UX.",
-      icon: <Code2 className="w-6 h-6" />,
-      features: ["Scalable Microservices", "Custom API Integrations", "Distributed Logic"],
-      href: "/services/custom-development"
+      title: "Customized Softwares",
+      description: "Tailored enterprise software built for your exact business workflows. We streamline operations, eliminate technical debt, and build scalable system architectures.",
+      vector: SoftwareVectorImage,
+    },
+    {
+      title: "Digital Transformation & SEO",
+      description: "Strategic evolution of your business infrastructure with search engine dominance, lead generation, cloud integration, and process automation.",
+      vector: SeoVectorImage,
     },
     {
       title: "CMS, E-Commerce & ERP",
-      description: "Unified commerce and enterprise resource planning systems designed for automation.",
-      benefit: "Reduce operational overhead with proprietary software designed to scale with your user base.",
-      icon: <Database className="w-6 h-6" />,
-      features: ["Headless Commerce", "ERP Connectivity", "Inventory Sync"],
-      href: "/services/cms-ecommerce-erp"
+      description: "Unified e-commerce platforms and automated enterprise resource planning systems designed to scale inventory, orders, and sales channels effortlessly.",
+      vector: ErpVectorImage,
     },
     {
-      title: "BPO Support",
-      description: "Human-centric multichannel support infrastructure (Chat, Mail, Telecalling) for 24/7 reliability.",
-      benefit: "Focus on your core business while we manage the integrity and reliability of your digital infrastructure.",
-      icon: <Headset className="w-6 h-6" />,
-      features: ["24/7 Multi-Channel", "Rapid Incident Response", "System Health Audits"],
-      href: "/services/support"
+      title: "BPO & 24/7 Support Services",
+      description: "Human-centric 24/7 customer support infrastructure (Chat, Mail, Telecalling) and technical maintenance to ensure non-stop operational reliability.",
+      vector: SupportVectorImage,
+    },
+  ];
+
+  const remainingServices = [
+    {
+      title: "Lead Generation",
+      description: "High-intent B2B & B2C lead acquisition strategies that scale your sales pipeline.",
+      icon: Target,
+    },
+    {
+      title: "Social Media Management",
+      description: "Comprehensive brand presence, content curation, and community growth across all platforms.",
+      icon: Share2,
+    },
+    {
+      title: "Graphic Design & Branding",
+      description: "High-impact visual identity, UI assets, and corporate brand design systems.",
+      icon: Palette,
+    },
+    {
+      title: "Programmatic Advertising",
+      description: "Data-driven automated ad placements for maximum ROI and precision audience targeting.",
+      icon: BarChart3,
+    },
+    {
+      title: "Google Ads & PPC Campaigns",
+      description: "Targeted pay-per-click campaigns engineered for high conversion rates and measurable ROI.",
+      icon: Megaphone,
+    },
+    {
+      title: "CRM Solutions",
+      description: "Custom customer relationship management systems for seamless client tracking and sales automation.",
+      icon: Users,
+    },
+    {
+      title: "Business Process Automation",
+      description: "Automated business workflows that eliminate repetitive tasks and increase operational speed.",
+      icon: Zap,
+    },
+    {
+      title: "IT Backend Support",
+      description: "Robust server architecture, database management, and backend infrastructure reliability.",
+      icon: Server,
+    },
+    {
+      title: "Website Maintenance & Support",
+      description: "Continuous website updates, security patches, backups, and speed performance optimizations.",
+      icon: Wrench,
+    },
+    {
+      title: "Cloud & Hosting Support",
+      description: "Scalable cloud infrastructure management, seamless migration, and 24/7 uptime monitoring.",
+      icon: Cloud,
     },
   ];
 
@@ -78,125 +124,126 @@ export default function ServicesPage() {
       {/* 1. Breadcrumb Header */}
       <BreadcrumbHeader title="Our Solutions & Capabilities" pageName="Services" />
 
-      {/* 2. Services Grid */}
-      <Section light={true}>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((s, i) => (
-            <FadeIn key={i} delay={i * 0.1}>
-              <Card className="flex flex-col h-full group !p-10 border border-border-light bg-white hover:bg-white transition-all duration-500 hover:shadow-2xl hover:shadow-brand-primary/10 relative overflow-hidden text-left">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
-                <div className="w-16 h-16 bg-slate-50 border border-border-light rounded-2xl flex items-center justify-center mb-8 text-brand-primary group-hover:bg-brand-primary group-hover:text-white group-hover:scale-110 transition-all duration-500 relative z-10">
-                  {s.icon}
+      {/* 2. Vector Illustration Capability Cards */}
+      <Section light={true} className="py-8 md:py-12">
+        <div className="text-center max-w-2xl mx-auto mb-8 space-y-2">
+          <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#DCFCE7] text-primary-green-dark font-bold text-xs uppercase tracking-wider">
+            FEATURED SERVICES
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0F2D5C] tracking-tight">
+            Comprehensive <span className="text-primary-green font-handwriting text-4xl sm:text-5xl lg:text-6xl font-normal inline-block">Solutions</span>
+          </h2>
+          <p className="text-slate-600 font-medium text-base sm:text-lg">
+            Direct access to our core development teams with immediate chat and call support.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 max-w-[1360px] mx-auto">
+          {services.map((s, i) => {
+            const VectorComp = s.vector;
+            return (
+              <FadeIn key={i} delay={i * 0.08}>
+                <div className="flex flex-col h-full bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-6 shadow-sm hover:shadow-xl hover:border-primary-green/40 transition-all duration-300 text-center items-center justify-between group">
+                  
+                  <div className="w-full flex flex-col items-center">
+                    {/* Top Vector Illustration */}
+                    <div className="w-full h-32 sm:h-36 relative mb-4 flex items-center justify-center overflow-hidden">
+                      <VectorComp className="w-auto h-full object-contain group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+
+                    {/* Title & Description */}
+                    <h3 className="text-lg sm:text-xl font-black text-[#0F2D5C] tracking-tight mb-2">
+                      {s.title}
+                    </h3>
+
+                    <p className="text-slate-600 font-medium text-xs sm:text-sm leading-relaxed mb-4 max-w-xs">
+                      {s.description}
+                    </p>
+                  </div>
+
+                {/* Bottom Action Pill Buttons (Chat With Us & Call Us) */}
+                <div className="pt-3.5 border-t border-slate-100 flex items-center justify-center gap-2.5 w-full">
+                  <a
+                    href="https://wa.me/919842212345"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-full bg-primary-green hover:bg-primary-green-dark text-white font-extrabold text-xs tracking-tight shadow-md flex items-center justify-center gap-1.5 transition-all duration-300 hover:scale-105 shrink-0"
+                  >
+                    <MessageSquare className="w-3.5 h-3.5 text-white" />
+                    <span>Chat With Us</span>
+                  </a>
+                  
+                  <a
+                    href="tel:+919842212345"
+                    className="px-4 py-2 rounded-full bg-[#0F2D5C] hover:bg-[#0A1F3F] text-white font-extrabold text-xs tracking-tight shadow-md flex items-center justify-center gap-1.5 transition-all duration-300 hover:scale-105 shrink-0"
+                  >
+                    <Phone className="w-3.5 h-3.5 text-white" />
+                    <span>Call Us</span>
+                  </a>
                 </div>
-                <h3 className="text-2xl font-black text-brand-secondary mb-4 tracking-tight leading-none uppercase relative z-10">{s.title}</h3>
-                <p className="text-[16px] text-text-secondary font-semibold mb-6 leading-relaxed relative z-10">
-                  {s.description}
-                </p>
-                
-                <div className="mt-auto relative z-10">
-                  <div className="h-px w-full bg-border-light/50 mb-8"></div>
-                  <ul className="space-y-4 mb-10">
-                    {s.features.map((f, idx) => (
-                      <li key={idx} className="flex items-center space-x-3">
-                        <CheckCircle2 className="text-brand-primary h-5 w-5 shrink-0" />
-                        <span className="font-bold text-brand-secondary text-[15px]">{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href={s.href} className="w-full block">
-                    <Button variant="primary" showArrow={true} className="w-full justify-center h-[52px]">
-                      Initialize Integration
-                    </Button>
-                  </Link>
-                </div>
-              </Card>
+
+              </div>
             </FadeIn>
-          ))}
+          );
+        })}
         </div>
       </Section>
 
-      {/* 3. Partnership Section */}
-      <Section light={false} className="relative overflow-hidden">
-        <div className="absolute top-1/2 left-0 w-[max(300px,40vw)] h-[max(300px,40vw)] bg-brand-primary/5 blur-[100px] rounded-full -translate-x-1/2"></div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center relative z-10 text-left">
-          <FadeIn direction="left">
-            <div className="space-y-12">
-              <span className="inline-flex items-center gap-2 text-brand-primary font-bold uppercase tracking-[2px] text-xs mb-3">
-                Value Proposition
-              </span>
-              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-tight uppercase">
-                ROI-Driven Infrastructure
-              </h2>
-              <p className="text-lg text-gray-400 font-medium leading-relaxed -mt-6">
-                We bridge the gap between technical features and business value. Our engineering methodology is designed to outlast market trends and deliver sustainable results.
-              </p>
-              
-              <div className="space-y-6">
-                <div className="group flex gap-6 p-8 bg-white/5 rounded-[2.5rem] border border-white/5 hover:border-brand-primary/30 transition-all">
-                  <div className="shrink-0 w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all">
-                    <Activity className="w-8 h-8" />
+      {/* 3. Additional Specialized Services List */}
+      <Section light={true} className="py-6 md:py-10">
+        <div className="text-center max-w-2xl mx-auto mb-8 space-y-2">
+          <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#DCFCE7] text-primary-green-dark font-bold text-xs uppercase tracking-wider">
+            MORE CAPABILITIES
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-black text-[#0F2D5C] tracking-tight">
+            Specialized Tech &amp; <span className="text-primary-green font-handwriting text-4xl sm:text-5xl font-normal inline-block">Growth Services</span>
+          </h2>
+          <p className="text-slate-600 font-medium text-base">
+            End-to-end digital expertise tailored to empower your business operations.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[1360px] mx-auto">
+          {remainingServices.map((item, idx) => {
+            const IconComp = item.icon;
+            return (
+              <FadeIn key={idx} delay={idx * 0.04}>
+                <div className="group p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-lg hover:border-primary-green/40 transition-all duration-300 flex items-center gap-5 text-left">
+                  {/* Left SVG Icon Box */}
+                  <div className="w-14 h-14 rounded-2xl bg-[#0F2D5C]/10 border border-[#0F2D5C]/30 flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 group-hover:bg-[#0F2D5C] group-hover:border-[#0F2D5C] transition-all duration-300">
+                    <IconComp className="w-7 h-7 stroke-[1.8] text-primary-green group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <div>
-                    <h4 className="text-xl font-black text-white mb-2 tracking-tight uppercase">Technical Value</h4>
-                    <p className="text-gray-400 leading-relaxed font-medium text-lg">
-                      Every project is an investment in your company&apos;s digital valuation.
+
+                  {/* Right Content */}
+                  <div className="flex-1 min-w-0">
+                    <h4 className="text-lg font-extrabold text-[#0F2D5C] mb-1 tracking-tight group-hover:text-primary-green transition-colors truncate">
+                      {item.title}
+                    </h4>
+                    <p className="text-xs sm:text-sm font-medium text-slate-600 line-clamp-1 leading-relaxed">
+                      {item.description}
                     </p>
                   </div>
                 </div>
-                <div className="group flex gap-6 p-8 bg-white/5 rounded-[2.5rem] border border-white/5 hover:border-brand-primary/30 transition-all">
-                  <div className="shrink-0 w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all">
-                    <ShieldAlert className="w-8 h-8" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-black text-white mb-2 tracking-tight uppercase">Mission Integrity</h4>
-                    <p className="text-gray-400 leading-relaxed font-medium text-lg">
-                       Mission-ready support ensures zero-downtime operations for your core business.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-          
-          <FadeIn direction="right" delay={0.2}>
-            <div>
-              <Card className="bg-white p-12 text-bg-dark border-none shadow-2xl relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary opacity-5 rounded-bl-full"></div>
-                <div className="mb-10 text-brand-primary">
-                  <Rocket className="h-12 w-12" />
-                </div>
-                 <h3 className="text-2xl md:text-3xl font-black text-brand-secondary mb-12 italic leading-tight tracking-tight">
-                  &quot;They helped us redefine our entire supply chain logic. Our operational efficiency increased by 40% in six months.&quot;
-                </h3>
-                <div className="flex items-center space-x-5 border-t border-slate-100 pt-8">
-                  <div className="w-14 h-14 bg-brand-secondary text-white rounded-[20px] flex items-center justify-center font-black text-lg tracking-tighter">
-                    SK
-                  </div>
-                  <div>
-                    <p className="font-black text-brand-secondary text-lg tracking-tight leading-none mb-1">Sarah Kensington</p>
-                    <p className="text-brand-primary text-sm font-bold uppercase tracking-widest">CTO @ Hanvrix</p>
-                  </div>
-                </div>
-              </Card>
-            </div>
-          </FadeIn>
+              </FadeIn>
+            );
+          })}
         </div>
       </Section>
 
       {/* 4. Final CTA */}
-      <section className="bg-brand-primary py-24 text-center text-white">
+      <section className="bg-brand-primary py-12 md:py-16 text-center text-white">
         <FadeIn>
           <div className="max-w-4xl mx-auto px-4">
-            <h2 className="text-4xl md:text-7xl font-black mb-8 tracking-tighter uppercase leading-[1]">
-              Digital <span className="underline decoration-white/30">Dominance.</span>
+            <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tight leading-tight">
+              Ready to Grow Your <span className="underline decoration-white/30">Business Online?</span>
             </h2>
-            <p className="text-xl font-medium mb-12 opacity-90 max-w-2xl mx-auto">
-              Deploy your most ambitious projects with the world&apos;s most precise engineering squad.
+            <p className="text-lg md:text-xl font-medium mb-6 opacity-90 max-w-2xl mx-auto leading-relaxed">
+              Whether you need a custom website, mobile app, or enterprise ERP software, our expert team is ready to help you build the right solution.
             </p>
             <div className="flex justify-center">
               <Link href="/contact">
-                <Button variant="white" showArrow={true} className="px-12 h-[54px]">
-                  Establish Mission
+                <Button variant="white" showArrow={true} className="px-10 h-[50px]">
+                  Get a Free Quote
                 </Button>
               </Link>
             </div>
