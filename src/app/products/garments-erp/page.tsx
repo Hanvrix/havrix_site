@@ -6,7 +6,6 @@ import {
   Coins, 
   Cpu, 
   Globe2, 
-  LayoutGrid, 
   LineChart, 
   Rocket, 
   Settings2, 
@@ -15,13 +14,11 @@ import {
   Zap,
   Scissors,
   FileText,
-  CheckCircle2,
-  ArrowRight,
-  PlayCircle,
-  Settings,
+  Shirt,
   Layers,
   Sparkles,
-  Palette
+  CheckCircle2,
+  Truck
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -32,72 +29,72 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Textiles ERP (Silks) | Hanvrix Salem",
-  description: "Specialized Textile & Silk Saree ERP Software. Streamline yarn stock, weaver loom allocations, Jacquard saree catalogs, dyeing batches, and GST billing.",
+  title: "Garments ERP Software | Apparel Factory Management | Hanvrix Salem",
+  description: "End-to-end Garments & Apparel Manufacturing ERP. Track cut-to-pack operations, worker piece-rate payroll, tech packs, buyer export orders, and quality control.",
 };
 
-export default function TextileERP() {
+export default function GarmentsERP() {
   const highlights = [
-    { label: "Loom Efficiency", value: "35%+", icon: <Zap className="h-5 w-5" /> },
-    { label: "Yarn Waste Saved", value: "12%", icon: <Box className="h-5 w-5" /> },
-    { label: "GST Compliance", value: "100%", icon: <ShieldCheck className="h-5 w-5" /> },
-    { label: "Batch Tracking", value: "Realtime", icon: <Globe2 className="h-5 w-5" /> },
+    { label: "Fabric Savings", value: "8-10%", icon: <Scissors className="h-5 w-5" /> },
+    { label: "Line Output", value: "+28%", icon: <Zap className="h-5 w-5" /> },
+    { label: "Piece Payroll", value: "Auto", icon: <Coins className="h-5 w-5" /> },
+    { label: "Export On-Time", value: "99%", icon: <Truck className="h-5 w-5" /> },
   ];
 
   const features = [
     {
-      title: "Yarn Stock & Raw Silk Inventory",
-      description: "Track raw silk, twisted yarn, zari reels, and cotton blends down to grams. Auto-calculate wastage and reorder levels.",
-      icon: <Box className="h-8 w-8 text-primary-green" />,
+      title: "Style Master & Tech Pack Management",
+      description: "Centralized repository for garment style specs, measurement sheets, trim cards, colorways, and multi-level BOM costing.",
+      icon: <Shirt className="h-8 w-8 text-primary-green" />,
     },
     {
-      title: "Weaver & Loom Job Work Allocation",
-      description: "Manage weaver contracts, loom assignment, per-piece wage rates, warp/weft issuances, and damaged cloth deductions.",
-      icon: <Layers className="h-8 w-8 text-primary-green" />,
+      title: "Cut-to-Pack Bundle Production Tracking",
+      description: "Barcode & QR bundle tracking across laying, cutting, panel numbering, sewing lines, washing, pressing, and final packing.",
+      icon: <Scissors className="h-8 w-8 text-primary-green" />,
     },
     {
-      title: "Silk Saree & Jacquard Design Catalog",
-      description: "Digitize Jacquard punch card designs, saree border specs, weight measurements, and color variant stock effortlessly.",
-      icon: <Sparkles className="h-8 w-8 text-primary-green" />,
-    },
-    {
-      title: "Color Dyeing & Processing Batches",
-      description: "Monitor dye-house chemical recipes, color fastness quality checks, wet-processing schedules, and lot-wise shrinkage.",
-      icon: <Palette className="h-8 w-8 text-primary-green" />,
-    },
-    {
-      title: "Wholesale & Retail GST Invoicing",
-      description: "Instant GST invoice generation for saree wholesalers and showrooms, multi-godown stock transfers, and automated balance sheets.",
+      title: "Worker Piece-Rate Payroll Automation",
+      description: "Automated calculation of operator piece-rate wages, daily production logs, line efficiency scores, and overtime allowances.",
       icon: <Coins className="h-8 w-8 text-primary-green" />,
     },
     {
-      title: "Quality & Damage Control",
-      description: "In-house weaving defect inspection (mending, stain, pull), piece ranking, and weaver scorecards for high export quality.",
+      title: "Buyer Export Orders & Shipment Status",
+      description: "Manage buyer POs, target delivery dates, container stuffing lists, commercial export invoicing, and shipping status.",
+      icon: <Truck className="h-8 w-8 text-primary-green" />,
+    },
+    {
+      title: "In-line & Final Quality Control (AQL)",
+      description: "Mobile tablet QC audits at cutting, sewing, and packing stages. Track defect counts, top defect types, and supplier ratings.",
       icon: <ClipboardCheck className="h-8 w-8 text-primary-green" />,
+    },
+    {
+      title: "Fabric Roll & Trim Inventory Control",
+      description: "Track fabric rolls by shade batch and GSM, manage trims/accessory stocks, auto-calculate marker efficiency and wastage.",
+      icon: <Box className="h-8 w-8 text-primary-green" />,
     },
   ];
 
   const modules = [
-    { name: "Yarn & Raw Silk", icon: <Box className="h-5 w-5" /> },
-    { name: "Weaver Job Work", icon: <Layers className="h-5 w-5" /> },
-    { name: "Design Catalog", icon: <Sparkles className="h-5 w-5" /> },
-    { name: "Color Dyeing", icon: <Palette className="h-5 w-5" /> },
-    { name: "GST & Billing", icon: <Coins className="h-5 w-5" /> },
-    { name: "Showroom POS", icon: <BarChart3 className="h-5 w-5" /> },
+    { name: "Style & Tech Pack", icon: <Shirt className="h-5 w-5" /> },
+    { name: "Cutting & Bundles", icon: <Scissors className="h-5 w-5" /> },
+    { name: "Sewing Line Balancing", icon: <Layers className="h-5 w-5" /> },
+    { name: "Piece-Rate Payroll", icon: <Coins className="h-5 w-5" /> },
+    { name: "AQL Quality Control", icon: <ClipboardCheck className="h-5 w-5" /> },
+    { name: "Export & Shipping", icon: <Truck className="h-5 w-5" /> },
   ];
 
   const timeline = [
-    { title: "Requirement Mapping", desc: "Understanding loom counts, yarn types, & weaver terms.", icon: <FileText className="h-5 w-5" /> },
-    { title: "ERP Customization", desc: "Configuring Jacquard designs & GST tax brackets.", icon: <Settings2 className="h-5 w-5" /> },
-    { title: "Weaver & Staff Training", desc: "Hands-on regional language training for floor staff.", icon: <Users2 className="h-5 w-5" /> },
-    { title: "Factory Go Live", desc: "Seamless launch with 24/7 dedicated local support.", icon: <Rocket className="h-5 w-5" /> },
+    { title: "Factory Audit", desc: "Mapping cutting floor, sewing lines, & buyer requirements.", icon: <FileText className="h-5 w-5" /> },
+    { title: "System Setup", desc: "Configuring style templates & piece-rate rates.", icon: <Settings2 className="h-5 w-5" /> },
+    { title: "Floor Training", desc: "Training floor supervisors & barcode scanning operators.", icon: <Users2 className="h-5 w-5" /> },
+    { title: "Go Live & Support", desc: "Live order tracking with 24/7 technical support.", icon: <Rocket className="h-5 w-5" /> },
   ];
 
   return (
     <div className="bg-background min-h-screen">
       <BreadcrumbHeader 
-        title="Textiles ERP (Silks & Weaving)" 
-        pageName="Textiles ERP (Silks)" 
+        title="Garments ERP Software" 
+        pageName="Garments ERP" 
         parentLink={{ name: "Products", href: "/products" }} 
       />
 
@@ -105,14 +102,14 @@ export default function TextileERP() {
       <Section light={true} className="py-10 md:py-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center max-w-[1360px] mx-auto">
           <div className="lg:col-span-6 space-y-6 text-left">
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#DCFCE7] text-primary-green-dark font-bold text-xs uppercase tracking-wider">
-              SPECIALIZED FOR SILK &amp; WEAVING MILLS
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-100 text-blue-800 font-bold text-xs uppercase tracking-wider">
+              FOR APPAREL &amp; KNITWEAR FACTORIES
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0F2D5C] tracking-tight leading-tight">
-              Master Your <span className="text-primary-green font-handwriting text-4xl sm:text-5xl lg:text-6xl font-normal inline-block">Silk Manufacturing</span> &amp; Saree Production
+              Streamline Your <span className="text-primary-green font-handwriting text-4xl sm:text-5xl lg:text-6xl font-normal inline-block">Garment Factory</span> Operations
             </h1>
             <p className="text-slate-600 font-medium text-base sm:text-lg leading-relaxed">
-              Purpose-built for Salem, Kanchipuram, and Tirupur textile hubs. Track yarn procurement, weaver job-work allocations, Jacquard saree designs, dyeing batches, and wholesale GST billing in one unified system.
+              Designed for garment manufacturers, knitwear units, and apparel exporters. Gain 100% floor visibility from fabric cutting bundles to piece-rate operator payroll and buyer export shipments.
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
@@ -128,7 +125,7 @@ export default function TextileERP() {
             <div className="pt-2 flex flex-wrap gap-4">
               <Link href="/contact">
                 <Button variant="primary" showArrow={true} className="px-8 h-[48px]">
-                  Request Live Demo
+                  Request Factory Demo
                 </Button>
               </Link>
             </div>
@@ -138,8 +135,8 @@ export default function TextileERP() {
             <div className="absolute -inset-2 bg-primary-green/15 blur-3xl rounded-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"></div>
             <div className="relative rounded-2xl overflow-hidden border border-slate-200/90 shadow-2xl bg-slate-900 aspect-video flex items-center justify-center">
               <Image
-                src="/images/textile_erp_silk.png"
-                alt="Textiles ERP Silk Saree Manufacturing Dashboard"
+                src="/images/garments_erp.png"
+                alt="Garments Manufacturing ERP Dashboard"
                 width={800}
                 height={450}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -154,8 +151,8 @@ export default function TextileERP() {
         <div className="max-w-[1360px] mx-auto">
           <FadeIn>
             <SectionHeader 
-              title="Engineered for Silk & Weaving Excellence"
-              subtitle="Specialized modules designed to handle yarn variations, weaver job work, and saree design complexities."
+              title="Built for Apparel Manufacturing Precision"
+              subtitle="Eliminate production bottlenecks, control fabric wastage, and automate piece-rate worker payouts."
             />
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -183,10 +180,10 @@ export default function TextileERP() {
         <div className="max-w-[1360px] mx-auto text-center space-y-8">
           <div className="max-w-2xl mx-auto space-y-2">
             <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#DCFCE7] text-primary-green-dark font-bold text-xs uppercase tracking-wider">
-              ALL-IN-ONE PLATFORM
+              FACTORY SUITE
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-[#0F2D5C] tracking-tight">
-              Complete Integrated Modules
+              Complete Garment ERP Modules
             </h2>
           </div>
 
@@ -206,10 +203,10 @@ export default function TextileERP() {
         <div className="max-w-[1360px] mx-auto text-center space-y-10">
           <div className="max-w-2xl mx-auto space-y-2">
             <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#DCFCE7] text-primary-green-dark font-bold text-xs uppercase tracking-wider">
-              SMOOTH ONBOARDING
+              FAST DEPLOYMENT
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-[#0F2D5C] tracking-tight">
-              How We Deploy Your Silk ERP
+              How We Setup Your Garment ERP
             </h2>
           </div>
 
@@ -230,15 +227,15 @@ export default function TextileERP() {
         <FadeIn>
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tight leading-tight">
-              Ready to Modernize Your <span className="underline decoration-white/30">Silk Saree Factory?</span>
+              Ready to Upgrade Your <span className="underline decoration-white/30">Garment Production?</span>
             </h2>
             <p className="text-lg md:text-xl font-medium mb-6 opacity-90 max-w-2xl mx-auto leading-relaxed">
-              Talk to our textile software engineers today and request a tailored demonstration for your weaving unit.
+              Schedule a live demonstration with our apparel software experts and see how Garments ERP transforms factory efficiency.
             </p>
             <div className="flex justify-center">
               <Link href="/contact">
                 <Button variant="white" showArrow={true} className="px-10 h-[50px]">
-                  Book Free Factory Demo
+                  Book Free Demo
                 </Button>
               </Link>
             </div>

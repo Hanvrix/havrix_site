@@ -29,7 +29,7 @@ export default function FloatingActions() {
         href="https://wa.me/918838213390"
         target="_blank"
         rel="noopener noreferrer"
-        className="w-10 h-10 md:w-12 h-12 bg-brand-secondary hover:bg-brand-primary text-white rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer border border-white/10"
+        className="w-10 h-10 md:w-12 h-12 bg-brand-primary hover:bg-brand-secondary text-white rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer border border-white/10"
         aria-label="WhatsApp Us"
       >
         <WhatsAppIcon />

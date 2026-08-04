@@ -7,19 +7,6 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
-    Industries: [
-      { name: "Textiles & apparel", href: "/industries/textiles" },
-      { name: "Electrical & Electronics", href: "/industries/electrical" },
-      { name: "Steel & Metals", href: "/industries/steel-metals" },
-      { name: "Automotive", href: "/industries/automotive" },
-      { name: "Construction & Infrastructure", href: "/industries/construction" },
-      { name: "Real Estate", href: "/industries/real-estate" },
-      { name: "Banking & Finance", href: "/industries/banking-finance" },
-      { name: "E-Commerce", href: "/industries/e-commerce" },
-      { name: "Agriculture", href: "/industries/agriculture" },
-      { name: "Education", href: "/industries/education" },
-      { name: "Logistics", href: "/industries/logistics" },
-    ],
     company: [
       { name: "About Us", href: "/about" },
       { name: "Services", href: "/services" },
@@ -27,9 +14,9 @@ const Footer = () => {
       { name: "Contact", href: "/contact" },
     ],
     products: [
-      { name: "Textile ERP", href: "/products/textile-erp" },
-      { name: "E-Commerce ERP", href: "/products/e-commerce-erp" },
-      { name: "Electrical ERP", href: "/products/electrical-erp" },
+      { name: "Textiles ERP (Silks)", href: "/products/textile-erp" },
+      { name: "Garments ERP", href: "/products/garments-erp" },
+      { name: "Lead Management CRM", href: "/products/lead-management-crm" },
     ],
     services: [
       { name: "Digital Transformation", href: "/services" },
@@ -49,19 +36,30 @@ const Footer = () => {
 
 
   return (
-    <footer className="bg-bg-footer text-white pt-15 pb-5 overflow-hidden relative">
+    <footer 
+      className="relative w-full text-white pt-16 pb-5 overflow-hidden bg-[#0B0F17] bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/images/heroBG.png')" }}
+    >
+      {/* Dark Overlay for contrast & text legibility */}
+      <div className="absolute inset-0 bg-black/60 pointer-events-none"></div>
+
+      {/* Ambient Green Glow */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-primary-green/10 blur-[150px] rounded-full"></div>
+      </div>
+
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-10">
           {/* Brand Identity */}
           <div className="space-y-8">
             <Link href="/" className="flex items-center space-x-2 group">
-              <div className="p-1.5 bg-brand-primary rounded-lg">
+              <div className="relative transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src="/logo.png"
                   alt="Hanvrix Logo"
-                  width={24}
-                  height={24}
-                  className="w-6 h-6 object-contain brightness-0 invert"
+                  width={36}
+                  height={36}
+                  className="w-9 h-9 object-contain"
                 />
               </div>
               <span className="text-2xl font-black tracking-tighter text-white uppercase">
@@ -118,23 +116,12 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-            
-            <h3 className="text-white font-semibold mb-6 mt-8 text-[15px]">Products</h3>
-            <ul className="space-y-4 text-[14px]">
-              {footerLinks.products.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="hover:text-white transition-colors">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-6 text-[15px]">Industries</h3>
+            <h3 className="text-white font-semibold mb-6 text-[15px]">Products</h3>
             <ul className="space-y-4 text-[14px]">
-              {footerLinks.Industries.map((link) => (
+              {footerLinks.products.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="hover:text-white transition-colors">
                     {link.name}

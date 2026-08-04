@@ -1,31 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Space+Grotesk:wght@300..700&family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Space+Grotesk:wght@300..700&family=Syne:wght@400..800&display=swap');
 @import "tailwindcss";
 
 :root {
 
-  /* ── Brand Colors ── */
-  --brand-primary:    #1e8a8a;   /* Teal — buttons, icons, accents */
-  --brand-secondary:  #0c1e21;   /* Deep Teal-Charcoal — headings, dark text */
-  --brand-accent:     #1e8a8a;   /* Same as primary */
-  --brand-cta:        #1e8a8a;   /* CTA buttons */
+  /* ── User Defined Primary Color Theme Pattern ── */
+  --primary-green:       #16A34A;
+  --primary-green-dark:  #15803D;
+  --primary-green-light: #DCFCE7;
+
+  --navy-blue:           #0F2D5C;
+  --navy-blue-light:     #1E3A8A;
+
+  --white:               #FFFFFF;
+  --background:          #F8FAFC;
+  --text:                #374151;
+
+  /* ── System Mapped Brand Tokens ── */
+  --brand-primary:       var(--primary-green);
+  --brand-secondary:     var(--navy-blue);
+  --brand-accent:        var(--primary-green);
+  --brand-cta:           var(--primary-green);
 
   /* ── Background Colors ── */
-  --background:       #ecf0f0;   /* Page background — soft off-white teal */
-  --bg-light:         #ffffff;   /* White cards, sections */
-  --bg-dark:          #0c1e21;   /* Dark sections, hero, process */
-  --bg-footer:        #202e30;   /* Footer, CTA banner */
+  --bg-light:            var(--white);
+  --bg-dark:             var(--navy-blue);
+  --bg-footer:           #091D3E;
 
   /* ── Text Colors ── */
-  --text-primary:     #0c1e21;   /* Main body text */
-  --text-secondary:   #364e52;   /* Muted / paragraph text */
-  --text-white:       #ffffff;   /* Text on dark backgrounds */
-  --foreground:       #0c1e21;
+  --text-primary:        var(--navy-blue);
+  --text-secondary:      var(--text);
+  --text-white:          var(--white);
+  --foreground:          var(--text);
 
   /* ── Extra ── */
-  --teal-hover:       #156a6a;   /* Scrollbar hover, darker teal */
-  --teal-gradient:    #3ca3a3;   /* Text gradient end color */
-  --services-bg:      #f8fafa;   /* Services slider section bg */
-  --border-light:     #c9d1d1;   /* Borders, dividers */
+  --teal-hover:          var(--primary-green-dark);
+  --teal-gradient:       #22C55E;
+  --services-bg:         #F1F5F9;
+  --border-light:        #E2E8F0;
 
   --section-padding: 120px;
 }
@@ -34,6 +45,17 @@
   --font-sans: "Space Grotesk", "Inter", sans-serif;
   --font-display: "Syne", sans-serif;
   --font-serif: "Cormorant Garamond", serif;
+
+  --color-primary-green: var(--primary-green);
+  --color-primary-green-dark: var(--primary-green-dark);
+  --color-primary-green-light: var(--primary-green-light);
+
+  --color-navy-blue: var(--navy-blue);
+  --color-navy-blue-light: var(--navy-blue-light);
+
+  --color-white: var(--white);
+  --color-background: var(--background);
+  --color-text: var(--text);
 
   --color-brand-primary: var(--brand-primary);
   --color-brand-secondary: var(--brand-secondary);
@@ -114,22 +136,17 @@ h6 {
   color: #ffffff;
 }
 
+/* Hide scrollbars across all browsers while allowing smooth scrolling */
+html, body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg-dark);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--brand-primary);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--teal-hover);
+  display: none;
+  width: 0px;
+  height: 0px;
+  background: transparent;
 }
 
 /* Utilities */
@@ -146,8 +163,12 @@ h6 {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.font-handwriting {
+  font-family: 'Caveat', 'Dancing Script', cursive;
+}
+
 .glass-morphism-dark {
-  background: rgba(12, 30, 33, 0.85);
+  background: rgba(15, 45, 92, 0.85);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
