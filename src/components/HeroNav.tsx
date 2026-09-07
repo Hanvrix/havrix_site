@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Menu, X, ChevronDown,
   Box, Code2, Sparkles, Monitor, Smartphone, Headset, ShoppingCart, Shirt, Users,
-  Facebook, Twitter, Linkedin, Instagram
+  Facebook, Twitter, Linkedin, Instagram, Mail, Phone
 } from "lucide-react";
 import Image from "next/image";
 import Button from "./ui/Button";
@@ -352,19 +352,32 @@ export function MobileDrawer({
                 className="mt-auto pt-12 space-y-8"
               >
                 <div className="space-y-4">
+                  <div className="flex flex-col sm:flex-row gap-4 text-sm text-gray-300 pb-2">
+                    <a href="mailto:hanvrix@gmail.com" className="flex items-center gap-2 hover:text-brand-primary transition-colors">
+                      <Mail className="w-4 h-4 text-brand-primary" />
+                      <span>hanvrix@gmail.com</span>
+                    </a>
+                    <a href="tel:+918838213390" className="flex items-center gap-2 hover:text-brand-primary transition-colors">
+                      <Phone className="w-4 h-4 text-brand-primary" />
+                      <span>+91 8838213390</span>
+                    </a>
+                  </div>
                   <div className="flex space-x-4">
                     {[
-                      <Facebook key="fb" className="w-5 h-5" />,
-                      <Twitter  key="tw" className="w-5 h-5" />,
-                      <Linkedin key="li" className="w-5 h-5" />,
-                      <Instagram key="ig" className="w-5 h-5" />,
-                    ].map((icon, i) => (
+                      { name: "Facebook", icon: <Facebook key="fb" className="w-5 h-5" />, href: "https://www.facebook.com/hanvrix" },
+                      { name: "Twitter", icon: <Twitter key="tw" className="w-5 h-5" />, href: "https://x.com/hanvrix_tech" },
+                      { name: "LinkedIn", icon: <Linkedin key="li" className="w-5 h-5" />, href: "https://www.linkedin.com/company/hanvrix/" },
+                      { name: "Instagram", icon: <Instagram key="ig" className="w-5 h-5" />, href: "https://www.instagram.com/hanvrix?stkn=NnB1MXFqZWQ3NHlq" },
+                    ].map((item, i) => (
                       <a
                         key={i}
-                        href="#"
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={item.name}
                         className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:bg-brand-primary hover:text-bg-dark transition-all duration-300"
                       >
-                        {icon}
+                        {item.icon}
                       </a>
                     ))}
                   </div>

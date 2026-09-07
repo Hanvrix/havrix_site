@@ -88,7 +88,7 @@ export default function RootLayout({
               "image": "https://hanvrix.vercel.app/logo.png",
               "@id": "https://hanvrix.vercel.app",
               "url": "https://hanvrix.vercel.app",
-              "telephone": "+91-XXXXXXXXXX",
+              "telephone": "+91-8838213390",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Salem",

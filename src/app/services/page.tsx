@@ -164,7 +164,7 @@ export default function ServicesPage() {
                 {/* Bottom Action Pill Buttons (Chat With Us & Call Us) */}
                 <div className="pt-3.5 border-t border-slate-100 flex items-center justify-center gap-2.5 w-full">
                   <a
-                    href="https://wa.me/919842212345"
+                    href="https://wa.me/918838213390"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 rounded-full bg-primary-green hover:bg-primary-green-dark text-white font-extrabold text-xs tracking-tight shadow-md flex items-center justify-center gap-1.5 transition-all duration-300 hover:scale-105 shrink-0"
@@ -174,7 +174,7 @@ export default function ServicesPage() {
                   </a>
                   
                   <a
-                    href="tel:+919842212345"
+                    href="tel:+918838213390"
                     className="px-4 py-2 rounded-full bg-[#0F2D5C] hover:bg-[#0A1F3F] text-white font-extrabold text-xs tracking-tight shadow-md flex items-center justify-center gap-1.5 transition-all duration-300 hover:scale-105 shrink-0"
                   >
                     <Phone className="w-3.5 h-3.5 text-white" />
