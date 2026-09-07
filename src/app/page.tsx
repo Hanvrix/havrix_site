@@ -593,7 +593,7 @@ export default function Home() {
                 Find answers to common questions
               </h2>
               
-              <div className="mt-8 pt-6 border-t border-border-light">
+              <div className="mt-8 pt-6 border-t border-border-light flex flex-wrap items-center gap-6">
                 <a 
                   href="tel:+918838213390" 
                   className="inline-flex items-center gap-3 text-brand-secondary font-black text-xl hover:text-brand-primary transition-colors"
@@ -602,6 +602,15 @@ export default function Home() {
                     <Phone className="w-5 h-5" />
                   </span>
                   <span>+91 8838213390</span>
+                </a>
+
+                <a 
+                  href="https://wa.me/918838213390" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white px-4 py-2.5 rounded-xl font-bold text-sm shadow-md transition-all duration-300"
+                >
+                  Chat on WhatsApp
                 </a>
               </div>
             </div>
@@ -687,7 +696,7 @@ export default function Home() {
                   Contact Us Now
                 </Button>
               </Link>
-              <a href="tel:+919876543210" className="inline-flex items-center space-x-2.5 px-7 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-white font-bold text-base transition-all backdrop-blur-sm">
+              <a href="tel:+918838213390" className="inline-flex items-center space-x-2.5 px-7 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-white font-bold text-base transition-all backdrop-blur-sm">
                 <Phone className="w-4 h-4 text-primary-green" />
                 <span>+91 88382 13390</span>
               </a>
